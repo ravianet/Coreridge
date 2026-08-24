@@ -1,0 +1,8 @@
+{
+  "/(dashboard)/dashboard/login/page": "app/(dashboard)/dashboard/login/page.js",
+  "/(public)/about/page": "app/(public)/about/page.js",
+  "/(public)/company/clients/page": "app/(public)/company/clients/page.js",
+  "/(public)/contact/page": "app/(public)/contact/page.js",
+  "/(public)/page": "app/(public)/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
+}

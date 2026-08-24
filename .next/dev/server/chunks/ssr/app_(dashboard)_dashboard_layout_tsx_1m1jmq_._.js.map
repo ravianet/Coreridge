@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/coreridge/app/(dashboard)/dashboard/layout.tsx"],"sourcesContent":["import { auth } from \"../api/auth/[...nextauth]/route\";\r\nimport { redirect } from \"next/navigation\";\r\nimport DashboardNavigation from \"../../components/DashboardNavigation\";\r\n\r\nexport default async function DashboardLayout({\r\n  children,\r\n}: {\r\n  children: React.ReactNode;\r\n}) {\r\n  const session = await auth();\r\n\r\n  if (!session) {\r\n    redirect(\"/dashboard/login\");\r\n  }\r\n\r\n  return (\r\n    <div className=\"min-h-screen bg-gray-900\">\r\n      <DashboardNavigation user={session.user} />\r\n      <div className=\"md:ml-64\">\r\n        <main className=\"p-6\">{children}</main>\r\n      </div>\r\n    </div>\r\n  );\r\n}"],"names":["DashboardLayout","children","session","auth","className","DashboardNavigation","user"],"mappings":";;;;;;;;;;AACA;AAAA;;;;;;;;;;AAGe,eAAeA,gBAAgB,EAC5CC,QAAQ,EAGT;IACC,MAAMC,UAAU,MAAMC;IAEtB,IAAI,CAACD,SAAS;QACZ,IAAA,iMAAQ,EAAC;IACX;IAEA,qBACE,8OAAC;QAAIE,WAAU;;0BACb,8OAACC;gBAAoBC,MAAMJ,QAAQI,IAAI;;;;;;0BACvC,8OAAC;gBAAIF,WAAU;0BACb,cAAA,8OAAC;oBAAKA,WAAU;8BAAOH;;;;;;;;;;;;;;;;;AAI/B"}}]
+}
