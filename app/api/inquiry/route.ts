@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import prisma from "../../../lib/prisma";
 
 // Zod validation schema for inquiry submissions
 const inquirySchema = z.object({
@@ -53,7 +51,7 @@ export async function POST(request: Request) {
     if (error instanceof z.ZodError) {
       return NextResponse.json({ 
         success: false, 
-        errors: error.errors 
+        errors: (error as any).errors 
       }, { status: 400 });
     }
 

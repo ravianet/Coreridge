@@ -10,7 +10,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-navy-900 pt-28 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white pt-28 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Hero */}
         <motion.div
@@ -18,12 +18,12 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
               About Coreridge
             </span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             We are a leading enterprise technology partner dedicated to transforming businesses through innovative solutions, robust security, and regulatory compliance.
           </p>
         </motion.div>
@@ -40,7 +40,7 @@ export default function AboutPage() {
               <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-400">{stat.label}</div>
+              <div className="text-black">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -53,7 +53,7 @@ export default function AboutPage() {
           className="glass-card rounded-2xl p-12 mb-12"
         >
           <h2 className="text-3xl font-bold text-white mb-6">Our Mission</h2>
-          <p className="text-lg text-gray-400 leading-relaxed">
+          <p className="text-lg text-black leading-relaxed">
             At Coreridge Technologies, we empower enterprises to navigate the complex digital landscape with confidence. Our mission is to deliver cutting-edge technology solutions that not only drive innovation but also maintain the highest standards of security, reliability, and regulatory compliance. We believe in building long-term partnerships with our clients, understanding their unique challenges, and providing tailored solutions that deliver measurable business outcomes.
           </p>
         </motion.section>
@@ -74,7 +74,45 @@ export default function AboutPage() {
               <div key={index} className="glass-card rounded-xl p-8">
                 <span className="text-5xl mb-4 block">{value.icon}</span>
                 <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
-                <p className="text-gray-400">{value.desc}</p>
+                <p className="text-black">{value.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Team */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mt-20"
+        >
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Leadership Team</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              { 
+                name: "Ravi Kumar Valluru", 
+                role: "Founder & CEO",
+                bio: "19-year technology leader specializing in enterprise IT infrastructure, AI engineering, and digital transformation. Managed IT infrastructure for 50,000+ users across 600+ locations, integrated 9,400+ surveillance cameras, and built enterprise AI products in computer vision, predictive maintenance, and demand forecasting for education, manufacturing, and aviation sectors."
+              },
+              { 
+                name: "Nagadeepthi Valluru", 
+                role: "Co-Founder & CTO",
+                bio: "20-year aviation technology leader with extensive aviation experience, excelling as a Software Developer, DBA, Full-Stack Engineer, and Data Analyst. Led enterprise architecture, cloud modernization, and big data analytics initiatives for global airline networks, architecting mission-critical systems that power commercial aviation operations worldwide."
+              },
+              { 
+                name: "Reshma Shaik", 
+                role: "Managing Director",
+                bio: "Leading strategic growth and operations for Coreridge Technologies as Managing Director, with 10+ years of experience growing enterprise technology brands. Expert in business strategy, demand generation, and building strong client relationships that drive business expansion across aviation and industrial sectors."
+              },
+            ].map((member, index) => (
+              <div key={index} className="glass-card rounded-xl p-8 text-center">
+                <div className="w-24 h-24 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 mx-auto mb-4 flex items-center justify-center text-3xl text-white">
+                  {member.name.charAt(0)}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
+                <p className="text-cyan-400 font-medium mb-3">{member.role}</p>
+                <p className="text-black">{member.bio}</p>
               </div>
             ))}
           </div>

@@ -129,19 +129,19 @@ export default function AlliancesPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-navy-900 pt-28 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white pt-28 pb-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-20"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6">
             <span className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
               Our Alliances
             </span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             We partner with industry leaders to deliver best-in-class solutions.
           </p>
         </motion.div>
@@ -165,7 +165,7 @@ export default function AlliancesPage() {
                 alt={`${alliance.name} logo`}
                 className="h-16 w-full object-contain mb-4 grayscale hover:grayscale-0 transition-all duration-300"
               />
-              <h3 className="text-lg font-semibold text-white">{alliance.name}</h3>
+              <h3 className="text-lg font-semibold text-gray-800">{alliance.name}</h3>
             </motion.div>
           ))}
         </motion.div>

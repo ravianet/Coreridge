@@ -1,0 +1,263 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model User {
+  id         String      @id @default(cuid())
+  email      String      @unique
+  password   String? // For auth
+  name       String?
+  role       String      @default("EMPLOYEE") // ADMIN, MANAGER, EMPLOYEE, ACCOUNTANT
+  phone      String?
+  isActive   Boolean     @default(true)
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+  inquiries  Inquiry[]
+  auditLogs  AuditLog[]
+  clients    Client[]    @relation("ClientCreatedBy")
+  vendors    Vendor[]    @relation("VendorCreatedBy")
+  quotations Quotation[]
+  invoices   Invoice[]
+  payments   Payment[]
+}
+
+// Client Management
+model Client {
+  id          String      @id @default(cuid())
+  name        String // Business name
+  gstin       String? // GST Identification Number (India)
+  pan         String? // PAN Number
+  email       String?
+  phone       String?
+  address     String?
+  city        String?
+  state       String?
+  pincode     String?
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  createdById String
+  createdBy   User        @relation("ClientCreatedBy", fields: [createdById], references: [id])
+  quotations  Quotation[]
+  invoices    Invoice[]
+  payments    Payment[]
+}
+
+// Vendor Management
+model Vendor {
+  id          String    @id @default(cuid())
+  name        String // Vendor business name
+  gstin       String? // GSTIN
+  pan         String? // PAN
+  email       String?
+  phone       String?
+  address     String?
+  city        String?
+  state       String?
+  pincode     String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  createdById String
+  createdBy   User      @relation("VendorCreatedBy", fields: [createdById], references: [id])
+  bills       Bill[]
+  payments    Payment[]
+}
+
+// Products/Services
+model Product {
+  id             String          @id @default(cuid())
+  name           String
+  description    String?
+  hsnCode        String? // HSN Code for GST
+  unitPrice      Float // Base price
+  cgstRate       Float // CGST Rate %
+  sgstRate       Float // SGST Rate %
+  igstRate       Float // IGST Rate %
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  quotationItems QuotationItem[]
+  invoiceItems   InvoiceItem[]
+  billItems      BillItem[]
+}
+
+// Quotations
+model Quotation {
+  id          String          @id @default(cuid())
+  quotationNo String          @unique
+  clientId    String
+  client      Client          @relation(fields: [clientId], references: [id])
+  issueDate   DateTime
+  validTill   DateTime
+  status      String          @default("DRAFT") // DRAFT, SENT, ACCEPTED, REJECTED
+  notes       String?
+  subtotal    Float
+  cgstAmount  Float
+  sgstAmount  Float
+  igstAmount  Float
+  totalAmount Float
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  createdById String
+  createdBy   User            @relation(fields: [createdById], references: [id])
+  items       QuotationItem[]
+  invoices    Invoice[]
+}
+
+model QuotationItem {
+  id          String    @id @default(cuid())
+  quotationId String
+  quotation   Quotation @relation(fields: [quotationId], references: [id], onDelete: Cascade)
+  productId   String
+  product     Product   @relation(fields: [productId], references: [id])
+  quantity    Float
+  unitPrice   Float
+  cgstAmount  Float
+  sgstAmount  Float
+  igstAmount  Float
+  totalAmount Float
+}
+
+// Invoices (Sales)
+model Invoice {
+  id            String        @id @default(cuid())
+  invoiceNo     String        @unique
+  clientId      String
+  client        Client        @relation(fields: [clientId], references: [id])
+  quotationId   String?
+  quotation     Quotation?    @relation(fields: [quotationId], references: [id])
+  issueDate     DateTime
+  dueDate       DateTime
+  status        String        @default("DRAFT") // DRAFT, SENT, PAID, OVERDUE, CANCELLED
+  invoiceType   String // SGST, CGST (Intra-state) OR IGST (Inter-state)
+  notes         String?
+  subtotal      Float
+  cgstAmount    Float
+  sgstAmount    Float
+  igstAmount    Float
+  totalAmount   Float
+  paidAmount    Float         @default(0)
+  pendingAmount Float
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  createdById   String
+  createdBy     User          @relation(fields: [createdById], references: [id])
+  items         InvoiceItem[]
+  payments      Payment[]
+}
+
+model InvoiceItem {
+  id          String  @id @default(cuid())
+  invoiceId   String
+  invoice     Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  productId   String
+  product     Product @relation(fields: [productId], references: [id])
+  quantity    Float
+  unitPrice   Float
+  cgstAmount  Float
+  sgstAmount  Float
+  igstAmount  Float
+  totalAmount Float
+}
+
+// Purchase Bills (from Vendors)
+model Bill {
+  id            String     @id @default(cuid())
+  billNo        String     @unique
+  vendorId      String
+  vendor        Vendor     @relation(fields: [vendorId], references: [id])
+  issueDate     DateTime
+  dueDate       DateTime
+  status        String     @default("DRAFT") // DRAFT, RECIEVED, PAID, OVERDUE
+  billType      String // SGST/CGST or IGST
+  notes         String?
+  subtotal      Float
+  cgstAmount    Float
+  sgstAmount    Float
+  igstAmount    Float
+  totalAmount   Float
+  paidAmount    Float      @default(0)
+  pendingAmount Float
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  items         BillItem[]
+  payments      Payment[]
+}
+
+model BillItem {
+  id          String  @id @default(cuid())
+  billId      String
+  bill        Bill    @relation(fields: [billId], references: [id], onDelete: Cascade)
+  productId   String
+  product     Product @relation(fields: [productId], references: [id])
+  quantity    Float
+  unitPrice   Float
+  cgstAmount  Float
+  sgstAmount  Float
+  igstAmount  Float
+  totalAmount Float
+}
+
+// Payments (both incoming and outgoing)
+model Payment {
+  id            String   @id @default(cuid())
+  paymentNo     String   @unique
+  paymentType   String // INCOME (from client) or EXPENSE (to vendor)
+  invoiceId     String?
+  invoice       Invoice? @relation(fields: [invoiceId], references: [id])
+  billId        String?
+  bill          Bill?    @relation(fields: [billId], references: [id])
+  clientId      String?
+  client        Client?  @relation(fields: [clientId], references: [id])
+  vendorId      String?
+  vendor        Vendor?  @relation(fields: [vendorId], references: [id])
+  amount        Float
+  paymentDate   DateTime
+  paymentMode   String // UPI, NETBANKING, CASH, CHEQUE, NEFT, RTGS
+  transactionId String?
+  status        String   @default("PENDING") // PENDING, COMPLETED, FAILED, CANCELLED
+  notes         String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  createdById   String
+  createdBy     User     @relation(fields: [createdById], references: [id])
+}
+
+// Ledger Entry for accounting
+model LedgerEntry {
+  id            String   @id @default(cuid())
+  date          DateTime
+  particulars   String
+  ledgerAccount String // Chart of accounts
+  debitAmount   Float    @default(0)
+  creditAmount  Float    @default(0)
+  paymentId     String?
+  createdAt     DateTime @default(now())
+}
+
+model Inquiry {
+  id          String   @id @default(cuid())
+  firstName   String
+  lastName    String
+  email       String
+  company     String?
+  serviceType String // AI, Infrastructure, Security, Development, CSV
+  message     String?
+  createdAt   DateTime @default(now())
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  details   String?
+  createdAt DateTime @default(now())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+}

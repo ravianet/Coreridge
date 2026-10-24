@@ -6,4 +6,22 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  theme: {
+    extend: {
+      // We'll use native Tailwind colors that match our enterprise design system
+      // This avoids CSS variable mapping issues while maintaining the MNC-style look
+      colors: {
+        primary: {
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+        },
+        accent: {
+          cyan: '#06b6d4',
+          blue: '#3b82f6',
+          violet: '#8b5cf6',
+        }
+      },
+    },
+  },
 } satisfies Config;

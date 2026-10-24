@@ -1,17 +1,17 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { 
+  Phone, MessageCircle, Mail, MapPin, 
+  Globe, Zap, Shield, Monitor, ArrowRight, 
+  CheckCircle2
+} from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    company: "",
-    serviceInterest: "",
-    message: ""
+    firstName: "", lastName: "", email: "", 
+    company: "", serviceInterest: "", message: ""
   });
-
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -21,314 +21,223 @@ export default function ContactPage() {
     setFormData({ firstName: "", lastName: "", email: "", company: "", serviceInterest: "", message: "" });
   };
 
-  const contactMethods = [
-    {
-      title: "Call Us",
-      subtitle: "Speak directly with our experts",
-      value: "+91 800 885 6333",
-      icon: "📞",
-      link: "tel:+91-8008856333",
-      linkText: "Call Now",
-      gradient: "from-cyan-500 to-blue-500"
-    },
-    {
-      title: "WhatsApp",
-      subtitle: "Quick chat for instant support",
-      value: "+91 800 885 6333",
-      icon: "💬",
-      link: "https://wa.me/918008856333?text=Hi%20Coreridge%20Technologies,%20I%20need%20assistance%20with...",
-      linkText: "Chat Now",
-      gradient: "from-green-500 to-emerald-500"
-    },
-    {
-      title: "Email Us",
-      subtitle: "Send us your requirements",
-      value: "info@coreridgetech.com",
-      icon: "✉️",
-      link: "mailto:info@coreridgetech.com",
-      linkText: "Send Email",
-      gradient: "from-violet-500 to-purple-500"
-    }
-  ];
-
-  const offices = [
-    {
-      country: "🇮🇳",
-      title: "India Headquarters",
-      subtitle: "Global Operations",
-      address: "112, APR Signator, Mallampet\nNear Bhachupally\nHyderabad 500090, India",
-      timezone: "IST Timezone",
-      mapsLink: "https://maps.app.goo.gl/jnRBXrEkzHAwn1vr6",
-      description: "Main Operations"
-    }
-  ];
-
-  const serviceInterests = [
-    "AI Solutions",
-    "IT Infrastructure",
-    "Cyber Security",
-    "Application Development",
-    "Computer System Validation",
-    "Other"
+  const contactInfo = [
+    { icon: Phone, label: "Call", value: "+91 800 885 6333", link: "tel:+91-8008856333", color: "text-cyan-600", bg: "bg-cyan-50" },
+    { icon: MessageCircle, label: "WhatsApp", value: "+91 800 885 6333", link: "https://wa.me/918008856333", linkText: "Chat", color: "text-green-600", bg: "bg-green-50" },
+    { icon: Mail, label: "Email", value: "info@coreridgetech.com", link: "mailto:info@coreridgetech.com", color: "text-violet-600", bg: "bg-violet-50" }
   ];
 
   const features = [
-    { icon: "🌐", title: "Global Reach", description: "Serving clients worldwide" },
-    { icon: "⚡", title: "Fast Response", description: "Quick response guaranteed" },
-    { icon: "🔒", title: "24/7 Support", description: "Round-the-clock assistance" },
-    { icon: "💻", title: "Remote Support", description: "Seamless remote capabilities" }
+    { icon: Globe, title: "Global Reach" },
+    { icon: Zap, title: "24h Response" },
+    { icon: Shield, title: "24/7 Support" },
+    { icon: Monitor, title: "Remote Support" }
   ];
 
+  const serviceInterests = ["AI Solutions", "IT Infrastructure", "Cyber Security", "App Development", "CCTV Video Analytics", "CSV", "Other"];
+
   return (
-    <div className="min-h-screen bg-navy-900 pt-28 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Hero Section */}
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 pt-28 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Modern floating background elements */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-[#184491]/8 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400/6 rounded-full blur-3xl pointer-events-none" />
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Compact Hero with enhanced animations */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
-              Get in Touch
-            </span>
-          </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-            Ready to transform your IT infrastructure? Let's discuss your requirements and create the perfect solution for your business.
-          </p>
-          
-          {/* Feature Tags */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <span className="px-4 py-2 bg-cyan-500/10 text-cyan-400 rounded-full text-sm font-medium">🚀 Expert IT Solutions</span>
-            <span className="px-4 py-2 bg-violet-500/10 text-violet-400 rounded-full text-sm font-medium">🔒 Enterprise Security</span>
-            <span className="px-4 py-2 bg-green-500/10 text-green-400 rounded-full text-sm font-medium">☁️ Cloud Technologies</span>
-            <span className="px-4 py-2 bg-orange-500/10 text-orange-400 rounded-full text-sm font-medium">🛠️ 24/7 Support</span>
-          </div>
+          <motion.span 
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="inline-block px-4 py-1.5 bg-[#184491]/10 text-[#184491] rounded-full text-xs font-semibold mb-4 backdrop-blur-sm border border-[#184491]/10"
+          >
+            CONTACT US
+          </motion.span>
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#184491] mb-3 bg-clip-text text-transparent bg-gradient-to-r from-[#184491] to-blue-600">Let's Connect</h1>
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">Ready to transform your IT infrastructure? Let's discuss your requirements.</p>
         </motion.div>
 
-        {/* Contact Methods */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-20"
-        >
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Choose Your Preferred Way to Connect</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {contactMethods.map((method, index) => (
+        {/* Modern glass-morphism card with enhanced shadows */}
+        <div className="grid lg:grid-cols-3 gap-0 bg-white/85 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/60 overflow-hidden shadow-[0_20px_60px_-15px_rgba(24,68,145,0.1)]">
+          {/* Main Form - 2/3 width */}
+          <motion.section
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            className="lg:col-span-2 p-8 md:p-10 border-b lg:border-b-0 lg:border-r border-gray-100"
+          >
+            {submitted ? (
               <motion.div
-                key={method.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + index * 0.1 }}
-                className="glass-card rounded-2xl p-8 hover:scale-105 transition-transform duration-300"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="h-full flex flex-col items-center justify-center py-16"
               >
-                <span className="text-6xl mb-6 block">{method.icon}</span>
-                <h3 className="text-2xl font-bold text-white mb-2">{method.title}</h3>
-                <p className="text-gray-400 mb-4">{method.subtitle}</p>
-                <p className="text-xl font-semibold text-white mb-6">{method.value}</p>
-                <a
-                  href={method.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-block w-full text-center py-3 bg-gradient-to-r ${method.gradient} rounded-xl font-semibold text-white hover:opacity-90 transition-opacity`}
-                >
-                  {method.linkText} →
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Global Presence */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mb-20"
-        >
-          <h2 className="text-3xl font-bold text-white mb-4 text-center">Our Global Presence</h2>
-          <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
-            Headquarters in India enabling 24/7 global IT support and services.
-          </p>
-          <div className="grid lg:grid-cols-1 gap-8 max-w-3xl mx-auto">
-            {offices.map((office, index) => (
-              <motion.div
-                key={office.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + index * 0.1 }}
-                className="glass-card rounded-2xl p-10"
-              >
-                <span className="text-6xl mb-4 block">{office.country}</span>
-                <h3 className="text-2xl font-bold text-white mb-1">{office.title}</h3>
-                <p className="text-cyan-400 mb-4">{office.subtitle}</p>
-                <p className="text-gray-300 whitespace-pre-line mb-4">{office.address}</p>
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="px-3 py-1 bg-white/10 rounded-full text-sm text-gray-400">{office.description}</span>
-                  <span className="px-3 py-1 bg-white/10 rounded-full text-sm text-gray-400">{office.timezone}</span>
+                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                  <CheckCircle2 className="w-10 h-10 text-green-500" strokeWidth={2} />
                 </div>
-                <a
-                  href={office.mapsLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-cyan-500/50 text-cyan-400 rounded-xl hover:bg-cyan-500/10 transition-colors"
-                >
-                  📍 Get Directions
-                </a>
+                <h3 className="text-xl font-bold text-green-600 mb-2">Message Sent!</h3>
+                <p className="text-gray-500 text-sm">We'll be in touch within 24 hours.</p>
               </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* Global Service Coverage Features */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mb-20"
-        >
-          <div className="glass-card rounded-2xl p-12 bg-gradient-to-r from-cyan-500/5 to-violet-500/5">
-            <h2 className="text-3xl font-bold text-white mb-4 text-center">🌍 Global Service Coverage</h2>
-            <p className="text-gray-400 text-center max-w-3xl mx-auto mb-12">
-              While our offices are located in India and USA, we provide IT services and support to clients worldwide through our global network and remote capabilities.
-            </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.7 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <span className="text-4xl mb-3 block">{feature.icon}</span>
-                  <h4 className="text-lg font-semibold text-white mb-1">{feature.title}</h4>
-                  <p className="text-sm text-gray-400">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Contact Form Section - Enhanced */}
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-        >
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white mb-4">Send Us a Message</h2>
-              <p className="text-gray-400">Quick Response Guaranteed - We'll get back to you within 24 hours</p>
-            </div>
-            <motion.div
-              className="glass-card rounded-2xl p-10"
-              whileHover={{ scale: 1.01 }}
-              transition={{ duration: 0.3 }}
-            >
-              {submitted ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center py-12"
-                >
-                  <span className="text-8xl mb-6 block">✅</span>
-                  <h3 className="text-2xl font-bold text-green-400 mb-4">Message Sent Successfully!</h3>
-                  <p className="text-gray-400">Thank you for reaching out. We'll be in touch soon.</p>
-                </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+            ) : (
+              <>
+                <h2 className="text-2xl font-bold text-[#184491] mb-6">Send a Message</h2>
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-gray-300 mb-2 font-medium">First Name *</label>
+                      <label className="block text-gray-700 mb-2 font-medium text-xs">First Name *</label>
                       <input
-                        type="text"
-                        required
+                        type="text" required
                         value={formData.firstName}
                         onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
+                        className="w-full px-4 py-3 bg-gray-50/80 border border-gray-200 rounded-xl text-gray-800 focus:outline-none focus:border-[#184491] focus:ring-4 focus:ring-[#184491]/10 transition-all duration-300 hover:bg-white hover:border-gray-300 text-sm transform focus:scale-[1.01]"
                         placeholder="John"
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-300 mb-2 font-medium">Last Name *</label>
+                      <label className="block text-gray-700 mb-2 font-medium text-xs">Last Name *</label>
                       <input
-                        type="text"
-                        required
+                        type="text" required
                         value={formData.lastName}
                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 focus:outline-none focus:border-[#184491] focus:ring-4 focus:ring-[#184491]/5 transition-all text-sm"
                         placeholder="Doe"
                       />
                     </div>
                   </div>
                   
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-gray-300 mb-2 font-medium">Work Email *</label>
+                      <label className="block text-gray-700 mb-2 font-medium text-xs">Work Email *</label>
                       <input
-                        type="email"
-                        required
+                        type="email" required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 focus:outline-none focus:border-[#184491] focus:ring-4 focus:ring-[#184491]/5 transition-all text-sm"
                         placeholder="john@company.com"
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-300 mb-2 font-medium">Company *</label>
+                      <label className="block text-gray-700 mb-2 font-medium text-xs">Company *</label>
                       <input
-                        type="text"
-                        required
+                        type="text" required
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors"
+                        className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 focus:outline-none focus:border-[#184491] focus:ring-4 focus:ring-[#184491]/5 transition-all text-sm"
                         placeholder="Your Company"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-gray-300 mb-2 font-medium">Service Interest *</label>
+                    <label className="block text-gray-700 mb-2 font-medium text-xs">Service Interest *</label>
                     <select
                       required
                       value={formData.serviceInterest}
                       onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 focus:outline-none focus:border-[#184491] focus:ring-4 focus:ring-[#184491]/5 transition-all text-sm"
                     >
-                      <option value="" className="bg-navy-800">Select a service</option>
+                      <option value="">Select a service...</option>
                       {serviceInterests.map((service) => (
-                        <option key={service} value={service} className="bg-navy-800">{service}</option>
+                        <option key={service} value={service}>{service}</option>
                       ))}
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-gray-300 mb-2 font-medium">Message *</label>
+                    <label className="block text-gray-700 mb-2 font-medium text-xs">Your Message *</label>
                     <textarea
-                      required
-                      rows={5}
+                      required rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 placeholder-gray-400 focus:outline-none focus:border-[#184491] focus:ring-4 focus:ring-[#184491]/5 transition-all resize-none text-sm"
                       placeholder="Tell us about your project..."
                     />
                   </div>
 
-                  <motion.button
+                  <button
                     type="submit"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full py-4 bg-gradient-to-r from-cyan-500 to-violet-600 rounded-xl font-semibold text-lg text-white hover:shadow-lg hover:shadow-cyan-500/25 transition-all"
+                    className="w-full py-3.5 bg-gradient-to-r from-[#184491] to-[#2563eb] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300 flex items-center justify-center gap-2 text-sm hover:scale-[1.02] active:scale-[0.98] hover:brightness-110"
                   >
-                    Submit Request 🚀
-                  </motion.button>
+                    Send Message <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </button>
                 </form>
-              )}
-            </motion.div>
-          </div>
-        </motion.section>
+              </>
+            )}
+          </motion.section>
+
+          {/* Compact Sidebar - 1/3 width - all info consolidated */}
+          <motion.aside
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            className="p-8 md:p-10 bg-gray-50"
+          >
+            {/* Contact Links */}
+            <div className="space-y-4 mb-8">
+              <h3 className="text-lg font-bold text-[#184491] mb-4">Connect With Us</h3>
+              {contactInfo.map((method) => {
+                const IconComponent = method.icon;
+                return (
+                  <a
+                    key={method.label}
+                    href={method.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-3 bg-white rounded-xl border border-gray-100 hover:shadow-lg transition-all duration-300 group hover:-translate-y-1"
+                  >
+                    <div className={`w-10 h-10 ${method.bg} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                      <IconComponent className={`w-5 h-5 ${method.color}`} strokeWidth={2} />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs text-gray-500">{method.label}</p>
+                      <p className="text-sm font-semibold text-gray-800 truncate">{method.value}</p>
+                    </div>
+                    <ArrowRight className="w-4 h-4 text-gray-400 group-hover:translate-x-1 transition-transform ml-auto" />
+                  </a>
+                );
+              })}
+            </div>
+
+            {/* Office Location */}
+            <div className="mb-8 p-4 bg-white rounded-xl border border-gray-100">
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-[#184491]" strokeWidth={2} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-[#184491] text-sm mb-1">India HQ</h4>
+                  <p className="text-gray-600 text-xs leading-relaxed">Hyderabad, 500090, India</p>
+                  <a 
+                    href="https://maps.app.goo.gl/jnRBXrEkzHAwn1vr6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 mt-2 text-xs text-[#184491] font-medium hover:underline"
+                  >
+                    Get Directions <ArrowRight className="w-3 h-3" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Features Grid */}
+            <div className="grid grid-cols-2 gap-3">
+              {features.map((feature) => {
+                const IconComponent = feature.icon;
+                return (
+                  <div key={feature.title} className="flex items-center gap-2 p-2 bg-white rounded-lg border border-gray-100">
+                    <IconComponent className="w-4 h-4 text-[#184491]" strokeWidth={2} />
+                    <span className="text-xs font-medium text-gray-700">{feature.title}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.aside>
+        </div>
       </div>
     </div>
   );

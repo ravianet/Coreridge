@@ -1,4 +1,6 @@
 node_modules
+.next/
+coreridge-production.zip
 # Keep environment variables out of version control
 .env
 

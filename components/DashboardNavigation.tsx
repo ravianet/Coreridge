@@ -7,7 +7,7 @@ import { signOut } from "next-auth/react";
 interface User {
   name?: string | null;
   email?: string | null;
-  role: string;
+  role?: string;
 }
 
 export default function DashboardNavigation({ user }: { user: User }) {

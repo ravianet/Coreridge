@@ -1,19 +1,111 @@
 @import "tailwindcss";
 
+/* cspell:ignore @theme @layer */
+/* --------------------------------------------------------------------------
+   Tailwind CSS v4 globals - these directives are valid for Tailwind,
+   the IDE warnings are just linter not recognizing new Tailwind v4 syntax
+   -------------------------------------------------------------------------- */
+/* Enterprise-grade Design System - Matching Top MNC Standards (iflexion.com, Accenture, Deloitte) */
 @theme {
-  --color-navy-950: #0f172a;
-  --color-navy-900: #1e293b;
-  --color-navy-800: #334155;
-}
-
-@layer base {
-  body {
-    @apply bg-[#0f172a] text-gray-100;
+          /* Core Brand Colors - Premium Teal Palette (Viatris.in inspired professional enterprise) */
+          --color-primary-50: #f0fdf9;
+          --color-primary-100: #dcfce7;
+          --color-primary-500: #059669;
+          --color-primary-600: #047857;
+          --color-primary-700: #065f46;
+          --color-primary-900: #022c22;
+          
+          /* Light Theme Neutral Palette - Professional bright backgrounds */
+          --color-slate-50: #f8fafc;
+          --color-slate-100: #f1f5f9;
+          --color-slate-200: #e2e8f0;
+          --color-slate-300: #cbd5e1;
+          --color-slate-400: #94a3b8;
+          --color-slate-500: #64748b;
+          --color-slate-600: #475569;
+          --color-slate-700: #334155;
+          --color-slate-800: #1e293b;
+          --color-slate-900: #0f172a;
+          --color-slate-950: #020617;
+          
+          /* Accent Colors - Vibrant but professional */
+          --color-accent-cyan: #06b6d4;
+          --color-accent-blue: #3b82f6;
+          --color-accent-violet: #8b5cf6;
+          --color-success-500: #10b981;
+          --color-warning-500: #f59e0b;
+          --color-error-500: #ef4444;
+        }
+        
+        @layer base {
+          /* Global Typography - Modern sans-serif stack matching enterprise standards */
+          html {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            scroll-behavior: smooth;
+          }
+          
+          body {
+            @apply bg-white text-black antialiased;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
+  
+  /* Professional heading hierarchy - All dark text for maximum readability */
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-black;
   }
+  
+  h2 {
+    @apply text-3xl md:text-4xl font-bold tracking-tight leading-[1.2] text-black;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold tracking-tight leading-[1.3] text-black;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl font-semibold tracking-normal leading-[1.4] text-black;
+  }
+  
+  p {
+            @apply text-base md:text-lg leading-relaxed text-black;
+          }
 }
 
 @layer components {
+  /* Enterprise-grade card styling - light theme with dark text */
+  .enterprise-card {
+    @apply bg-white backdrop-blur-xl border border-slate-200 rounded-2xl shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:shadow-slate-200/70 hover:border-slate-300 transition-all duration-500 text-slate-900;
+  }
+  
+  /* Professional glass card evolution - light theme */
   .glass-card {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    @apply bg-gradient-to-br from-white to-slate-50 backdrop-blur-2xl border border-slate-200 rounded-2xl shadow-2xl shadow-slate-200/50 hover:shadow-slate-200/70 transition-all duration-500 text-slate-900;
+  }
+  
+  /* Primary CTA button - Enterprise standard (kept white text on green as it's a button) */
+  .btn-primary {
+    @apply px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-500 hover:to-primary-600 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-primary-500/35;
+  }
+  
+  /* Secondary CTA button - updated for light theme dark text */
+  .btn-secondary {
+    @apply px-8 py-4 bg-slate-100 text-slate-900 font-semibold rounded-xl border border-slate-300 hover:bg-slate-200 hover:border-slate-400 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300;
+  }
+  
+  /* Gradient text for brand elements */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-700 to-primary-500 bg-clip-text text-transparent;
+  }
+  
+  /* Section spacing - Enterprise standard whitespace */
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-36;
+  }
+  
+  /* Container - Professional max-width for enterprise readability */
+  .container-pro {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
+/* csslint ignore:end */

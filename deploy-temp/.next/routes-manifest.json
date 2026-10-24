@@ -1,0 +1,252 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "app",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/about",
+      "destination": "/company/about-us",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/about(?:/)?$"
+    }
+  ],
+  "headers": [],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/auth/[...nextauth]",
+      "regex": "^/api/auth/(.+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPnextauth": "nxtPnextauth"
+      },
+      "namedRegex": "^/api/auth/(?<nxtPnextauth>.+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/api/inquiry",
+      "regex": "^/api/inquiry(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/inquiry(?:/)?$"
+    },
+    {
+      "page": "/clients",
+      "regex": "^/clients(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/clients(?:/)?$"
+    },
+    {
+      "page": "/company/about-us",
+      "regex": "^/company/about\\-us(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/company/about\\-us(?:/)?$"
+    },
+    {
+      "page": "/company/alliances",
+      "regex": "^/company/alliances(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/company/alliances(?:/)?$"
+    },
+    {
+      "page": "/company/careers",
+      "regex": "^/company/careers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/company/careers(?:/)?$"
+    },
+    {
+      "page": "/company/clients",
+      "regex": "^/company/clients(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/company/clients(?:/)?$"
+    },
+    {
+      "page": "/company/why-coreridge",
+      "regex": "^/company/why\\-coreridge(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/company/why\\-coreridge(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/dashboard",
+      "regex": "^/dashboard(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard(?:/)?$"
+    },
+    {
+      "page": "/dashboard/login",
+      "regex": "^/dashboard/login(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dashboard/login(?:/)?$"
+    },
+    {
+      "page": "/industries",
+      "regex": "^/industries(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries(?:/)?$"
+    },
+    {
+      "page": "/industries/aviation",
+      "regex": "^/industries/aviation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/aviation(?:/)?$"
+    },
+    {
+      "page": "/industries/education",
+      "regex": "^/industries/education(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/education(?:/)?$"
+    },
+    {
+      "page": "/industries/enterprise",
+      "regex": "^/industries/enterprise(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/enterprise(?:/)?$"
+    },
+    {
+      "page": "/industries/manufacturing",
+      "regex": "^/industries/manufacturing(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/manufacturing(?:/)?$"
+    },
+    {
+      "page": "/industries/pharma",
+      "regex": "^/industries/pharma(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries/pharma(?:/)?$"
+    },
+    {
+      "page": "/services",
+      "regex": "^/services(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services(?:/)?$"
+    },
+    {
+      "page": "/services/build",
+      "regex": "^/services/build(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/build(?:/)?$"
+    },
+    {
+      "page": "/services/cctv-video-analytics",
+      "regex": "^/services/cctv\\-video\\-analytics(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/cctv\\-video\\-analytics(?:/)?$"
+    },
+    {
+      "page": "/services/change-control",
+      "regex": "^/services/change\\-control(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/change\\-control(?:/)?$"
+    },
+    {
+      "page": "/services/computer-system-validation",
+      "regex": "^/services/computer\\-system\\-validation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/computer\\-system\\-validation(?:/)?$"
+    },
+    {
+      "page": "/services/quality-management",
+      "regex": "^/services/quality\\-management(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/quality\\-management(?:/)?$"
+    },
+    {
+      "page": "/services/sap-implementation",
+      "regex": "^/services/sap\\-implementation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/sap\\-implementation(?:/)?$"
+    },
+    {
+      "page": "/services/secure",
+      "regex": "^/services/secure(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/secure(?:/)?$"
+    },
+    {
+      "page": "/services/supply-chain",
+      "regex": "^/services/supply\\-chain(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/supply\\-chain(?:/)?$"
+    },
+    {
+      "page": "/services/transform",
+      "regex": "^/services/transform(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/transform(?:/)?$"
+    },
+    {
+      "page": "/services/validate",
+      "regex": "^/services/validate(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/validate(?:/)?$"
+    },
+    {
+      "page": "/start",
+      "regex": "^/start(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/start(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

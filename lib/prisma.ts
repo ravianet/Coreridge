@@ -4,7 +4,7 @@ import "dotenv/config";
 
 const connectionString = process.env.DATABASE_URL || "file:./prisma/dev.db";
 
-const prisma = new PrismaClient({
+export const prisma = new PrismaClient({
   adapter: new PrismaBetterSqlite3({
     url: connectionString,
   }),

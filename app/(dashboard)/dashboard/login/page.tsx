@@ -41,27 +41,27 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-navy-900 flex items-center justify-center px-4">
+    <div className="min-h-screen bg-white flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
           <Link href="/">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-violet-700 bg-clip-text text-transparent">
               Coreridge Technologies
             </h1>
           </Link>
-          <p className="text-gray-400 mt-2">Employee Login - ERP System</p>
+          <p className="text-black mt-2">Employee Login - ERP System</p>
         </div>
 
-        <div className="glass-card rounded-2xl p-8 border border-white/10">
+        <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm">
           {error && (
-            <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-sm">
+            <div className="mb-4 p-3 bg-red-100 border border-red-300 rounded-lg text-red-700 text-sm">
               {error}
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-black mb-2">
                 Email Address
               </label>
               <input
@@ -70,13 +70,13 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full px-4 py-3 bg-navy-800 border border-white/10 rounded-lg text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black focus:outline-none focus:border-cyan-500 transition-colors"
                 placeholder="admin@coreridgetech.com"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-2">
+              <label htmlFor="password" className="block text-sm font-medium text-black mb-2">
                 Password
               </label>
               <input
@@ -85,7 +85,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-4 py-3 bg-navy-800 border border-white/10 rounded-lg text-white focus:outline-none focus:border-cyan-500 transition-colors"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-black focus:outline-none focus:border-cyan-500 transition-colors"
                 placeholder="••••••••"
               />
             </div>
@@ -100,7 +100,7 @@ export default function LoginPage() {
           </form>
         </div>
 
-        <p className="text-center text-gray-500 text-sm mt-6">
+        <p className="text-center text-black text-sm mt-6">
           © 2024 Coreridge Technologies. All rights reserved.
         </p>
       </div>

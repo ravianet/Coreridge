@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://coreridgetech.com'),
   title: "Coreridge Technologies | Enterprise Technology Partner",
   description: "Architecting Next-Gen Enterprise Tech. Validating Core Systems. AI Solutions, IT Infrastructure, Cybersecurity, Application Development, and Computer System Validation.",
   openGraph: {
@@ -26,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body className={inter.className}>
         <Navigation />
         <main>{children}</main>

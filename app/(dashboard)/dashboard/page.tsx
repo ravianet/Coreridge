@@ -1,5 +1,5 @@
 import { auth } from "../../api/auth/[...nextauth]/route";
-import { prisma } from "../../../lib/prisma";
+import prisma from "../../../lib/prisma";
 
 async function getDashboardStats() {
   const [totalClients, totalVendors, totalInvoices, totalPendingPayments] = await Promise.all([
@@ -8,7 +8,7 @@ async function getDashboardStats() {
     prisma.invoice.count(),
     prisma.invoice.aggregate({
       _sum: {
-        balanceDue: true,
+        pendingAmount: true,
       },
     }),
   ]);
@@ -17,7 +17,7 @@ async function getDashboardStats() {
     totalClients,
     totalVendors,
     totalInvoices,
-    pendingPayments: totalPendingPayments._sum.balanceDue || 0,
+    pendingPayments: totalPendingPayments._sum.pendingAmount || 0,
   };
 }
 
