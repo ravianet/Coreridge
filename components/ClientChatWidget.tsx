@@ -299,7 +299,7 @@ export default function ClientChatWidget() {
                   </button>
                 </div>
                 <p className="mt-2 text-center text-[10px] leading-relaxed text-slate-400">
-                  Messages are processed by OpenAI · Don’t share sensitive information
+                  AI responses are processed by Groq · Don’t share sensitive information
                 </p>
               </div>
             </>

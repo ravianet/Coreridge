@@ -35,7 +35,7 @@ Rules:
 - Do not claim to be a human.`;
 
 export async function POST(request: Request) {
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
 
   if (!apiKey) {
     return NextResponse.json(
@@ -71,28 +71,33 @@ export async function POST(request: Request) {
   }
 
   try {
-    const upstream = await fetch("https://api.openai.com/v1/responses", {
+    const upstream = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: process.env.OPENAI_MODEL || "gpt-5.4-mini",
-        instructions: assistantInstructions,
-        input: parsed.data.messages.map((message) => ({
-          role: message.role,
-          content: message.content,
-        })),
-        max_output_tokens: 400,
-        store: false,
+        model: process.env.GROQ_MODEL || "llama-3.3-70b-versatile",
+        messages: [
+          { role: "system", content: assistantInstructions },
+          ...parsed.data.messages,
+        ],
+        max_tokens: 400,
+        temperature: 0.2,
       }),
       cache: "no-store",
       signal: AbortSignal.timeout(20_000),
     });
 
     if (!upstream.ok) {
-      console.error("OpenAI chat request failed with status:", upstream.status);
+      console.error("Groq chat request failed with status:", upstream.status);
+      if (upstream.status === 429) {
+        return NextResponse.json(
+          { success: false, message: "The assistant has reached its current free-tier usage limit. Please try again later or contact our team." },
+          { status: 429 },
+        );
+      }
       return NextResponse.json(
         { success: false, message: "The assistant is temporarily unavailable. Please try again or contact our team." },
         { status: 502 },
@@ -101,29 +106,19 @@ export async function POST(request: Request) {
 
     const result: unknown = await upstream.json();
     const responseSchema = z.object({
-      output: z.array(
-        z.object({
-          content: z.array(
-            z.object({
-              type: z.string(),
-              text: z.string().optional(),
-            }),
-          ).optional(),
+      choices: z.array(z.object({
+        message: z.object({
+          content: z.string(),
         }),
-      ),
+      })),
     });
     const parsedResponse = responseSchema.safeParse(result);
     const reply = parsedResponse.success
-      ? parsedResponse.data.output
-          .flatMap((item) => item.content ?? [])
-          .filter((item) => item.type === "output_text")
-          .map((item) => item.text ?? "")
-          .join("\n")
-          .trim()
+      ? parsedResponse.data.choices[0]?.message.content.trim() ?? ""
       : "";
 
     if (!reply) {
-      console.error("OpenAI chat response did not contain text output.");
+      console.error("Groq chat response did not contain text output.");
       return NextResponse.json(
         { success: false, message: "The assistant could not prepare a reply. Please try again or contact our team." },
         { status: 502 },
@@ -132,7 +127,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true, reply });
   } catch (error) {
-    console.error("OpenAI chat request could not be completed:", error);
+    console.error("Groq chat request could not be completed:", error);
     return NextResponse.json(
       { success: false, message: "The assistant is temporarily unavailable. Please try again or contact our team." },
       { status: 502 },
