@@ -175,14 +175,14 @@ export default function Home() {
         className="border-y border-slate-100 bg-white px-5 py-10 sm:px-8 sm:py-12 lg:px-10"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
+          <div className="flex flex-col items-start justify-between gap-4 text-left sm:flex-row sm:items-end">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#184491]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#184491]">
                 Our clients
               </p>
               <h2
                 id="client-organizations-title"
-                className="mt-2 text-2xl font-semibold tracking-tight text-slate-950 sm:text-3xl"
+              className="mt-2 max-w-2xl text-2xl font-semibold leading-tight tracking-[-0.03em] text-slate-950 sm:text-3xl"
               >
                 Organizations we’re proud to work with
               </h2>
@@ -197,14 +197,14 @@ export default function Home() {
           </div>
           <div
             aria-label="Client logos. Scroll horizontally to see all clients."
-            className="mt-7 overflow-x-auto overscroll-x-contain pb-3 [scrollbar-color:#cbd5e1_transparent] [scrollbar-width:thin]"
+            className="mt-6 overflow-x-auto overscroll-x-contain pb-3 [scrollbar-color:#cbd5e1_transparent] [scrollbar-width:thin]"
             tabIndex={0}
           >
             <div className="flex w-max snap-x snap-mandatory gap-3 pr-1 sm:gap-4">
             {clientLogos.map((logo) => (
               <div
                 key={logo.name}
-                className="flex h-24 w-32 snap-start flex-col items-center justify-center gap-2 rounded-xl border border-slate-100 bg-slate-50/60 px-3 py-3 transition duration-300 hover:border-blue-200 hover:bg-white hover:shadow-md sm:h-28 sm:w-36"
+                className="flex h-24 w-32 snap-start flex-col items-center justify-center gap-2 rounded-xl border border-slate-100 bg-white px-3 py-3 transition duration-300 hover:border-blue-200 hover:shadow-md sm:h-28 sm:w-36"
               >
                 <Image
                   src={logo.src}
@@ -227,14 +227,14 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#184491]">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#184491]">
                 What we do
               </p>
-              <h2 className="mt-4 max-w-xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
+              <h2 className="mt-3 max-w-xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
                 Technology that moves your business forward.
               </h2>
             </div>
-            <p className="max-w-2xl text-base leading-7 text-slate-600 lg:justify-self-end lg:text-lg">
+            <p className="max-w-2xl text-base leading-7 text-slate-600 lg:justify-self-end">
               The right partner should make technology easier to navigate. We
               bring engineering, security, validation, and transformation
               together to help you take the next step with confidence.
@@ -246,17 +246,17 @@ export default function Home() {
               <Link
                 key={eyebrow}
                 href={href}
-                className="group rounded-3xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_60px_-32px_rgba(15,42,86,0.3)] sm:p-8"
+                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_60px_-32px_rgba(15,42,86,0.3)] sm:p-7"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold tracking-[0.16em] text-slate-500">
                     {eyebrow}
                   </span>
-                  <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${tone}`}>
+                  <span className={`flex h-11 w-11 items-center justify-center rounded-xl ${tone}`}>
                     <Icon aria-hidden="true" className="h-5 w-5" />
                   </span>
                 </div>
-                <h3 className="mt-7 max-w-md text-xl font-semibold leading-snug tracking-tight text-slate-900 sm:text-2xl">
+                <h3 className="mt-6 min-h-[3.5rem] max-w-md text-xl font-semibold leading-snug tracking-tight text-slate-900 sm:text-2xl">
                   {title}
                 </h3>
                 <p className="mt-3 max-w-lg text-sm leading-6 text-slate-600 sm:text-base">
@@ -272,7 +272,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#184491]">
+                <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-[#184491]">
                   {linkLabel}
                   <ArrowRight
                     aria-hidden="true"
@@ -289,10 +289,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div className="max-w-2xl">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#184491]">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#184491]">
                 Who we work with
               </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
                 Built around the realities of your industry.
               </h2>
               <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
@@ -302,7 +302,7 @@ export default function Home() {
             </div>
             <Link
               href="/industries"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#184491] hover:text-[#123975]"
+              className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#184491] hover:text-[#123975]"
             >
               See all industries
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -314,7 +314,7 @@ export default function Home() {
               <Link
                 key={name}
                 href={href}
-                className="group rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"
+                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg sm:p-6"
               >
                 <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-[#184491]">
                   <Icon aria-hidden="true" className="h-5 w-5" />
@@ -322,7 +322,7 @@ export default function Home() {
                 <h3 className="mt-5 text-lg font-semibold text-slate-900">
                   {name}
                 </h3>
-                <p className="mt-2 min-h-12 text-sm leading-6 text-slate-600">
+                <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">
                   {detail}
                 </p>
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#184491]">
@@ -339,12 +339,12 @@ export default function Home() {
       </section>
 
       <section className="px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#184491]">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div className="max-w-xl">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#184491]">
               The Coreridge approach
             </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
               Good partnerships feel clear from day one.
             </h2>
             <p className="mt-5 text-base leading-7 text-slate-600">
@@ -365,7 +365,7 @@ export default function Home() {
             {principles.map((principle, index) => (
               <div
                 key={principle.title}
-                className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:gap-5 sm:p-6"
+                className="flex h-full gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:border-blue-200 hover:shadow-md sm:gap-5 sm:p-6"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-sm font-bold text-[#184491]">
                   0{index + 1}
@@ -385,20 +385,20 @@ export default function Home() {
       </section>
 
       <section className="px-5 pb-14 sm:px-8 sm:pb-16 lg:px-10 lg:pb-20">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#102b55] px-6 py-12 text-white sm:px-12 sm:py-16 lg:px-16">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[1.75rem] bg-[#102b55] px-6 py-10 text-white sm:px-10 sm:py-12 lg:px-14">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -right-24 -top-44 h-96 w-96 rounded-full bg-blue-400/20 blur-3xl"
           />
-          <div className="relative flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
             <div className="max-w-2xl">
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-blue-200">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-200">
                 Have a project in mind?
               </p>
-              <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.035em] text-white sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.035em] text-white sm:text-4xl">
                 Let’s make your next move a confident one.
               </h2>
-              <p className="mt-4 text-base leading-7 text-blue-100/85">
+              <p className="mt-3 text-base leading-7 text-blue-100/85">
                 Tell us where you want to go. We’ll help you explore a practical
                 way to get there.
               </p>
