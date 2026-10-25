@@ -172,7 +172,7 @@ export default function Home() {
 
       <section
         aria-labelledby="client-organizations-title"
-        className="border-y border-slate-100 bg-white px-5 py-14 sm:px-8 sm:py-16 lg:px-10"
+        className="border-y border-slate-100 bg-white px-5 py-10 sm:px-8 sm:py-12 lg:px-10"
       >
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left">
@@ -223,7 +223,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+      <section className="px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
@@ -241,7 +241,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-11 grid gap-4 sm:grid-cols-2">
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {capabilities.map(({ eyebrow, title, description, href, linkLabel, icon: Icon, tone, features }) => (
               <Link
                 key={eyebrow}
@@ -285,7 +285,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f7f9fc] px-5 py-20 sm:px-8 sm:py-24 lg:px-10">
+      <section className="bg-[#f7f9fc] px-5 py-14 sm:px-8 sm:py-16 lg:px-10">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div className="max-w-2xl">
@@ -309,7 +309,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {industries.map(({ name, detail, href, icon: Icon }) => (
               <Link
                 key={name}
@@ -338,7 +338,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+      <section className="px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#184491]">
@@ -384,7 +384,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 pb-20 sm:px-8 sm:pb-24 lg:px-10 lg:pb-28">
+      <section className="px-5 pb-14 sm:px-8 sm:pb-16 lg:px-10 lg:pb-20">
         <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#102b55] px-6 py-12 text-white sm:px-12 sm:py-16 lg:px-16">
           <div
             aria-hidden="true"
