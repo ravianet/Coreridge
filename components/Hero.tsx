@@ -1,54 +1,149 @@
-"use client";
-import { motion } from "framer-motion";
 import Link from "next/link";
+import {
+  ArrowRight,
+  Check,
+  Cpu,
+  Layers3,
+  LockKeyhole,
+  ShieldCheck,
+} from "lucide-react";
 
-const clientLogos = [
-  { name: "Tlog", src: "/clients/tlog.png" },
-  { name: "Natoli", src: "/clients/natoli.png" },
-  { name: "Ami Polymers", src: "/logos/ami-logo.jpg" },
-  { name: "Pacific", src: "/clients/pacific.png" },
-  { name: "Skandanana", src: "/clients/skandana.png" },
-  { name: "Sree Solutions", src: "/clients/sree-solutions.png" },
-  { name: "Shapes Style Lounge", src: "/clients/shapes.png" },
-  { name: "Cadmach", src: "/clients/cadmach-logo.png" }
+const deliveryAreas = [
+  { label: "BUILD", detail: "Infrastructure & managed hardware", icon: Cpu },
+  {
+    label: "TRANSFORM",
+    detail: "AI & software powering business transformation",
+    icon: Layers3,
+  },
+  { label: "SECURE", detail: "Cybersecurity & threat protection", icon: LockKeyhole },
+  { label: "VALIDATE", detail: "CSV & regulatory compliance", icon: ShieldCheck },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
-      <div className="max-w-7xl mx-auto relative z-10">
-        <motion.div
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-center"
-        >
-          <span className="inline-block px-4 py-2 bg-[#184491]/10 text-[#184491] rounded-full text-sm font-semibold mb-6">
-            🚀 Enterprise Technology Solutions
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#184491] mb-6 leading-tight">
-            Building technology
-            <br />
-            that moves businesses forward
+    <section className="relative isolate overflow-hidden bg-[#f7f9fc] px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-10 lg:pb-28 lg:pt-40">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-48 -top-56 -z-10 h-[38rem] w-[38rem] rounded-full bg-blue-200/40 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-72 -left-48 -z-10 h-[34rem] w-[34rem] rounded-full bg-cyan-100/70 blur-3xl"
+      />
+
+      <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="max-w-2xl">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-sm font-semibold text-[#184491] shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            Your partner for technology that works
+          </div>
+
+          <h1 className="text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-6xl">
+            Move forward with
+            <span className="mt-1 block text-[#184491]">
+              confidence in every system.
+            </span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
-            End-to-End Technology Solutions, Robust Cyber Security, AI Innovation, and Regulatory Compliance for Modern Enterprises.
+
+          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600 sm:text-xl">
+            From modernizing enterprise technology to validating critical
+            systems, Coreridge helps your teams make complex change feel clear,
+            secure, and manageable.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/services"
-              className="px-8 py-4 bg-gradient-to-r from-[#184491] to-[#2563eb] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300"
-            >
-              Explore Our Solutions
-            </Link>
-            <Link 
+
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Link
               href="/contact"
-              className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-[#184491] font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
+              className="group inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-[#184491] px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-950/15 transition hover:-translate-y-0.5 hover:bg-[#123975] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#184491]"
             >
-              Schedule a Consultation
+              Talk to our team
+              <ArrowRight
+                aria-hidden="true"
+                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+              />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#184491]"
+            >
+              Explore our services
             </Link>
           </div>
-        </motion.div>
+
+          <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-slate-600">
+            {["Practical expertise", "Clear communication", "Built around your needs"].map(
+              (item) => (
+                <span key={item} className="inline-flex items-center gap-2">
+                  <Check aria-hidden="true" className="h-4 w-4 text-emerald-600" />
+                  {item}
+                </span>
+              ),
+            )}
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-xl lg:ml-auto">
+          <div className="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-blue-200/60 via-white/20 to-cyan-100/70 blur-2xl" />
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-white/80 bg-white p-5 shadow-[0_28px_80px_-32px_rgba(15,42,86,0.32)] sm:p-7">
+            <div className="flex items-start justify-between gap-4 border-b border-slate-100 pb-5">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#184491]">
+                  Technology, made practical
+                </p>
+                <h2 className="mt-2 text-xl font-semibold tracking-tight text-slate-900 sm:text-2xl">
+                  One partner. A clearer path.
+                </h2>
+              </div>
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-[#184491]">
+                <Cpu aria-hidden="true" className="h-5 w-5" />
+              </div>
+            </div>
+
+            <div className="space-y-2.5 py-5">
+              {deliveryAreas.map(({ label, detail, icon: Icon }, index) => (
+                <div
+                  key={label}
+                  className="flex items-center gap-3 rounded-2xl border border-slate-100 bg-slate-50/80 p-3 transition hover:border-blue-200 hover:bg-blue-50/50 sm:gap-4 sm:p-3.5"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[#184491] shadow-sm">
+                    <Icon aria-hidden="true" className="h-5 w-5" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-bold tracking-wide text-slate-900">{label}</p>
+                    <p className="mt-0.5 text-sm text-slate-500">{detail}</p>
+                  </div>
+                  <span className="text-xs font-semibold tracking-wider text-slate-400">
+                    0{index + 1}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-2xl bg-[#102b55] p-5 text-white sm:p-6">
+              <p className="text-sm font-medium text-blue-100">
+                From the first conversation to what comes next
+              </p>
+              <div className="mt-4 flex items-center gap-2" aria-hidden="true">
+                <span className="h-1.5 flex-1 rounded-full bg-blue-300" />
+                <span className="h-1.5 flex-1 rounded-full bg-blue-400/80" />
+                <span className="h-1.5 flex-1 rounded-full bg-cyan-300/80" />
+              </div>
+              <div className="mt-2 flex justify-between text-[11px] font-medium text-blue-100/80">
+                <span>Understand</span>
+                <span>Deliver</span>
+                <span>Support</span>
+              </div>
+            </div>
+          </div>
+          <div className="absolute -bottom-5 -left-4 hidden items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3 shadow-xl sm:flex">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+              <Check aria-hidden="true" className="h-5 w-5" />
+            </span>
+            <span className="text-sm font-semibold text-slate-800">
+              Thoughtful delivery
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );
