@@ -10,30 +10,38 @@ const prisma = new PrismaClient({
   }),
 });
 
+function requireSeedPassword(name: string) {
+  const password = process.env[name];
+
+  if (!password || password.length < 16) {
+    throw new Error(`${name} must be set to a password of at least 16 characters.`);
+  }
+
+  return password;
+}
+
 async function main() {
-  // Create admin user
-  const hashedPassword = await bcrypt.hash("admin123", 10);
+  const [adminPassword, accountantPassword] = await Promise.all([
+    bcrypt.hash(requireSeedPassword("SEED_ADMIN_PASSWORD"), 10),
+    bcrypt.hash(requireSeedPassword("SEED_ACCOUNTANT_PASSWORD"), 10),
+  ]);
   
   const admin = await prisma.user.upsert({
     where: { email: "admin@coreridgetech.com" },
-    update: {},
+    update: { password: adminPassword },
     create: {
       email: "admin@coreridgetech.com",
-      password: hashedPassword,
+      password: adminPassword,
       name: "System Admin",
       role: "ADMIN",
     },
   });
 
   console.log(`Admin user created: ${admin.email}`);
-  console.log("Password: admin123");
 
-  // Create accountant user
-  const accountantPassword = await bcrypt.hash("account123", 10);
-  
   const accountant = await prisma.user.upsert({
     where: { email: "accountant@coreridgetech.com" },
-    update: {},
+    update: { password: accountantPassword },
     create: {
       email: "accountant@coreridgetech.com",
       password: accountantPassword,
@@ -43,7 +51,6 @@ async function main() {
   });
 
   console.log(`Accountant user created: ${accountant.email}`);
-  console.log("Password: account123");
 }
 
 main()

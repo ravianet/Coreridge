@@ -1,7 +1,14 @@
-import { auth } from "../api/auth/[...nextauth]/route";
+import type { Metadata } from "next";
+import { auth } from "../../lib/auth";
 import { redirect } from "next/navigation";
 import DashboardNavigation from "../../components/DashboardNavigation";
-import { headers } from "next/headers";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default async function DashboardLayout({
   children,
@@ -9,26 +16,14 @@ export default async function DashboardLayout({
   children: React.ReactNode;
 }) {
   const session = await auth();
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") || "";
-  const isLoginPage = pathname === "/dashboard/login";
 
-  if (!session && !isLoginPage) {
+  if (!session) {
     redirect("/dashboard/login");
-  }
-
-  // If user is logged in and tries to access login page, redirect to dashboard
-  if (session && isLoginPage) {
-    redirect("/dashboard");
-  }
-
-  if (isLoginPage) {
-    return <>{children}</>;
   }
 
   return (
     <div className="min-h-screen bg-gray-900">
-      <DashboardNavigation user={session?.user} />
+      <DashboardNavigation user={session.user} />
       <div className="md:ml-64">
         <main className="p-6">{children}</main>
       </div>

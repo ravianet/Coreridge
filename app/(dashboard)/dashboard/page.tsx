@@ -1,4 +1,5 @@
-import { auth } from "../../api/auth/[...nextauth]/route";
+import { auth } from "../../../lib/auth";
+import { redirect } from "next/navigation";
 import prisma from "../../../lib/prisma";
 
 async function getDashboardStats() {
@@ -23,6 +24,10 @@ async function getDashboardStats() {
 
 export default async function DashboardPage() {
   const session = await auth();
+  if (!session) {
+    redirect("/dashboard/login");
+  }
+
   const stats = await getDashboardStats();
 
   return (

@@ -8,16 +8,24 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://coreridgetech.com'),
-  title: "Coreridge Technologies | Enterprise Technology Partner",
+  title: {
+    default: "Coreridge Technologies | Enterprise Technology Partner",
+    template: "%s | Coreridge Technologies",
+  },
   description: "Architecting Next-Gen Enterprise Tech. Validating Core Systems. AI Solutions, IT Infrastructure, Cybersecurity, Application Development, and Computer System Validation.",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://coreridgetech.com",
     siteName: "Coreridge Technologies",
     title: "Coreridge Technologies | Enterprise Technology Partner",
     description: "Architecting Next-Gen Enterprise Tech. Validating Core Systems.",
-    images: ["/og-image.png"],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Coreridge Technologies" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Coreridge Technologies | Enterprise Technology Partner",
+    description: "Architecting Next-Gen Enterprise Tech. Validating Core Systems.",
+    images: ["/opengraph-image"],
   },
 };
 
