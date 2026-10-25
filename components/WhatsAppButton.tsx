@@ -8,9 +8,9 @@ export default function WhatsAppButton() {
       rel="noopener noreferrer"
       aria-label="Chat with Coreridge on WhatsApp"
       title="Chat with us on WhatsApp"
-      className="fixed bottom-4 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition hover:bg-[#1fb85a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#128C7E] sm:bottom-5 sm:right-5"
+      className="fixed bottom-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white shadow-md transition hover:bg-[#1fb85a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#128C7E] sm:bottom-5 sm:right-5"
     >
-      <MessageCircle aria-hidden="true" className="h-6 w-6" strokeWidth={2.2} />
+      <MessageCircle aria-hidden="true" className="h-5 w-5" strokeWidth={2.2} />
     </a>
   );
 }
