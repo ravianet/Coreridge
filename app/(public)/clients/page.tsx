@@ -37,9 +37,9 @@ export default function ClientsPage() {
               transition={{ delay: 0.2 }}
               className="text-center"
             >
-              <span className="inline-block px-8 py-4 bg-gradient-to-r from-[#184491] via-[#2563eb] to-[#3b82f6] text-white rounded-full text-lg font-bold mb-6 shadow-xl shadow-[#184491]/30 border-2 border-white/30 animate-pulse hover:scale-105 transition-all duration-500 cursor-default">
+              <h1 className="inline-block px-8 py-4 bg-gradient-to-r from-[#184491] via-[#2563eb] to-[#3b82f6] text-white rounded-full text-lg font-bold mb-6 shadow-xl shadow-[#184491]/30 border-2 border-white/30">
                 🤝 Our Valued Clients
-              </span>
+              </h1>
               <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-8">
                 From enterprise corporations to innovative startups, we partner with organizations that demand excellence.
               </p>

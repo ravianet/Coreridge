@@ -13,12 +13,49 @@ export default function ContactPage() {
     company: "", serviceInterest: "", message: ""
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ firstName: "", lastName: "", email: "", company: "", serviceInterest: "", message: "" });
+    setSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          serviceType: formData.serviceInterest,
+        }),
+      });
+      const result: { success?: boolean; message?: string } = await response.json();
+
+      if (!response.ok || !result.success) {
+        setSubmitError(
+          result.message || "We couldn't submit your message. Please try again.",
+        );
+        return;
+      }
+
+      setSubmitted(true);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        company: "",
+        serviceInterest: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Contact inquiry submission failed:", error);
+      setSubmitError(
+        "We couldn't submit your message. Please try again or contact us by phone or email.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -28,10 +65,10 @@ export default function ContactPage() {
   ];
 
   const features = [
-    { icon: Globe, title: "Global Reach" },
-    { icon: Zap, title: "24h Response" },
-    { icon: Shield, title: "24/7 Support" },
-    { icon: Monitor, title: "Remote Support" }
+    { icon: Globe, title: "Global collaboration" },
+    { icon: Zap, title: "Clear next steps" },
+    { icon: Shield, title: "Security-minded" },
+    { icon: Monitor, title: "Remote delivery" }
   ];
 
   const serviceInterests = ["AI Solutions", "IT Infrastructure", "Cyber Security", "App Development", "CCTV Video Analytics", "CSV", "Other"];
@@ -59,7 +96,7 @@ export default function ContactPage() {
             CONTACT US
           </motion.span>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#184491] mb-3 bg-clip-text text-transparent bg-gradient-to-r from-[#184491] to-blue-600">Let's Connect</h1>
-          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">Ready to transform your IT infrastructure? Let's discuss your requirements.</p>
+          <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">Tell us what you’re looking to build, transform, secure, or validate. We’ll help you explore the right next step.</p>
         </motion.div>
 
         {/* Modern glass-morphism card with enhanced shadows */}
@@ -76,16 +113,23 @@ export default function ContactPage() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="h-full flex flex-col items-center justify-center py-16"
+                role="status"
+                aria-live="polite"
               >
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
                   <CheckCircle2 className="w-10 h-10 text-green-500" strokeWidth={2} />
                 </div>
                 <h3 className="text-xl font-bold text-green-600 mb-2">Message Sent!</h3>
-                <p className="text-gray-500 text-sm">We'll be in touch within 24 hours.</p>
+                <p className="text-gray-500 text-sm">Your inquiry has been submitted. Our team will review it and follow up.</p>
               </motion.div>
             ) : (
               <>
                 <h2 className="text-2xl font-bold text-[#184491] mb-6">Send a Message</h2>
+                {submitError && (
+                  <p role="alert" className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                    {submitError}
+                  </p>
+                )}
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid md:grid-cols-2 gap-5">
                     <div>
@@ -161,9 +205,10 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-gradient-to-r from-[#184491] to-[#2563eb] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300 flex items-center justify-center gap-2 text-sm hover:scale-[1.02] active:scale-[0.98] hover:brightness-110"
+                    disabled={submitting}
+                    className="w-full py-3.5 bg-gradient-to-r from-[#184491] to-[#2563eb] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300 flex items-center justify-center gap-2 text-sm hover:scale-[1.02] active:scale-[0.98] hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
                   >
-                    Send Message <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    {submitting ? "Sending..." : "Send Message"} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </button>
                 </form>
               </>

@@ -15,7 +15,8 @@ export default function Footer() {
                 className="h-14 w-auto object-contain mb-3"
               />
               <p className="mt-1 text-blue-200 text-sm max-w-md">
-                Architecting Next-Gen Enterprise Tech. Validating Core Systems.
+                Build, transform, secure, and validate the technology your
+                business depends on.
               </p>
             </div>
 

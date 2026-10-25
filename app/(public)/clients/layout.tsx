@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "../../../lib/seo-metadata";
 
-export const metadata: Metadata = {
-  title: "Client Partnerships",
-  description:
-    "Discover how Coreridge Technologies partners with organizations to deliver enterprise technology solutions.",
-};
+export const metadata = createPageMetadata(
+  "Client Partnerships",
+  "Discover organizations that work with Coreridge Technologies across enterprise technology, infrastructure, software, and compliance.",
+  "/clients",
+);
 
 export default function ClientsLayout({
   children,

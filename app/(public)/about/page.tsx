@@ -52,7 +52,7 @@ export default function AboutPage() {
           transition={{ delay: 0.3 }}
           className="glass-card rounded-2xl p-12 mb-12"
         >
-          <h2 className="text-3xl font-bold text-white mb-6">Our Mission</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-6">Our Mission</h2>
           <p className="text-lg text-black leading-relaxed">
             At Coreridge Technologies, we empower enterprises to navigate the complex digital landscape with confidence. Our mission is to deliver cutting-edge technology solutions that not only drive innovation but also maintain the highest standards of security, reliability, and regulatory compliance. We believe in building long-term partnerships with our clients, understanding their unique challenges, and providing tailored solutions that deliver measurable business outcomes.
           </p>
@@ -64,7 +64,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Core Values</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Our Core Values</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: "Excellence", desc: "We strive for excellence in every project we undertake, delivering solutions that exceed expectations.", icon: "🎯" },
@@ -73,7 +73,7 @@ export default function AboutPage() {
             ].map((value, index) => (
               <div key={index} className="glass-card rounded-xl p-8">
                 <span className="text-5xl mb-4 block">{value.icon}</span>
-                <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-3">{value.title}</h3>
                 <p className="text-black">{value.desc}</p>
               </div>
             ))}
@@ -87,7 +87,7 @@ export default function AboutPage() {
           transition={{ delay: 0.5 }}
           className="mt-20"
         >
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Leadership Team</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Our Leadership Team</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
               { 
@@ -110,7 +110,7 @@ export default function AboutPage() {
                 <div className="w-24 h-24 rounded-full bg-gradient-to-r from-cyan-400 to-violet-500 mx-auto mb-4 flex items-center justify-center text-3xl text-white">
                   {member.name.charAt(0)}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">{member.name}</h3>
                 <p className="text-cyan-400 font-medium mb-3">{member.role}</p>
                 <p className="text-black">{member.bio}</p>
               </div>
