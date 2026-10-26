@@ -1,49 +1,54 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import {
+  ArrowRight,
+  BadgeCheck,
+  BookOpen,
+  ClipboardCheck,
+  Dna,
+  Factory,
+  GraduationCap,
+  HeartPulse,
+  Pill,
+  SearchCheck,
+  ShieldCheck,
+} from 'lucide-react';
 
 export default function ValidatePage() {
   const validationServices = [
     {
       title: "Computer System Validation (CSV)",
       description: "Ensure your software systems meet strict regulatory compliance standards for FDA, GxP, 21 CFR Part 11, and EU Annex 11.",
-      icon: "✅",
+      icon: BadgeCheck,
       features: ["FDA Compliance", "GxP Alignment", "21 CFR Part 11", "EU Annex 11", "Regulatory Documentation"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800&h=500",
-      color: "from-green-500 to-emerald-500"
     },
     {
       title: "System Lifecycle Management",
       description: "Complete validation documentation from initial planning through ongoing compliance maintenance.",
-      icon: "📋",
+      icon: ClipboardCheck,
       features: ["Validation Master Plans (VMP)", "User Requirement Specifications (URS)", "Installation Qualification (IQ)", "Operational Qualification (OQ)", "Performance Qualification (PQ)"],
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800&h=500",
-      color: "from-teal-500 to-green-500"
     },
     {
       title: "Regulatory Audit Support",
       description: "Comprehensive audit preparation and support to ensure your systems pass regulatory inspections.",
-      icon: "🔍",
+      icon: SearchCheck,
       features: ["Gap Analysis", "Remediation Planning", "Audit Readiness", "Compliance Maintenance", "Regulator Liaison"],
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800&h=500",
-      color: "from-emerald-500 to-teal-500"
     },
     {
       title: "Educational System Audits",
       description: "Data integrity and security audits for institutional management systems in education sector.",
-      icon: "🎓",
+      icon: GraduationCap,
       features: ["Student Data Protection", "Privacy Compliance", "System Security Assessments", "Data Integrity Checks", "Institutional Reporting"],
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800&h=500",
-      color: "from-cyan-500 to-green-500"
     }
   ];
 
   const targetIndustries = [
-    { name: "Pharmaceutical", icon: "💊", description: "Full CSV compliance for drug development and manufacturing systems" },
-    { name: "Healthcare", icon: "🏥", description: "HIPAA and healthcare regulatory compliance" },
-    { name: "Life Sciences", icon: "🧬", description: "Biotech and research institution validation" },
-    { name: "Education", icon: "📚", description: "Educational institution data security and compliance" },
-    { name: "Manufacturing", icon: "🏭", description: "Industrial system validation and quality management" }
+    { name: "Pharmaceutical", icon: Pill, description: "Validation support for drug development and manufacturing systems" },
+    { name: "Healthcare", icon: HeartPulse, description: "System validation and healthcare compliance support" },
+    { name: "Life Sciences", icon: Dna, description: "Biotech and research system validation" },
+    { name: "Education", icon: BookOpen, description: "Institutional system and data integrity support" },
+    { name: "Manufacturing", icon: Factory, description: "Industrial system validation and quality management" }
   ];
 
   const complianceStandards = [
@@ -56,12 +61,11 @@ export default function ValidatePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-32">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-white">
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
+        className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 pb-12 pt-24 md:pb-14 md:pt-28"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#184491]/5 to-blue-400/5" />
         <div className="max-w-7xl mx-auto relative z-10">
@@ -71,25 +75,25 @@ export default function ValidatePage() {
             transition={{ delay: 0.2 }}
             className="text-center"
           >
-            <span className="inline-block px-4 py-2 bg-[#184491]/10 text-[#184491] rounded-full text-sm font-semibold mb-6">
-              ✅ VALIDATE
+            <span className="mb-4 inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-wide text-[#184491]">
+              <ShieldCheck aria-hidden="true" className="mr-2 h-4 w-4" /> VALIDATE · CSV & COMPLIANCE
             </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#184491] mb-6">
+            <h1 className="mb-5 text-4xl font-bold tracking-tight text-[#184491] md:text-5xl lg:text-6xl">
               Computer System Validation
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
-              CSV & Compliance tailored for Pharma, Life Sciences & Education. Ensure your systems meet all regulatory requirements and maintain audit readiness.
+            <p className="mx-auto mb-7 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
+              Practical validation and compliance support for regulated systems—from planning and documentation to audit readiness and lifecycle maintenance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-[#184491] to-[#2563eb] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300"
+                className="rounded-xl bg-[#184491] px-6 py-3 font-semibold text-white transition hover:bg-[#12366f]"
               >
                 Schedule Compliance Consultation
               </Link>
               <Link 
                 href="#services"
-                className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-[#184491] font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
+                className="rounded-xl border border-[#184491]/20 bg-white/80 px-6 py-3 font-semibold text-[#184491] transition hover:bg-white"
               >
                 Explore Validation Services
               </Link>
@@ -99,10 +103,10 @@ export default function ValidatePage() {
       </motion.section>
 
       {/* Compliance Standards Banner */}
-      <section className="py-12 px-6 bg-gray-50">
+      <section className="border-y border-slate-100 bg-slate-50 px-6 py-7">
         <div className="max-w-7xl mx-auto">
-          <h3 className="text-center text-gray-800 mb-8">Supported Compliance Standards</h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <h3 className="mb-5 text-center text-sm font-semibold uppercase tracking-wide text-slate-500">Standards & frameworks</h3>
+          <div className="flex flex-wrap justify-center gap-2.5">
             {complianceStandards.map((standard, index) => (
               <motion.div
                 key={index}
@@ -110,7 +114,7 @@ export default function ValidatePage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="px-6 py-3 bg-[#184491]/10 border border-[#184491]/30 rounded-full text-[#184491] font-medium"
+                className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700"
               >
                 {standard}
               </motion.div>
@@ -120,34 +124,34 @@ export default function ValidatePage() {
       </section>
 
       {/* Target Industries */}
-      <section className="py-20 px-6">
+      <section className="px-6 py-12 md:py-14">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-9 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#184491] mb-4">Industries We Serve</h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <h2 className="mb-3 text-3xl font-bold text-[#184491] md:text-4xl">Industries we support</h2>
+            <p className="mx-auto max-w-3xl text-slate-600 md:text-lg">
               Specialized validation services for regulated industries requiring strict compliance and audit trails.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-5 gap-6">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {targetIndustries.map((industry, index) => (
               <motion.div
-                key={index}
+                key={industry.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 backdrop-blur-sm p-6 rounded-xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300 text-center"
+                className="rounded-xl border border-slate-200 bg-white p-5 text-center shadow-sm transition hover:-translate-y-1 hover:border-[#184491]/30 hover:shadow-md"
               >
-                <div className="text-4xl mb-4">{industry.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{industry.name}</h3>
-                <p className="text-sm text-gray-600">{industry.description}</p>
+                <industry.icon aria-hidden="true" className="mx-auto mb-3 h-6 w-6 text-[#184491]" />
+                <h3 className="mb-2 text-base font-bold text-slate-900">{industry.name}</h3>
+                <p className="text-sm leading-5 text-slate-600">{industry.description}</p>
               </motion.div>
             ))}
           </div>
@@ -155,52 +159,42 @@ export default function ValidatePage() {
       </section>
 
       {/* Services Grid */}
-      <section id="services" className="py-24 px-6 bg-gray-50">
+      <section id="services" className="bg-slate-50 px-6 py-12 md:py-14">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-9 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#184491] mb-4">Comprehensive Validation Services</h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <h2 className="mb-3 text-3xl font-bold text-[#184491] md:text-4xl">Validation services across the system lifecycle</h2>
+            <p className="mx-auto max-w-3xl text-slate-600 md:text-lg">
               From initial system deployment through ongoing compliance maintenance, we support your entire validation lifecycle.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-5 md:grid-cols-2">
             {validationServices.map((service, index) => (
               <motion.div
-                key={index}
+                key={service.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.15 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-white backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 hover:border-[#184491]/50 transition-all duration-300 shadow-sm"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#184491]/30 hover:shadow-md"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-4xl">{service.icon}</div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                  <p className="text-gray-700 mb-6">{service.description}</p>
-                  <ul className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700">
-                        <span className="w-2 h-2 bg-[#184491] rounded-full mr-2" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <service.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <h3 className="mb-3 text-xl font-bold text-slate-900">{service.title}</h3>
+                <p className="mb-5 text-sm leading-6 text-slate-600">{service.description}</p>
+                <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-sm text-slate-600">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#184491]" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
@@ -208,16 +202,16 @@ export default function ValidatePage() {
       </section>
 
       {/* Validation Process Timeline */}
-      <section className="py-24 px-6">
+      <section className="px-6 py-12 md:py-14">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-9 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#184491] mb-4">Our Validation Process</h2>
-            <p className="text-xl text-gray-700">A proven methodology for successful system validation and regulatory compliance</p>
+            <h2 className="mb-3 text-3xl font-bold text-[#184491] md:text-4xl">A clear validation process</h2>
+            <p className="text-slate-600">Structured steps to support system validation and ongoing compliance.</p>
           </motion.div>
 
           <div className="relative">
@@ -231,7 +225,7 @@ export default function ValidatePage() {
             ].map((item, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.15 }}
                 viewport={{ once: true }}
@@ -254,24 +248,24 @@ export default function ValidatePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-[#184491]">
+      <section className="bg-[#184491] px-6 py-12 md:py-14">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Achieve Compliance?
+          <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+            Need support with validation?
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
-            Our CSV experts have helped hundreds of organizations maintain regulatory compliance and pass audits with confidence.
+          <p className="mb-7 text-lg text-blue-100">
+            Talk with our team about your systems, compliance needs, and validation priorities.
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-10 py-5 bg-white text-[#184491] font-semibold rounded-xl hover:shadow-lg hover:shadow-white/30 transition-all duration-300 text-lg"
+            className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[#184491] transition hover:bg-blue-50"
           >
-            Start Your Validation Project
+            Discuss your project <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </motion.div>
       </section>

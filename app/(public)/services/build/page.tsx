@@ -1,22 +1,38 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import {
+  ArrowRight,
+  BarChart3,
+  Cloud,
+  CloudCog,
+  HardDrive,
+  Laptop,
+  LockKeyhole,
+  Network,
+  Router,
+  Server,
+  Settings2,
+  ShieldCheck,
+  Smartphone,
+} from "lucide-react";
 
 export default function BuildPage() {
   const hardwareCategories = [
     {
       title: "Network & Security Hardware",
       items: ["Next-Gen Firewalls (NGFW)", "Routers", "Switches", "Load Balancers"],
-      icon: "🔌"
+      icon: Router
     },
     {
       title: "Compute & Storage",
       items: ["Enterprise Rack/Blade Servers", "SAN/NAS Storage", "Cloud Storage Solutions", "Backup Systems"],
-      icon: "💾"
+      icon: HardDrive
     },
     {
       title: "End-User Computing",
       items: ["High-performance Workstations", "Desktops", "Laptops", "Thin Clients"],
-      icon: "💻"
+      icon: Laptop
     }
   ];
 
@@ -24,12 +40,12 @@ export default function BuildPage() {
     {
       title: "DLP (Data Loss Prevention)",
       description: "Comprehensive data protection across endpoints and cloud environments. Prevent data exfiltration and ensure compliance with regulatory requirements.",
-      icon: "🛡️"
+      icon: ShieldCheck
     },
     {
       title: "MDM (Mobile Device Management)",
       description: "Secure fleet management for remote and campus teams. Enforce security policies, manage applications, and protect corporate data on all devices.",
-      icon: "📱"
+      icon: Smartphone
     }
   ];
 
@@ -46,13 +62,13 @@ export default function BuildPage() {
     {
       title: "Public Cloud",
       description: "The rapid rise of cloud-based solutions has resulted in nearly all businesses placing at least a part of their operations there. Leverage leading cloud platforms for scalability and innovation.",
-      icon: "☁️",
+      icon: Cloud,
       features: ["AWS Migration", "Azure Services", "Google Cloud Platform", "Cloud Cost Optimization"]
     },
     {
       title: "Private Cloud",
       description: "Secure, dedicated cloud infrastructure tailored for enterprise needs with enhanced security and compliance controls.",
-      icon: "🔒",
+      icon: LockKeyhole,
       features: ["On-premise Cloud", "Hosted Private Cloud", "VMware Solutions", "Hybrid Integration"]
     }
   ];
@@ -61,29 +77,33 @@ export default function BuildPage() {
     {
       title: "Infrastructure Managed Services",
       description: "The distribution of businesses across geographies and involvement of various functional teams from remote independent locations has resulted in the scattering of IT infrastructure. Our managed services bring order and efficiency to your distributed IT landscape.",
-      icon: "🔧",
+      icon: Settings2,
       features: ["24/7 Infrastructure Monitoring", "Proactive Maintenance", "Performance Optimization", "Incident Management", "Capacity Planning"]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-28 pb-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white px-4 pb-14 pt-24 sm:px-6 md:pt-28 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-20"
+          className="mx-auto mb-12 max-w-4xl text-center md:mb-14"
         >
-          <span className="text-6xl mb-6 block">🏗️</span>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-[#184491]">
-              BUILD — IT Infrastructure Services
-            </span>
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-wide text-[#184491]">
+            <Server aria-hidden="true" className="h-4 w-4" />
+            BUILD · INFRASTRUCTURE & MANAGED HARDWARE
+          </span>
+          <h1 className="mb-5 text-4xl font-bold tracking-tight text-slate-950 md:text-5xl lg:text-6xl">
+            Resilient infrastructure,
+            <span className="block text-[#184491]">built for what&apos;s next.</span>
           </h1>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            Infrastructure Procurement, Consulting, Deployment & Management. Build resilient IT foundations that scale with your enterprise needs.
+          <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
+            Practical infrastructure consulting, procurement, deployment, and managed services—aligned to your organization&apos;s needs.
           </p>
+          <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#184491] px-6 py-3 font-semibold text-white transition hover:bg-[#12366f]">
+            Plan your infrastructure <ArrowRight aria-hidden="true" className="h-4 w-4" />
+          </Link>
         </motion.div>
 
         {/* Consulting & System Design */}
@@ -91,25 +111,25 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-16"
+          className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-6">Consulting & System Design</h2>
-          <p className="text-gray-700 text-lg leading-relaxed mb-8">
+          <h2 className="mb-3 text-2xl font-bold text-[#184491] md:text-3xl">Consulting & system design</h2>
+          <p className="mb-6 max-w-3xl text-base leading-7 text-slate-600 md:text-lg">
             Expert guidance to design the right infrastructure for your organization. Our team works with you to create scalable, secure, and cost-effective IT architectures.
           </p>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="p-6 bg-white rounded-xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300">
-              <span className="text-3xl mb-4 block">🌐</span>
+          <div className="grid gap-5 md:grid-cols-3">
+            <div className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#184491]/40">
+              <Network aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
               <h3 className="text-xl font-bold text-[#184491] mb-2">Network Architecture</h3>
               <p className="text-gray-700">Design robust, secure network infrastructures that support your business operations at scale.</p>
             </div>
-            <div className="p-6 bg-white rounded-xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300">
-              <span className="text-3xl mb-4 block">📊</span>
+            <div className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#184491]/40">
+              <BarChart3 aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
               <h3 className="text-xl font-bold text-[#184491] mb-2">Server Sizing</h3>
               <p className="text-gray-700">Right-size your compute resources to optimize performance while controlling costs.</p>
             </div>
-            <div className="p-6 bg-white rounded-xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300">
-              <span className="text-3xl mb-4 block">☁️</span>
+            <div className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#184491]/40">
+              <CloudCog aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
               <h3 className="text-xl font-bold text-[#184491] mb-2">Cloud Hybrid Planning</h3>
               <p className="text-gray-700">Develop hybrid cloud strategies that balance on-premise security with cloud scalability.</p>
             </div>
@@ -121,20 +141,20 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mb-16"
+          className="mb-10 md:mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-10">Hardware Sales & Enterprise Licensing</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Hardware & enterprise licensing</h2>
+          <div className="grid gap-5 md:grid-cols-3">
             {hardwareCategories.map((category, index) => (
               <motion.div
                 key={category.title}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + index * 0.1 }}
-                className="bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-[#184491]/50 transition-all duration-300"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#184491]/40 hover:shadow-md"
               >
-                <span className="text-4xl mb-4 block">{category.icon}</span>
-                <h3 className="text-xl font-bold text-[#184491] mb-4">{category.title}</h3>
+                <category.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <h3 className="mb-4 text-lg font-bold text-slate-900">{category.title}</h3>
                 <ul className="space-y-2">
                   {category.items.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-gray-700">
@@ -153,20 +173,20 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-16"
+          className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-10">Endpoint & Data Management</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Endpoint & data management</h2>
+          <div className="grid gap-5 md:grid-cols-2">
             {endpointManagement.map((item, index) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 + index * 0.1 }}
-                className="p-8 bg-white rounded-xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300"
+                className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#184491]/40"
               >
-                <span className="text-4xl mb-4 block">{item.icon}</span>
-                <h3 className="text-xl font-bold text-[#184491] mb-3">{item.title}</h3>
+                <item.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <h3 className="mb-2 text-lg font-bold text-slate-900">{item.title}</h3>
                 <p className="text-gray-700 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
@@ -178,9 +198,9 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-16"
+          className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-10">Infrastructure Services</h2>
+          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Infrastructure services</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {infrastructureServices.map((service, index) => (
               <motion.div
@@ -201,21 +221,21 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="bg-gray-50 rounded-2xl p-8 md:p-12 mb-16"
+          className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-10">Cloud Solutions</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Cloud solutions</h2>
+          <div className="grid gap-5 md:grid-cols-2">
             {cloudSolutions.map((cloud, index) => (
               <motion.div
                 key={cloud.title}
                 initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.9 + index * 0.1 }}
-                className="p-8 bg-white rounded-xl border border-gray-200"
+                className="rounded-xl border border-slate-200 bg-white p-5"
               >
-                <span className="text-4xl mb-4 block">{cloud.icon}</span>
-                <h3 className="text-xl font-bold text-[#184491] mb-3">{cloud.title}</h3>
-                <p className="text-gray-700 leading-relaxed mb-4">{cloud.description}</p>
+                <cloud.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <h3 className="mb-2 text-lg font-bold text-slate-900">{cloud.title}</h3>
+                <p className="mb-4 leading-relaxed text-slate-600">{cloud.description}</p>
                 <ul className="space-y-2">
                   {cloud.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-gray-700">
@@ -234,21 +254,21 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
-          className="bg-white rounded-2xl p-8 md:p-12 mb-16 border border-gray-200"
+          className="mb-10 rounded-2xl border border-slate-200 bg-white p-6 md:mb-12 md:p-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-10">Infrastructure Managed Services</h2>
-          <div className="grid md:grid-cols-1 gap-8">
+          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Infrastructure managed services</h2>
+          <div className="grid gap-5">
             {managedServices.map((service, index) => (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.0 + index * 0.1 }}
-                className="p-8 bg-gray-50 rounded-xl border border-gray-200"
+                className="rounded-xl border border-slate-200 bg-slate-50 p-5"
               >
-                <span className="text-4xl mb-4 block">{service.icon}</span>
-                <h3 className="text-xl font-bold text-[#184491] mb-3">{service.title}</h3>
-                <p className="text-gray-700 leading-relaxed mb-4">{service.description}</p>
+                <service.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <h3 className="mb-2 text-lg font-bold text-slate-900">{service.title}</h3>
+                <p className="mb-4 leading-relaxed text-slate-600">{service.description}</p>
                 <ul className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-gray-700">
@@ -267,7 +287,7 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1 }}
-          className="text-center py-24 px-6 bg-[#184491] rounded-2xl"
+          className="rounded-2xl bg-[#184491] px-6 py-10 text-center md:py-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Build Your IT Infrastructure?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">

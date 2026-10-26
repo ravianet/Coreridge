@@ -31,12 +31,12 @@ export default function SAPImplementationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-32">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
+        className="relative pt-24 pb-12 md:pt-28 md:pb-14 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#184491]/5 to-blue-400/5" />
         <div className="max-w-7xl mx-auto relative z-10">
@@ -74,13 +74,13 @@ export default function SAPImplementationPage() {
       </motion.section>
 
       {/* Core Services Grid */}
-      <section id="solutions" className="py-24 px-6">
+      <section id="solutions" className="py-14 md:py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#184491] mb-4">SAP Implementation Services</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -88,7 +88,7 @@ export default function SAPImplementationPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {sapServices.map((solution, index) => (
               <motion.div
                 key={index}
@@ -97,7 +97,7 @@ export default function SAPImplementationPage() {
                 transition={{ delay: index * 0.15 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 backdrop-blur-sm p-8 rounded-2xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300"
+                className="bg-gray-50 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300"
               >
                 <span className="text-5xl mb-6 block">{solution.icon}</span>
                 <h3 className="text-2xl font-bold text-[#184491] mb-3">{solution.title}</h3>
@@ -116,7 +116,7 @@ export default function SAPImplementationPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-gradient-to-r from-[#184491]/10 to-blue-400/10">
+      <section className="py-14 md:py-16 px-6 bg-gradient-to-r from-[#184491]/10 to-blue-400/10">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -126,12 +126,12 @@ export default function SAPImplementationPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#184491] mb-6">
             Ready to Transform with SAP?
           </h2>
-          <p className="text-xl text-gray-700 mb-10">
+          <p className="text-xl text-gray-700 mb-8">
             Our SAP experts have decades of experience implementing and managing SAP landscapes for enterprises worldwide.
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-10 py-5 bg-[#184491] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300 text-lg"
+            className="inline-block px-8 py-4 bg-[#184491] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300 text-lg"
           >
             Start Your SAP Journey
           </Link>

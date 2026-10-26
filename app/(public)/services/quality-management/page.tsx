@@ -37,12 +37,12 @@ export default function QMSPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-32">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
+        className="relative pt-24 pb-12 md:pt-28 md:pb-14 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
       >
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -79,13 +79,13 @@ export default function QMSPage() {
       </motion.section>
 
       {/* Core Services Grid */}
-      <section id="solutions" className="py-24 px-6">
+      <section id="solutions" className="py-14 md:py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-10"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-[#184491] mb-4">QMS Capabilities</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
@@ -93,7 +93,7 @@ export default function QMSPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {qmsServices.map((solution, index) => (
               <motion.div
                 key={index}
@@ -102,7 +102,7 @@ export default function QMSPage() {
                 transition={{ delay: index * 0.15 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 backdrop-blur-sm p-8 rounded-2xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300"
+                className="bg-gray-50 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300"
               >
                 <span className="text-5xl mb-6 block">{solution.icon}</span>
                 <h3 className="text-2xl font-bold text-[#184491] mb-3">{solution.title}</h3>
@@ -121,7 +121,7 @@ export default function QMSPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-[#184491]">
+      <section className="py-14 md:py-16 px-6 bg-[#184491]">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -131,12 +131,12 @@ export default function QMSPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Implement Your QMS?
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
+          <p className="text-xl text-blue-100 mb-8">
             Our quality management experts help regulated organizations implement and maintain QMS that meets the strictest regulatory requirements.
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-10 py-5 bg-white text-[#184491] font-semibold rounded-xl hover:shadow-lg hover:shadow-white/30 transition-all duration-300 text-lg"
+            className="inline-block px-8 py-4 bg-white text-[#184491] font-semibold rounded-xl hover:shadow-lg hover:shadow-white/30 transition-all duration-300 text-lg"
           >
             Start Your Quality Journey
           </Link>

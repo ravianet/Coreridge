@@ -21,7 +21,7 @@ const deliveryAreas = [
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#f7f9fc] px-5 pb-20 pt-12 sm:px-8 sm:pb-24 sm:pt-14 lg:px-10 lg:pb-28 lg:pt-16">
+    <section className="relative isolate overflow-hidden bg-[#f7f9fc] px-5 pb-20 pt-20 sm:px-8 sm:pb-24 sm:pt-24 lg:px-10 lg:pb-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-48 -top-56 -z-10 h-[38rem] w-[38rem] rounded-full bg-blue-200/40 blur-3xl"

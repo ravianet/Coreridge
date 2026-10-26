@@ -1,67 +1,70 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import {
+  Activity,
+  ArrowRight,
+  ClipboardCheck,
+  Lightbulb,
+  LockKeyhole,
+  MonitorCheck,
+  Shield,
+  ShieldCheck,
+} from 'lucide-react';
 
 export default function SecurePage() {
   const securityServices = [
     {
       title: "Perimeter & Network Security",
       description: "Secure your network boundary with advanced threat prevention and zero-trust architecture.",
-      icon: "🔒",
+      icon: Shield,
       features: ["Firewall Implementation", "Intrusion Prevention (IPS)", "Zero-Trust Network Access (ZTNA)", "VPN Solutions", "Network Segmentation"],
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800&h=500"
     },
     {
       title: "Endpoint Security",
       description: "Protect all devices accessing your network with modern endpoint protection platforms.",
-      icon: "💻",
+      icon: MonitorCheck,
       features: ["EDR/XDR Solutions", "Anti-Ransomware Protection", "Device Encryption", "Endpoint Detection", "Threat Response"],
-      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800&h=500"
     },
     {
       title: "Data Protection",
       description: "Safeguard your sensitive data with comprehensive access control and prevention measures.",
-      icon: "🔐",
+      icon: LockKeyhole,
       features: ["Data Loss Prevention (DLP)", "Access Control Systems", "Identity & Access Management (IAM)", "Data Encryption", "Cloud Security"],
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=800&h=500"
     },
     {
       title: "Security Audits & Compliance",
       description: "Maintain regulatory compliance with comprehensive security assessments and audits.",
-      icon: "📋",
+      icon: ClipboardCheck,
       features: ["Vulnerability Assessment", "Penetration Testing (VAPT)", "IT Risk Audits", "Compliance Reporting", "Remediation Planning"],
-      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800&h=500"
     },
     {
       title: "Managed Security Services",
       description: "We provide a wide range of Managed Security service offerings covering applications, networks, endpoints, data, end-users, infrastructure, the cloud, perimeters, and much more.",
-      icon: "🛡️",
+      icon: ShieldCheck,
       features: ["24/7 Security Operations", "Cloud Security Management", "Threat Intelligence", "Incident Response", "Security Monitoring"],
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&q=80&w=800&h=500"
     },
     {
       title: "IT Consulting & Implementation",
       description: "We provide across the board IT Consulting and Implementation services to screen and fill any need gap in your business IT network and security infrastructure.",
-      icon: "💡",
+      icon: Lightbulb,
       features: ["Security Gap Analysis", "Infrastructure Assessment", "Implementation Planning", "Deployment Support", "Post-Implementation Review"],
-      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80&w=800&h=500"
     }
   ];
 
   const securityStats = [
-    { number: "24/7", label: "Threat Monitoring" },
-    { number: "99.9%", label: "Threat Detection Rate" },
-    { number: "500+", label: "Secured Enterprises" },
-    { number: "0", label: "Data Breaches (Client Base)" }
+    { label: "Layered protection", icon: ShieldCheck },
+    { label: "Continuous visibility", icon: Activity },
+    { label: "Risk-led improvements", icon: ClipboardCheck },
+    { label: "Practical guidance", icon: Lightbulb }
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-32">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-white">
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
+        className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 pb-12 pt-24 md:pb-14 md:pt-28"
       >
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -71,24 +74,24 @@ export default function SecurePage() {
             className="text-center"
           >
             <span className="inline-block px-4 py-2 bg-[#184491]/10 text-[#184491] rounded-full text-sm font-semibold mb-6">
-              🛡️ SECURE
+              <Shield aria-hidden="true" className="mr-2 inline h-4 w-4" /> SECURE · CYBERSECURITY
             </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#184491] mb-6">
+            <h1 className="mb-5 text-4xl font-bold tracking-tight text-[#184491] md:text-5xl lg:text-6xl">
               Enterprise Cybersecurity
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
+            <p className="mx-auto mb-7 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
               Zero-Trust Cybersecurity & Continuous Threat Defense. Protect your organizational assets, users, and networks with comprehensive security solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-[#184491] to-[#2563eb] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300"
+                className="rounded-xl bg-[#184491] px-6 py-3 font-semibold text-white transition hover:bg-[#12366f]"
               >
                 Schedule Security Assessment
               </Link>
               <Link 
                 href="#services"
-                className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-[#184491] font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
+                className="rounded-xl border border-[#184491]/20 bg-white/80 px-6 py-3 font-semibold text-[#184491] transition hover:bg-white"
               >
                 Explore Security Services
               </Link>
@@ -97,23 +100,19 @@ export default function SecurePage() {
         </div>
       </motion.section>
 
-      {/* Stats Section */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className="border-y border-slate-100 bg-slate-50 px-6 py-7">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {securityStats.map((stat, index) => (
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {securityStats.map((item) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
+                key={item.label}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="flex items-center justify-center gap-2 text-center text-sm font-semibold text-slate-700 md:text-base"
               >
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#184491] to-[#2563eb] bg-clip-text text-transparent">
-                  {stat.number}
-                </div>
-                <div className="text-gray-700 mt-2">{stat.label}</div>
+                <item.icon aria-hidden="true" className="h-5 w-5 shrink-0 text-[#184491]" />
+                {item.label}
               </motion.div>
             ))}
           </div>
@@ -121,52 +120,42 @@ export default function SecurePage() {
       </section>
 
       {/* Services Grid */}
-      <section id="services" className="py-24 px-6">
+      <section id="services" className="px-6 py-12 md:py-14">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-9 text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#184491] mb-4">Comprehensive Security Solutions</h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              From network perimeter to endpoint devices, we provide end-to-end security to protect your business from evolving cyber threats.
+            <h2 className="mb-3 text-3xl font-bold text-[#184491] md:text-4xl">Security, aligned to your needs</h2>
+            <p className="mx-auto max-w-3xl text-slate-600 md:text-lg">
+              Strengthen networks, endpoints, data, and operations with security services shaped around your environment and priorities.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {securityServices.map((service, index) => (
               <motion.div
-                key={index}
+                key={service.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.15 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 hover:border-[#184491]/50 transition-all duration-300"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#184491]/30 hover:shadow-md"
               >
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-4xl">{service.icon}</div>
-                </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-[#184491] mb-3">{service.title}</h3>
-                  <p className="text-gray-700 mb-6">{service.description}</p>
-                  <ul className="grid grid-cols-2 gap-3">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-gray-700">
-                        <span className="w-2 h-2 bg-[#184491] rounded-full mr-2" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <service.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <h3 className="mb-3 text-xl font-bold text-slate-900">{service.title}</h3>
+                <p className="mb-5 text-sm leading-6 text-slate-600">{service.description}</p>
+                <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2 text-sm text-slate-600">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#184491]" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
@@ -174,24 +163,24 @@ export default function SecurePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-[#184491]">
+      <section className="bg-[#184491] px-6 py-12 md:py-14">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Secure Your Enterprise?
+          <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+            Ready to strengthen your security?
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
-            Our cybersecurity experts are ready to assess your infrastructure and implement robust protection strategies.
+          <p className="mb-7 text-lg text-blue-100">
+            Let&apos;s review your priorities and identify practical next steps for your environment.
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-10 py-5 bg-white text-[#184491] font-semibold rounded-xl hover:shadow-lg hover:shadow-white/30 transition-all duration-300 text-lg"
+            className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[#184491] transition hover:bg-blue-50"
           >
-            Get Your Free Security Assessment
+            Talk to our team <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </motion.div>
       </section>

@@ -5,86 +5,85 @@ import Link from 'next/link';
 export default function CCTVVideoAnalyticsPage() {
   const coreCapabilities = [
     {
-      title: "Large-Scale CCTV Implementations",
-      description: "Enterprise-grade surveillance deployments supporting thousands of cameras across multi-site facilities, campuses, and industrial complexes with unified management.",
+      title: "Multi-Site CCTV Systems",
+      description: "Plan and integrate camera networks across facilities, campuses, and industrial environments, with centralized viewing based on the selected video management system.",
       icon: "📹",
-      features: ["1000+ Camera Deployments", "Multi-Site Management", "Enterprise Storage", "99.9% Uptime SLA"]
+      features: ["Camera and VMS planning", "Centralized monitoring", "Storage and retention planning", "Access controls"]
     },
     {
-      title: "Google Maps Integration",
-      description: "Real-time camera visualization on interactive Google Maps with geolocation tracking, heat mapping, and instant camera access from any location worldwide.",
+      title: "Mapping & Site Visualization",
+      description: "Where supported by the selected VMS and mapping platform, camera locations can be presented on site maps for easier navigation and incident response.",
       icon: "🗺️",
-      features: ["Interactive Map Interface", "Real-Time Camera Status", "Geofence Alerts", "Pan-Tilt-Zoom Control"]
+      features: ["Camera location views", "Map-linked video access", "Site zones", "Platform-dependent alerts"]
     },
     {
-      title: "AI-Powered Video Analytics",
-      description: "Advanced computer vision algorithms that automatically detect, track, and alert on security events, anomalies, and business insights from video streams.",
+      title: "Video Analytics",
+      description: "Use compatible analytics to help identify events such as people or vehicles in defined areas, subject to camera capability, site conditions, and privacy requirements.",
       icon: "🤖",
-      features: ["Object Detection", "Facial Recognition", "License Plate Reading", "Behavior Analysis"]
+      features: ["Person and vehicle detection", "Perimeter events", "Occupancy insights", "Privacy-aware configuration"]
     },
     {
-      title: "Cloud-Native Architecture",
-      description: "Scalable cloud infrastructure that handles petabytes of video data with intelligent edge processing, bandwidth optimization, and global accessibility.",
+      title: "Flexible Video Architecture",
+      description: "Choose on-premises, cloud, or hybrid components according to your security, bandwidth, retention, and operational requirements.",
       icon: "☁️",
-      features: ["Edge Computing", "Bandwidth Optimization", "Cloud Storage", "Remote Access"]
+      features: ["On-premises, cloud, or hybrid", "Edge processing where supported", "Retention controls", "Role-based access"]
     }
   ];
 
   const aiFeatures = [
     {
       title: "Perimeter Breach Detection",
-      description: "Instant alerts for unauthorized access to restricted areas with accurate tracking and instant notification to security teams.",
+      description: "Flag movement across configured boundaries and route alerts to the appropriate team where supported by the camera and VMS.",
       icon: "🚨"
     },
     {
       title: "Crowd Analysis",
-      description: "Real-time people counting, density monitoring, and crowd behavior prediction to maintain safety and compliance.",
+      description: "Estimate people counts or occupancy in defined areas using compatible cameras and analytics.",
       icon: "👥"
     },
     {
       title: "Vehicle Tracking",
-      description: "Automatic license plate recognition with vehicle tracking, parking management, and unauthorized vehicle detection.",
+      description: "Support vehicle detection and traffic-flow review; number-plate recognition is subject to local law and project approval.",
       icon: "🚗"
     },
     {
       title: "Smoke & Fire Detection",
-      description: "AI-powered early warning system that detects smoke and fire hazards before traditional alarms, saving critical response time.",
+      description: "Video-based smoke or flame detection may supplement, but should not replace, certified fire detection and alarm systems.",
       icon: "🔥"
     },
     {
       title: "Loitering Detection",
-      description: "Identify individuals spending excessive time in sensitive areas for proactive security intervention.",
+      description: "Highlight prolonged presence in configured areas when supported by the selected analytics platform.",
       icon: "⏱️"
     },
     {
       title: "Fall Detection",
-      description: "Automatically detect worker falls in industrial environments for immediate emergency response activation.",
+      description: "Use compatible video analytics to flag potential falls for human review and established emergency procedures.",
       icon: "⚠️"
     }
   ];
 
-  const projectHighlights = [
+  const useCases = [
     {
-      title: "Smart City Surveillance",
-      description: "Deployed 5,000+ AI cameras across urban infrastructure with real-time analytics and emergency response integration.",
-      metrics: ["5,000+ Cameras", "500 sq km Coverage", "<100ms Latency", "99.98% Accuracy"]
+      title: "Site & Perimeter Security",
+      description: "Bring camera views and configured perimeter events together to help teams review activity across a facility.",
+      focus: ["Site entrances", "Restricted areas", "Incident review", "Centralized views"]
     },
     {
-      title: "Enterprise Campus Security",
-      description: "End-to-end CCTV implementation for a 50,000-employee technology park with Google Maps visualization and zero-trust access.",
-      metrics: ["12 Campus Locations", "2,500+ Cameras", "100% Mobile Access", "15-second Response"]
+      title: "Campus & Multi-Site Operations",
+      description: "Organize camera locations and operational views for campuses or distributed sites, with mapping integrations where available.",
+      focus: ["Site maps", "Multi-building views", "Role-based access", "Video retention"]
     },
     {
-      title: "Manufacturing Complex",
-      description: "Integrated surveillance and safety monitoring for a multi-billion dollar manufacturing facility with compliance reporting.",
-      metrics: ["8 Production Lines", "800+ Cameras", "OSHA Compliant", "24/7 Monitoring"]
+      title: "Workplace Safety",
+      description: "Consider compatible video analytics for selected safety scenarios, alongside established procedures and certified safety systems.",
+      focus: ["Defined safety zones", "Potential fall alerts", "Human review", "Existing alarm systems"]
     }
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section - Matches homepage gradient style */}
-      <section className="relative pt-32 pb-20 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+      <section className="relative pt-24 pb-12 md:pt-28 md:pb-14 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
         <div className="absolute inset-0 bg-gradient-to-b from-[#184491]/5 via-transparent to-transparent" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -93,36 +92,43 @@ export default function CCTVVideoAnalyticsPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <span className="inline-block px-5 py-2 mb-6 bg-[#184491]/10 border border-[#184491]/20 rounded-full text-[#184491] text-sm font-semibold uppercase tracking-widest">
-              📹 Surveillance & Security
+            <span className="inline-block px-4 py-2 mb-4 bg-[#184491]/10 border border-[#184491]/20 rounded-full text-[#184491] text-xs sm:text-sm font-semibold uppercase tracking-widest">
+              Video surveillance & analytics
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-[#184491] mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold text-[#184491] mb-5">
               CCTV & AI
               <span className="block bg-gradient-to-r from-[#184491] to-blue-500 bg-clip-text text-transparent">
                 Video Analytics
               </span>
             </h1>
-            <p className="text-xl text-slate-600 leading-relaxed">
-              Large-scale CCTV implementations with Google Maps integration and advanced AI-powered video analytics. 
-              Transform your surveillance system from passive recording to proactive security.
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+              Design a more useful video security system with centralized camera management, optional map views, and analytics tailored to your site and privacy requirements.
             </p>
+            <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
+              <Link href="/contact" className="rounded-xl bg-[#184491] px-6 py-3 font-semibold text-white transition hover:bg-[#12366f]">
+                Discuss your requirements
+              </Link>
+              <Link href="#capabilities" className="rounded-xl border border-[#184491]/20 bg-white/80 px-6 py-3 font-semibold text-[#184491] transition hover:bg-white">
+                Explore capabilities
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Core Capabilities */}
-      <section className="py-20 bg-white">
+      <section id="capabilities" className="py-12 md:py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-9"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-4">End-to-End Surveillance Solutions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-3">A connected approach to video security</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              From camera hardware installation to advanced AI analytics and map-based visualization, we deliver complete video surveillance ecosystems.
+              Align cameras, video management, storage, and optional analytics around your operational and security needs.
             </p>
           </motion.div>
           
@@ -134,7 +140,7 @@ export default function CCTVVideoAnalyticsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-8 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-[#184491]/50 transition-all duration-300"
+                className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-[#184491]/50 transition-all duration-300"
               >
                 <div className="text-4xl mb-4">{capability.icon}</div>
                 <h3 className="text-2xl font-bold text-[#184491] mb-3">{capability.title}</h3>
@@ -153,24 +159,23 @@ export default function CCTVVideoAnalyticsPage() {
       </section>
 
       {/* Google Maps Integration Highlight */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-14 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-6">
-                Google Maps <span className="bg-gradient-to-r from-[#184491] to-blue-500 bg-clip-text text-transparent">Visualization</span>
+                Map-based <span className="bg-gradient-to-r from-[#184491] to-blue-500 bg-clip-text text-transparent">camera views</span>
               </h2>
               <p className="text-slate-600 text-lg mb-6">
-                See every camera on an interactive Google Map interface. Click any camera to view live feeds, PTZ controls, and historical recordings. 
-                Create geofences that trigger automatic alerts when boundaries are crossed.
+                Help operators orient themselves by linking camera locations to a site map or supported mapping platform. Available views and controls depend on your selected cameras, VMS, and integrations.
               </p>
               <ul className="space-y-4">
-                {["Real-time camera status overlays on maps", "One-click access to live video streams", "Geofence creation and breach alerts", "Heat maps for high-traffic areas", "Exportable location-based incident reports"].map((item, i) => (
+                {["Locate cameras by building or zone", "Open available live or recorded video", "Use configured zones and alerts", "Plan for access and retention needs"].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-slate-600">
                     <span className="w-2 h-2 rounded-full bg-[#184491]"></span>
                     {item}
@@ -179,17 +184,17 @@ export default function CCTVVideoAnalyticsPage() {
               </ul>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm p-8"
+              className="bg-white rounded-2xl border border-gray-200 shadow-sm p-5 sm:p-6"
             >
               <div className="aspect-video bg-gradient-to-br from-blue-50 to-white rounded-xl flex items-center justify-center border border-gray-200">
                 <div className="text-center">
-                  <div className="text-6xl mb-4">🗺️</div>
-                  <p className="text-slate-700 font-medium">Interactive Map Interface</p>
-                  <p className="text-sm text-slate-500 mt-2">All cameras visualized on Google Maps</p>
+                  <div className="text-5xl mb-3">🗺️</div>
+                  <p className="text-slate-700 font-medium">Illustrative site-map view</p>
+                  <p className="text-sm text-slate-500 mt-2">Integration depends on the selected platform.</p>
                 </div>
               </div>
             </motion.div>
@@ -198,18 +203,18 @@ export default function CCTVVideoAnalyticsPage() {
       </section>
 
       {/* AI Capabilities Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-12 md:py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-9"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-4">Advanced AI Analytics</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Our computer vision models process every video frame to automatically detect security events and generate actionable insights.
+              Select analytics for the scenarios that matter to your operation. Features depend on camera capability, environment, configuration, and applicable privacy rules.
             </p>
           </motion.div>
           
@@ -233,37 +238,37 @@ export default function CCTVVideoAnalyticsPage() {
       </section>
 
       {/* Project Highlights */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 md:py-14 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-9"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-4">Proven Track Record</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-3">Example applications</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Successfully delivered large-scale CCTV and analytics projects for enterprises, cities, and industrial complexes worldwide.
+              Illustrative scenarios, not customer case studies. Final scope, integrations, and analytics depend on site requirements and selected equipment.
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {projectHighlights.map((project, index) => (
+          <div className="grid md:grid-cols-3 gap-6">
+            {useCases.map((project, index) => (
               <motion.div
                 key={project.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-8 bg-white rounded-2xl border border-gray-200 shadow-sm"
+                className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm"
               >
                 <h3 className="text-xl font-bold text-[#184491] mb-3">{project.title}</h3>
                 <p className="text-slate-600 mb-6 text-sm">{project.description}</p>
-                <div className="grid grid-cols-2 gap-3">
-                  {project.metrics.map((metric) => (
-                    <span key={metric} className="px-2 py-1 bg-[#184491]/10 text-[#184491] rounded text-xs text-center border border-[#184491]/30">
-                      {metric}
+                <div className="flex flex-wrap gap-2">
+                  {project.focus.map((item) => (
+                    <span key={item} className="rounded-full border border-[#184491]/15 bg-[#184491]/5 px-3 py-1 text-xs text-[#184491]">
+                      {item}
                     </span>
                   ))}
                 </div>
@@ -273,6 +278,17 @@ export default function CCTVVideoAnalyticsPage() {
         </div>
       </section>
 
+      <section className="px-4 py-10 sm:px-6 md:py-12">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-5 rounded-2xl bg-[#184491] px-6 py-7 text-white sm:px-8 md:flex-row md:items-center">
+          <div>
+            <h2 className="text-2xl font-bold">Planning a video security upgrade?</h2>
+            <p className="mt-2 max-w-2xl text-blue-100">Share your site, coverage, and operational requirements to explore an appropriate approach.</p>
+          </div>
+          <Link href="/contact" className="shrink-0 rounded-xl bg-white px-5 py-3 font-semibold text-[#184491] transition hover:bg-blue-50">
+            Talk to our team
+          </Link>
+        </div>
+      </section>
 
     </div>
   );
