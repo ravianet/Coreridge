@@ -32,26 +32,26 @@ export default function Hero() {
       />
 
       <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-        <div className="max-w-2xl">
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-sm font-semibold text-[#184491] shadow-sm">
+        <div className="mx-auto max-w-2xl text-center lg:mx-0">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-5 py-2.5 text-base font-semibold text-[#184491] shadow-sm">
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
             Your partner for technology that works
           </div>
 
-          <h1 className="text-4xl font-semibold leading-[1.08] tracking-[-0.045em] text-slate-950 sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-slate-950 sm:text-6xl lg:text-7xl">
             Move forward with
             <span className="mt-1 block text-[#184491]">
               confidence in every system.
             </span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600 sm:text-xl">
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-600 sm:text-xl lg:text-[1.35rem]">
             From modernizing enterprise technology to validating critical
             systems, Coreridge helps your teams make complex change feel clear,
             secure, and manageable.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/contact"
               className="group inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-[#184491] px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-950/15 transition hover:-translate-y-0.5 hover:bg-[#123975] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#184491]"
@@ -70,7 +70,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm font-medium text-slate-600">
+          <div className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-medium text-slate-600">
             {["Practical expertise", "Clear communication", "Built around your needs"].map(
               (item) => (
                 <span key={item} className="inline-flex items-center gap-2">
