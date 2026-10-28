@@ -297,7 +297,7 @@ export default function WhyCoreRidgePage() {
             </span>
             <h1 className="mb-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl md:text-6xl">
               Why Choose
-              <span className="block text-[#e87918]">
+              <span className="block text-[#C4A86A]">
                 CoreRidge
               </span>
             </h1>

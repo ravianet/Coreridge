@@ -44,7 +44,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#f7f9fc] px-5 pb-20 pt-20 sm:px-8 sm:pb-24 sm:pt-24 lg:px-10 lg:pb-28">
+    <section className="relative isolate overflow-hidden bg-[#f7f9fc] px-5 pb-8 pt-16 sm:px-8 sm:pb-10 sm:pt-20 lg:px-10 lg:pb-12">
       <video
         ref={videoRef}
         aria-hidden="true"
@@ -53,7 +53,7 @@ export default function Hero() {
         muted
         playsInline
         preload="metadata"
-        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-80 motion-reduce:hidden"
+        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-70 motion-reduce:hidden"
       >
         <source src="/ai.mp4" type="video/mp4" />
       </video>
@@ -72,7 +72,7 @@ export default function Hero() {
       </button>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-white/50 via-white/30 to-blue-50/40"
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-white/55 via-white/35 to-blue-50/45"
       />
       <div
         aria-hidden="true"
@@ -90,7 +90,7 @@ export default function Hero() {
             Your partner for technology that works
           </div>
 
-          <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.045em] text-[#1B0A60] drop-shadow-[0_1px_1px_rgba(255,255,255,0.65)] sm:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.045em] text-[#1B0A60] drop-shadow-[0_1px_1px_rgba(255,255,255,0.65)] sm:text-6xl lg:text-6xl xl:text-7xl">
             Move forward with
             <span className="mt-1 block text-[#1B0A60]">
               confidence in every system.
@@ -135,13 +135,13 @@ export default function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-xl lg:ml-auto">
-          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/50 p-4 sm:p-5">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/80 bg-white/50 p-4 shadow-lg shadow-[#1B0A60]/10 backdrop-blur-md sm:p-5">
             <div className="flex items-center justify-between gap-3 border-b border-[#1B0A60]/15 pb-4">
               <div>
                 <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#1B0A60]">
                   Our services
                 </p>
-                <h2 className="mt-1.5 text-lg font-semibold tracking-tight text-[#1B0A60] sm:text-xl">
+                <h2 className="mt-1.5 text-xl font-semibold tracking-tight text-[#1B0A60] sm:text-2xl">
                   One partner. A clearer path.
                 </h2>
               </div>
@@ -160,8 +160,8 @@ export default function Hero() {
                     <Icon aria-hidden="true" className="h-4 w-4" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[13px] font-bold tracking-wide text-[#1B0A60]">{label}</p>
-                    <p className="mt-0.5 text-xs font-medium text-slate-700">{detail}</p>
+                    <p className="text-sm font-bold tracking-wide text-[#1B0A60]">{label}</p>
+                    <p className="mt-0.5 text-[13px] font-medium text-slate-700">{detail}</p>
                   </div>
                   <span className="text-[11px] font-bold tracking-wider text-[#B85D00]">
                     0{index + 1}
@@ -179,7 +179,7 @@ export default function Hero() {
                 <span className="h-1 flex-1 rounded-full bg-[#1B0A60]/55" />
                 <span className="h-1 flex-1 rounded-full bg-[#FC7F00]/75" />
               </div>
-              <div className="mt-1.5 flex justify-between text-[10px] font-semibold text-slate-700">
+              <div className="mt-1.5 flex justify-between text-[11px] font-semibold text-slate-700">
                 <span>Plan</span>
                 <span>Deliver</span>
                 <span>Support</span>

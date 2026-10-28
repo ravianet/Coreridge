@@ -33,6 +33,7 @@
   ],
   "exclude": [
     "node_modules",
-    "deploy-temp"
+    "deploy-temp",
+    "Coreridge"
   ]
 }
