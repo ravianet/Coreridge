@@ -1,10 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { useRef, useState } from "react";
 import {
   ArrowRight,
   Check,
   Cpu,
   Layers3,
   LockKeyhole,
+  Pause,
+  Play,
   ShieldCheck,
 } from "lucide-react";
 
@@ -20,32 +25,79 @@ const deliveryAreas = [
 ];
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const toggleVideoPlayback = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      void video.play().then(
+        () => setIsPlaying(true),
+        () => setIsPlaying(false),
+      );
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  };
+
   return (
     <section className="relative isolate overflow-hidden bg-[#f7f9fc] px-5 pb-20 pt-20 sm:px-8 sm:pb-24 sm:pt-24 lg:px-10 lg:pb-28">
+      <video
+        ref={videoRef}
+        aria-hidden="true"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover opacity-80 motion-reduce:hidden"
+      >
+        <source src="/ai.mp4" type="video/mp4" />
+      </video>
+      <button
+        type="button"
+        onClick={toggleVideoPlayback}
+        aria-label={`${isPlaying ? "Pause" : "Play"} background video`}
+        aria-pressed={!isPlaying}
+        className="absolute bottom-4 right-5 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-white/25 text-[#1B0A60]/70 backdrop-blur-sm transition hover:border-white/60 hover:bg-white/60 hover:text-[#1B0A60] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FC7F00] motion-reduce:hidden sm:right-8 lg:right-10"
+      >
+        {isPlaying ? (
+          <Pause aria-hidden="true" className="h-3.5 w-3.5" />
+        ) : (
+          <Play aria-hidden="true" className="h-3.5 w-3.5" />
+        )}
+      </button>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-48 -top-56 -z-10 h-[38rem] w-[38rem] rounded-full bg-blue-200/40 blur-3xl"
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-white/50 via-white/30 to-blue-50/40"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-72 -left-48 -z-10 h-[34rem] w-[34rem] rounded-full bg-cyan-100/70 blur-3xl"
+        className="pointer-events-none absolute -right-48 -top-56 -z-10 h-[38rem] w-[38rem] rounded-full bg-blue-200/25 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-72 -left-48 -z-10 h-[34rem] w-[34rem] rounded-full bg-cyan-100/40 blur-3xl"
       />
 
       <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
         <div className="mx-auto max-w-2xl text-center lg:mx-0">
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white/80 px-5 py-2.5 text-base font-semibold text-[#184491] shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#1B0A60]/15 bg-white/85 px-5 py-2.5 text-base font-semibold text-[#1B0A60] shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-[#FC7F00]" />
             Your partner for technology that works
           </div>
 
-          <h1 className="text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-slate-950 sm:text-6xl lg:text-7xl">
+          <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.045em] text-[#1B0A60] drop-shadow-[0_1px_1px_rgba(255,255,255,0.65)] sm:text-6xl lg:text-7xl">
             Move forward with
-            <span className="mt-1 block text-[#184491]">
+            <span className="mt-1 block text-[#1B0A60]">
               confidence in every system.
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-600 sm:text-xl lg:text-[1.35rem]">
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-800 drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)] sm:text-xl lg:text-[1.35rem]">
             From modernizing enterprise technology to validating critical
             systems, Coreridge helps your teams make complex change feel clear,
             secure, and manageable.
@@ -54,27 +106,27 @@ export default function Hero() {
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="group inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-[#184491] px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-950/15 transition hover:-translate-y-0.5 hover:bg-[#123975] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#184491]"
+              className="group inline-flex min-h-14 items-center justify-center gap-2 rounded-xl bg-[#1B0A60] px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#1B0A60]/20 transition hover:-translate-y-0.5 hover:bg-[#130748] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FC7F00]"
             >
               Talk to our team
               <ArrowRight
                 aria-hidden="true"
-                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                className="h-4 w-4 text-[#FC7F00] transition-transform group-hover:translate-x-1"
               />
             </Link>
             <Link
               href="/services"
-              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-base font-semibold text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#184491]"
+              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-[#1B0A60]/25 bg-white/85 px-6 py-3.5 text-base font-semibold text-[#1B0A60] transition hover:border-[#1B0A60]/50 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#FC7F00]"
             >
               Explore our services
             </Link>
           </div>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-medium text-slate-600">
+          <div className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-semibold text-slate-800">
             {["Practical expertise", "Clear communication", "Built around your needs"].map(
               (item) => (
                 <span key={item} className="inline-flex items-center gap-2">
-                  <Check aria-hidden="true" className="h-4 w-4 text-emerald-600" />
+                  <Check aria-hidden="true" className="h-4 w-4 text-[#FC7F00]" />
                   {item}
                 </span>
               ),
@@ -83,63 +135,62 @@ export default function Hero() {
         </div>
 
         <div className="relative mx-auto w-full max-w-xl lg:ml-auto">
-          <div className="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-blue-200/60 via-white/20 to-cyan-100/70 blur-2xl" />
-          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/80 bg-white p-4 shadow-[0_28px_80px_-32px_rgba(15,42,86,0.32)] sm:p-5">
-            <div className="flex items-center justify-between gap-3 border-b border-slate-100 pb-4">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/50 p-4 sm:p-5">
+            <div className="flex items-center justify-between gap-3 border-b border-[#1B0A60]/15 pb-4">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#184491]">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#1B0A60]">
                   Our services
                 </p>
-                <h2 className="mt-1.5 text-lg font-semibold tracking-tight text-slate-900 sm:text-xl">
+                <h2 className="mt-1.5 text-lg font-semibold tracking-tight text-[#1B0A60] sm:text-xl">
                   One partner. A clearer path.
                 </h2>
               </div>
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-[#184491]">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-[#FC7F00]">
                 <Cpu aria-hidden="true" className="h-4 w-4" />
               </div>
             </div>
 
-            <div className="space-y-2 py-4">
+            <div className="divide-y divide-[#1B0A60]/15 py-2">
               {deliveryAreas.map(({ label, detail, icon: Icon }, index) => (
                 <div
                   key={label}
-                  className="flex items-center gap-3 rounded-xl border border-slate-100 bg-slate-50/80 px-3 py-2.5 transition hover:border-blue-200 hover:bg-blue-50/50"
+                  className="flex items-center gap-3 px-3 py-3 transition-colors hover:bg-white/15"
                 >
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white text-[#184491] shadow-sm">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center text-[#1B0A60]">
                     <Icon aria-hidden="true" className="h-4 w-4" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[13px] font-bold tracking-wide text-slate-900">{label}</p>
-                    <p className="mt-0.5 text-xs text-slate-500">{detail}</p>
+                    <p className="text-[13px] font-bold tracking-wide text-[#1B0A60]">{label}</p>
+                    <p className="mt-0.5 text-xs font-medium text-slate-700">{detail}</p>
                   </div>
-                  <span className="text-[11px] font-semibold tracking-wider text-slate-400">
+                  <span className="text-[11px] font-bold tracking-wider text-[#B85D00]">
                     0{index + 1}
                   </span>
                 </div>
               ))}
             </div>
 
-            <div className="rounded-xl bg-[#102b55] p-4 text-white">
-              <p className="text-xs font-medium text-blue-100">
+            <div className="p-3">
+              <p className="text-xs font-semibold text-[#1B0A60]">
                 From planning to ongoing support
               </p>
               <div className="mt-3 flex items-center gap-2" aria-hidden="true">
-                <span className="h-1 flex-1 rounded-full bg-blue-300" />
-                <span className="h-1 flex-1 rounded-full bg-blue-400/80" />
-                <span className="h-1 flex-1 rounded-full bg-cyan-300/80" />
+                <span className="h-1 flex-1 rounded-full bg-[#1B0A60]/80" />
+                <span className="h-1 flex-1 rounded-full bg-[#1B0A60]/55" />
+                <span className="h-1 flex-1 rounded-full bg-[#FC7F00]/75" />
               </div>
-              <div className="mt-1.5 flex justify-between text-[10px] font-medium text-blue-100/80">
+              <div className="mt-1.5 flex justify-between text-[10px] font-semibold text-slate-700">
                 <span>Plan</span>
                 <span>Deliver</span>
                 <span>Support</span>
               </div>
             </div>
           </div>
-          <div className="absolute -bottom-5 -left-4 hidden items-center gap-3 rounded-2xl border border-slate-100 bg-white px-4 py-3 shadow-xl sm:flex">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700">
+          <div className="absolute -bottom-5 -left-4 hidden items-center gap-3 rounded-2xl border border-[#1B0A60]/10 bg-white/90 px-4 py-3 shadow-xl sm:flex">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#FC7F00]/10 text-[#B85D00]">
               <Check aria-hidden="true" className="h-5 w-5" />
             </span>
-            <span className="text-sm font-semibold text-slate-800">
+            <span className="text-sm font-semibold text-[#1B0A60]">
               Thoughtful delivery
             </span>
           </div>

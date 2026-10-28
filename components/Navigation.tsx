@@ -140,12 +140,12 @@ export default function Navigation() {
     <header
       className={`fixed inset-x-0 top-0 z-[9999] border-b transition-[background-color,box-shadow] duration-200 ${
         scrolled
-          ? "border-slate-200/90 bg-white/95 shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl"
+          ? "border-slate-200/90 bg-white shadow-[0_8px_30px_rgba(15,23,42,0.08)]"
           : "border-slate-200/70 bg-white"
       }`}
     >
       <nav aria-label="Main navigation" className="container-pro">
-        <div className="flex min-h-16 items-center justify-between gap-6">
+        <div className="flex min-h-14 items-center justify-between gap-5">
           <Link
             href="/"
             aria-label="Coreridge Technologies home"
@@ -155,7 +155,7 @@ export default function Navigation() {
             <img
               src="/logos/cr1.png"
               alt="Coreridge Technologies"
-              className="h-10 w-auto object-contain md:h-10 xl:h-12"
+              className="h-10 w-auto max-w-[190px] object-contain"
             />
           </Link>
 
@@ -313,7 +313,7 @@ export default function Navigation() {
 
         <div
           id="mobile-navigation"
-          className={`${mobileMenuOpen ? "block" : "hidden"} max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-slate-100 pb-5 pt-3 lg:hidden`}
+          className={`${mobileMenuOpen ? "block" : "hidden"} max-h-[calc(100dvh-3.5rem)] overflow-y-auto border-t border-slate-100 pb-5 pt-3 lg:hidden`}
         >
           <button
             type="button"
