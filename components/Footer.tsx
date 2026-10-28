@@ -12,7 +12,7 @@ export default function Footer() {
               <img 
                 src="/logos/cr1.png" 
                 alt="Coreridge Technologies Logo" 
-                className="h-10 w-auto object-contain mb-2"
+                className="mb-2 h-10 w-auto rounded bg-white px-2 py-1 object-contain"
               />
               <p className="mt-1 text-blue-200 text-sm max-w-md">
                 Build, transform, secure, and validate the technology your
