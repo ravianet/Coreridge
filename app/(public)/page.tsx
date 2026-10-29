@@ -62,7 +62,7 @@ const capabilities = [
     href: "/services/build",
     linkLabel: "Explore BUILD services",
     icon: Layers3,
-    tone: "bg-blue-50 text-[#184491]",
+    tone: "bg-blue-50 text-brand-navy",
     features: [
       "Network & security hardware",
       "Compute & storage solutions",
@@ -172,12 +172,12 @@ export default function Home() {
 
       <section
         aria-labelledby="client-organizations-title"
-        className="border-y border-slate-100 bg-white px-5 py-10 sm:px-8 sm:py-12 lg:px-10"
+        className="border-b border-slate-100 bg-white px-5 py-7 sm:px-8 sm:py-9 lg:px-10"
       >
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-start justify-between gap-4 text-left sm:flex-row sm:items-end">
             <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#184491]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-navy">
                 Our clients
               </p>
               <h2
@@ -189,7 +189,7 @@ export default function Home() {
             </div>
             <Link
               href="/clients"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#184491] hover:text-[#123975]"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-navy-dark"
             >
               Meet all our clients
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -223,11 +223,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
+      <section className="px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#184491]">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-navy">
                 What we do
               </p>
               <h2 className="mt-3 max-w-xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
@@ -241,38 +241,39 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             {capabilities.map(({ eyebrow, title, description, href, linkLabel, icon: Icon, tone, features }) => (
               <Link
                 key={eyebrow}
                 href={href}
-                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-[0_20px_60px_-32px_rgba(15,42,86,0.3)] sm:p-7"
+                className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-slate-50/60 p-5 transition duration-300 hover:border-blue-200 hover:bg-white hover:shadow-[0_16px_40px_-28px_rgba(15,42,86,0.35)] sm:p-6"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold tracking-[0.16em] text-slate-500">
                     {eyebrow}
                   </span>
-                  <span className={`flex h-11 w-11 items-center justify-center rounded-xl ${tone}`}>
+                  <span className={`flex h-10 w-10 items-center justify-center rounded-xl ${tone}`}>
                     <Icon aria-hidden="true" className="h-5 w-5" />
                   </span>
                 </div>
-                <h3 className="mt-6 min-h-[3.5rem] max-w-md text-xl font-semibold leading-snug tracking-tight text-slate-900 sm:text-2xl">
+                <h3 className="mt-4 max-w-md text-lg font-semibold leading-snug tracking-tight text-slate-900 sm:text-xl">
                   {title}
                 </h3>
-                <p className="mt-3 max-w-lg text-sm leading-6 text-slate-600 sm:text-base">
+                <p className="mt-3 max-w-lg text-sm leading-6 text-slate-600">
                   {description}
                 </p>
-                <ul className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
                   {features.map((feature) => (
                     <li
                       key={feature}
-                      className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-600"
+                      className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-600"
                     >
+                      <span aria-hidden="true" className="h-1 w-1 rounded-full bg-brand-orange" />
                       {feature}
                     </li>
                   ))}
                 </ul>
-                <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold text-[#184491]">
+                <span className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-semibold text-brand-navy">
                   {linkLabel}
                   <ArrowRight
                     aria-hidden="true"
@@ -285,11 +286,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f7f9fc] px-5 py-14 sm:px-8 sm:py-16 lg:px-10">
+      <section className="bg-[#f7f9fc] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div className="max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#184491]">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-navy">
                 Who we work with
               </p>
               <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
@@ -302,30 +303,30 @@ export default function Home() {
             </div>
             <Link
               href="/industries"
-              className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#184491] hover:text-[#123975]"
+              className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-navy-dark"
             >
               See all industries
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
           </div>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {industries.map(({ name, detail, href, icon: Icon }) => (
               <Link
                 key={name}
                 href={href}
-                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg sm:p-6"
+                className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white/80 p-4 transition duration-300 hover:border-blue-200 hover:bg-white hover:shadow-md sm:p-5"
               >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50 text-[#184491]">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-brand-navy">
                   <Icon aria-hidden="true" className="h-5 w-5" />
                 </span>
-                <h3 className="mt-5 text-lg font-semibold text-slate-900">
+                <h3 className="mt-4 text-lg font-semibold text-slate-900">
                   {name}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">
                   {detail}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#184491]">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-navy">
                   Learn more
                   <ArrowUpRight
                     aria-hidden="true"
@@ -338,10 +339,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+      <section className="px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           <div className="max-w-xl">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#184491]">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-navy">
               The Coreridge approach
             </p>
             <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
@@ -354,20 +355,20 @@ export default function Home() {
             </p>
             <Link
               href="/company/why-coreridge"
-              className="mt-7 inline-flex items-center gap-2 rounded-lg text-sm font-semibold text-[#184491] hover:text-[#123975] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#184491]"
+              className="mt-5 inline-flex items-center gap-2 rounded-lg text-sm font-semibold text-brand-navy hover:text-brand-navy-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-navy"
             >
               Why work with Coreridge
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
           </div>
 
-          <div className="space-y-3">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/60 divide-y divide-slate-200">
             {principles.map((principle, index) => (
               <div
                 key={principle.title}
-                className="flex h-full gap-4 rounded-2xl border border-slate-200 bg-white p-5 transition duration-300 hover:border-blue-200 hover:shadow-md sm:gap-5 sm:p-6"
+                className="flex gap-4 p-4 transition-colors hover:bg-white sm:gap-5 sm:p-5"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-50 text-sm font-bold text-[#184491]">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-100/70 text-xs font-bold text-brand-navy">
                   0{index + 1}
                 </span>
                 <div>
@@ -384,43 +385,46 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 pb-14 sm:px-8 sm:pb-16 lg:px-10 lg:pb-20">
-        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[1.75rem] bg-[#102b55] px-6 py-10 text-white sm:px-10 sm:py-12 lg:px-14">
+      <section className="px-5 pb-10 sm:px-8 sm:pb-12 lg:px-10 lg:pb-14">
+        <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[1.5rem] border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-indigo-50 px-6 py-7 sm:px-8 sm:py-9 lg:px-10">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-24 -top-44 h-96 w-96 rounded-full bg-blue-400/20 blur-3xl"
+            className="pointer-events-none absolute -right-28 -top-36 -z-10 h-80 w-80 rounded-full bg-blue-200/35 blur-3xl"
           />
-          <div className="relative flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
             <div className="max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-200">
+              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-navy">
+                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-orange" />
                 Have a project in mind?
               </p>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.035em] text-white sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
                 Let’s make your next move a confident one.
               </h2>
-              <p className="mt-3 text-base leading-7 text-blue-100/85">
+              <p className="mt-3 max-w-xl text-base leading-7 text-slate-600">
                 Tell us where you want to go. We’ll help you explore a practical
                 way to get there.
               </p>
             </div>
-            <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-[#102b55] transition hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand-navy px-5 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-900/15 transition hover:-translate-y-0.5 hover:bg-brand-navy-dark hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
               >
                 Start a conversation
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/30 px-5 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-blue-300 hover:bg-white hover:text-brand-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
               >
                 Browse services
               </Link>
             </div>
           </div>
-          <div className="relative mt-10 flex items-center gap-2 border-t border-white/15 pt-5 text-xs font-medium text-blue-100/80 sm:text-sm">
-            <Check aria-hidden="true" className="h-4 w-4 text-emerald-300" />
+          <div className="mt-6 flex items-center gap-2 border-t border-blue-200/70 pt-4 text-xs font-medium text-slate-600 sm:text-sm">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+              <Check aria-hidden="true" className="h-3.5 w-3.5" />
+            </span>
             No pressure—just a thoughtful first conversation.
           </div>
         </div>

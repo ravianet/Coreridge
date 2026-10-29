@@ -37,7 +37,7 @@ export default function ClientsPage() {
               transition={{ delay: 0.2 }}
               className="text-center"
             >
-              <h1 className="inline-block px-8 py-4 bg-gradient-to-r from-[#184491] via-[#2563eb] to-[#3b82f6] text-white rounded-full text-lg font-bold mb-6 shadow-xl shadow-[#184491]/30 border-2 border-white/30">
+              <h1 className="inline-block px-8 py-4 bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy-mid text-white rounded-full text-lg font-bold mb-6 shadow-xl shadow-brand-navy/30 border-2 border-white/30">
                 🤝 Our Valued Clients
               </h1>
               <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-8">
@@ -46,13 +46,13 @@ export default function ClientsPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-[#184491] to-[#2563eb] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300"
+                  className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
                 >
                   Become a Client
                 </Link>
                 <Link 
                   href="/services"
-                  className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-[#184491] font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
+                  className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
                 >
                   Explore Our Services
                 </Link>
@@ -106,7 +106,7 @@ export default function ClientsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
               Ready to Join Our Client Family?
             </h2>
             <p className="text-xl text-gray-700 mb-10">
@@ -114,7 +114,7 @@ export default function ClientsPage() {
             </p>
             <Link 
               href="/contact"
-              className="inline-block px-8 py-4 bg-gradient-to-r from-[#184491] to-[#2563eb] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300"
+              className="inline-block px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
             >
               Start Your Journey Today
             </Link>

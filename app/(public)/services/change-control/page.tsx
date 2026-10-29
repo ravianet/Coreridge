@@ -51,10 +51,10 @@ export default function ChangeControlPage() {
             transition={{ delay: 0.2 }}
             className="text-center"
           >
-            <span className="inline-block px-4 py-2 bg-[#184491]/10 text-[#184491] rounded-full text-sm font-semibold mb-6">
+            <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
               📋 Change Control & CAPA
             </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#184491] mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
               Change Control & CAPA Excellence
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
@@ -63,13 +63,13 @@ export default function ChangeControlPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-[#184491] to-[#2563eb] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300"
+                className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
               >
                 Discuss Your Compliance Needs
               </Link>
               <Link 
                 href="#solutions"
-                className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-[#184491] font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
+                className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
               >
                 View Services
               </Link>
@@ -87,7 +87,7 @@ export default function ChangeControlPage() {
             viewport={{ once: true }}
             className="text-center mb-10"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#184491] mb-4">Change Control & CAPA Services</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Change Control & CAPA Services</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Comprehensive solutions for managing changes and quality issues in regulated environments.
             </p>
@@ -102,14 +102,14 @@ export default function ChangeControlPage() {
                 transition={{ delay: index * 0.15 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-gray-50 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300"
+                className="bg-gray-50 backdrop-blur-sm p-6 rounded-2xl border border-gray-200 hover:border-brand-navy/50 transition-all duration-300"
               >
                 <span className="text-5xl mb-6 block">{solution.icon}</span>
-                <h3 className="text-2xl font-bold text-[#184491] mb-3">{solution.title}</h3>
+                <h3 className="text-2xl font-bold text-brand-navy mb-3">{solution.title}</h3>
                 <p className="text-gray-700 mb-6">{solution.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {solution.features.map((feature, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-[#184491]/10 text-[#184491] rounded-full text-sm">
+                    <span key={idx} className="px-3 py-1 bg-brand-navy/10 text-brand-navy rounded-full text-sm">
                       {feature}
                     </span>
                   ))}
@@ -121,7 +121,7 @@ export default function ChangeControlPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-14 md:py-16 px-6 bg-[#184491]">
+      <section className="py-14 md:py-16 px-6 bg-brand-navy">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +136,7 @@ export default function ChangeControlPage() {
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-8 py-4 bg-white text-[#184491] font-semibold rounded-xl hover:shadow-lg hover:shadow-white/30 transition-all duration-300 text-lg"
+            className="inline-block px-8 py-4 bg-white text-brand-navy font-semibold rounded-xl hover:shadow-lg hover:shadow-white/30 transition-all duration-300 text-lg"
           >
             Start Your Compliance Journey
           </Link>

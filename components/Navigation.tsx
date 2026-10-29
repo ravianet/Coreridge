@@ -132,8 +132,8 @@ export default function Navigation() {
   const menuButtonClass = (menu: MenuName) =>
     `flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2.5 text-left text-[15px] font-medium transition-colors lg:w-auto lg:justify-center lg:px-3 lg:py-2 ${
       openMenu === menu || (menu === "services" ? pathname.startsWith("/services") : pathname.startsWith("/industries"))
-        ? "bg-slate-100 text-[#184491]"
-        : "text-slate-700 hover:bg-slate-50 hover:text-[#184491]"
+        ? "bg-slate-100 text-brand-navy"
+        : "text-slate-700 hover:bg-slate-50 hover:text-brand-navy"
     }`;
 
   return (
@@ -149,7 +149,7 @@ export default function Navigation() {
           <Link
             href="/"
             aria-label="Coreridge Technologies home"
-            className="flex shrink-0 items-center rounded-md transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#184491] focus-visible:ring-offset-2"
+            className="flex shrink-0 items-center rounded-md transition-transform duration-200 hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy focus-visible:ring-offset-2"
             onClick={closeMenus}
           >
             <img
@@ -183,13 +183,13 @@ export default function Navigation() {
                           href={pillar.href}
                           onClick={closeMenus}
                           aria-current={isActive(pillar.href) ? "page" : undefined}
-                          className={`group rounded-lg border p-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#184491] ${
+                          className={`group rounded-lg border p-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy ${
                             isActive(pillar.href)
                               ? "border-blue-200 bg-blue-50"
                               : "border-slate-200 hover:border-blue-200 hover:bg-blue-50/60"
                           }`}
                         >
-                          <span className="block text-sm font-bold tracking-wide text-[#184491]">{pillar.name}</span>
+                          <span className="block text-sm font-bold tracking-wide text-brand-navy">{pillar.name}</span>
                           <span className="mt-1 block text-xs leading-relaxed text-slate-600">{pillar.description}</span>
                         </Link>
                       ))}
@@ -202,7 +202,7 @@ export default function Navigation() {
                             key={service.name}
                             href={service.href}
                             onClick={closeMenus}
-                            className="rounded-md px-2 py-2 text-sm text-slate-700 transition-colors hover:bg-slate-50 hover:text-[#184491] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#184491]"
+                            className="rounded-md px-2 py-2 text-sm text-slate-700 transition-colors hover:bg-slate-50 hover:text-brand-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy"
                           >
                             {service.name}
                           </Link>
@@ -212,7 +212,7 @@ export default function Navigation() {
                     <Link
                       href="/services"
                       onClick={closeMenus}
-                      className="mt-2 block border-t border-slate-100 px-2 pt-3 text-sm font-semibold text-[#184491] hover:text-[#12366f]"
+                      className="mt-2 block border-t border-slate-100 px-2 pt-3 text-sm font-semibold text-brand-navy hover:text-brand-navy-dark"
                     >
                       Explore all services <span aria-hidden="true">→</span>
                     </Link>
@@ -254,7 +254,7 @@ export default function Navigation() {
                     <Link
                       href="/industries"
                       onClick={closeMenus}
-                      className="mt-2 block border-t border-slate-100 px-3 pt-3 text-sm font-semibold text-[#184491] hover:text-[#12366f]"
+                      className="mt-2 block border-t border-slate-100 px-3 pt-3 text-sm font-semibold text-brand-navy hover:text-brand-navy-dark"
                     >
                       Explore all industries <span aria-hidden="true">→</span>
                     </Link>
@@ -269,10 +269,10 @@ export default function Navigation() {
                 href={link.href}
                 aria-current={isActive(link.href) ? "page" : undefined}
                 onClick={closeMenus}
-                className={`whitespace-nowrap rounded-lg px-2.5 py-2 text-[15px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#184491] focus-visible:ring-offset-2 ${
+                className={`whitespace-nowrap rounded-lg px-2.5 py-2 text-[15px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy focus-visible:ring-offset-2 ${
                   isActive(link.href)
-                    ? "bg-slate-100 text-[#184491]"
-                    : "text-slate-700 hover:bg-slate-50 hover:text-[#184491]"
+                    ? "bg-slate-100 text-brand-navy"
+                    : "text-slate-700 hover:bg-slate-50 hover:text-brand-navy"
                 }`}
               >
                 {link.name}
@@ -282,7 +282,7 @@ export default function Navigation() {
             <Link
               href="/start"
               onClick={closeMenus}
-              className="ml-2 inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-lg bg-[#184491] px-4 text-[15px] font-semibold text-white shadow-sm transition-colors hover:bg-[#12366f] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#184491] focus-visible:ring-offset-2"
+              className="ml-2 inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-lg bg-brand-navy px-4 text-[15px] font-semibold text-white shadow-sm transition-colors hover:bg-brand-navy-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy focus-visible:ring-offset-2"
             >
               Get Started
             </Link>
@@ -297,7 +297,7 @@ export default function Navigation() {
               setMobileMenuOpen((open) => !open);
               setOpenMenu(null);
             }}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#184491] lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg text-slate-700 transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-navy lg:hidden"
           >
             {mobileMenuOpen ? (
               <svg aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -333,7 +333,7 @@ export default function Navigation() {
                   onClick={closeMenus}
                   className="block rounded-md px-3 py-2 transition-colors hover:bg-slate-50"
                 >
-                  <span className="block text-sm font-semibold text-[#184491]">{pillar.name}</span>
+                  <span className="block text-sm font-semibold text-brand-navy">{pillar.name}</span>
                   <span className="mt-0.5 block text-xs text-slate-500">{pillar.description}</span>
                 </Link>
               ))}
@@ -343,12 +343,12 @@ export default function Navigation() {
                   key={service.name}
                   href={service.href}
                   onClick={closeMenus}
-                  className="block rounded-md px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#184491]"
+                  className="block rounded-md px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-navy"
                 >
                   {service.name}
                 </Link>
               ))}
-              <Link href="/services" onClick={closeMenus} className="block px-3 py-2 text-sm font-semibold text-[#184491]">
+              <Link href="/services" onClick={closeMenus} className="block px-3 py-2 text-sm font-semibold text-brand-navy">
                 Explore all services →
               </Link>
             </div>
@@ -369,12 +369,12 @@ export default function Navigation() {
                   key={industry.name}
                   href={industry.href}
                   onClick={closeMenus}
-                  className="block rounded-md px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-[#184491]"
+                  className="block rounded-md px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-brand-navy"
                 >
                   {industry.name}
                 </Link>
               ))}
-              <Link href="/industries" onClick={closeMenus} className="block px-3 py-2 text-sm font-semibold text-[#184491]">
+              <Link href="/industries" onClick={closeMenus} className="block px-3 py-2 text-sm font-semibold text-brand-navy">
                 Explore all industries →
               </Link>
             </div>
@@ -387,7 +387,7 @@ export default function Navigation() {
               aria-current={isActive(link.href) ? "page" : undefined}
               onClick={closeMenus}
               className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
-                isActive(link.href) ? "bg-slate-100 text-[#184491]" : "text-slate-700 hover:bg-slate-50"
+                isActive(link.href) ? "bg-slate-100 text-brand-navy" : "text-slate-700 hover:bg-slate-50"
               }`}
             >
               {link.name}
@@ -396,7 +396,7 @@ export default function Navigation() {
           <Link
             href="/start"
             onClick={closeMenus}
-            className="mt-3 flex min-h-11 items-center justify-center rounded-lg bg-[#184491] px-4 text-sm font-semibold text-white transition-colors hover:bg-[#12366f]"
+            className="mt-3 flex min-h-11 items-center justify-center rounded-lg bg-brand-navy px-4 text-sm font-semibold text-white transition-colors hover:bg-brand-navy-dark"
           >
             Get Started
           </Link>

@@ -73,10 +73,10 @@ export default function SecurePage() {
             transition={{ delay: 0.2 }}
             className="text-center"
           >
-            <span className="inline-block px-4 py-2 bg-[#184491]/10 text-[#184491] rounded-full text-sm font-semibold mb-6">
+            <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
               <Shield aria-hidden="true" className="mr-2 inline h-4 w-4" /> SECURE · CYBERSECURITY
             </span>
-            <h1 className="mb-5 text-4xl font-bold tracking-tight text-[#184491] md:text-5xl lg:text-6xl">
+            <h1 className="mb-5 text-4xl font-bold tracking-tight text-brand-navy md:text-5xl lg:text-6xl">
               Enterprise Cybersecurity
             </h1>
             <p className="mx-auto mb-7 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
@@ -85,13 +85,13 @@ export default function SecurePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact"
-                className="rounded-xl bg-[#184491] px-6 py-3 font-semibold text-white transition hover:bg-[#12366f]"
+                className="rounded-xl bg-brand-navy px-6 py-3 font-semibold text-white transition hover:bg-brand-navy-dark"
               >
                 Schedule Security Assessment
               </Link>
               <Link 
                 href="#services"
-                className="rounded-xl border border-[#184491]/20 bg-white/80 px-6 py-3 font-semibold text-[#184491] transition hover:bg-white"
+                className="rounded-xl border border-brand-navy/20 bg-white/80 px-6 py-3 font-semibold text-brand-navy transition hover:bg-white"
               >
                 Explore Security Services
               </Link>
@@ -111,7 +111,7 @@ export default function SecurePage() {
                 viewport={{ once: true }}
                 className="flex items-center justify-center gap-2 text-center text-sm font-semibold text-slate-700 md:text-base"
               >
-                <item.icon aria-hidden="true" className="h-5 w-5 shrink-0 text-[#184491]" />
+                <item.icon aria-hidden="true" className="h-5 w-5 shrink-0 text-brand-navy" />
                 {item.label}
               </motion.div>
             ))}
@@ -128,7 +128,7 @@ export default function SecurePage() {
             viewport={{ once: true }}
             className="mb-9 text-center"
           >
-            <h2 className="mb-3 text-3xl font-bold text-[#184491] md:text-4xl">Security, aligned to your needs</h2>
+            <h2 className="mb-3 text-3xl font-bold text-brand-navy md:text-4xl">Security, aligned to your needs</h2>
             <p className="mx-auto max-w-3xl text-slate-600 md:text-lg">
               Strengthen networks, endpoints, data, and operations with security services shaped around your environment and priorities.
             </p>
@@ -143,15 +143,15 @@ export default function SecurePage() {
                 transition={{ delay: index * 0.15 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#184491]/30 hover:shadow-md"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-navy/30 hover:shadow-md"
               >
-                <service.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <service.icon aria-hidden="true" className="mb-4 h-6 w-6 text-brand-navy" />
                 <h3 className="mb-3 text-xl font-bold text-slate-900">{service.title}</h3>
                 <p className="mb-5 text-sm leading-6 text-slate-600">{service.description}</p>
                 <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
                   {service.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-sm text-slate-600">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#184491]" />
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-navy" />
                       {feature}
                     </li>
                   ))}
@@ -163,7 +163,7 @@ export default function SecurePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#184491] px-6 py-12 md:py-14">
+      <section className="bg-brand-navy px-6 py-12 md:py-14">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -178,7 +178,7 @@ export default function SecurePage() {
           </p>
           <Link 
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[#184491] transition hover:bg-blue-50"
+            className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-brand-navy transition hover:bg-blue-50"
           >
             Talk to our team <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>

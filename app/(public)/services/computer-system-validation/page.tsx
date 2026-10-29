@@ -77,7 +77,7 @@ export default function ComputerSystemValidationPage() {
           >
             <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
               Computer System Validation
-                <span className="block text-[#184491]">
+                <span className="block text-brand-navy">
                   Ensuring Regulatory Compliance
                 </span>
               </h1>
@@ -99,7 +99,7 @@ export default function ComputerSystemValidationPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-4">Core Capabilities</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Core Capabilities</h2>
             <p className="text-gray-700 max-w-2xl mx-auto">
               End-to-end validation services that ensure your critical systems meet all regulatory requirements
             </p>
@@ -113,14 +113,14 @@ export default function ComputerSystemValidationPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 bg-white rounded-2xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300 shadow-sm"
+                className="p-6 bg-white rounded-2xl border border-gray-200 hover:border-brand-navy/50 transition-all duration-300 shadow-sm"
               >
                 <div className="text-4xl mb-4">{capability.icon}</div>
-                <h3 className="text-2xl font-bold text-[#184491] mb-3">{capability.title}</h3>
+                <h3 className="text-2xl font-bold text-brand-navy mb-3">{capability.title}</h3>
                 <p className="text-gray-700 mb-6">{capability.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {capability.features.map((feature) => (
-                    <span key={feature} className="px-3 py-1 bg-[#184491]/10 text-[#184491] rounded-full text-sm">
+                    <span key={feature} className="px-3 py-1 bg-brand-navy/10 text-brand-navy rounded-full text-sm">
                       {feature}
                     </span>
                   ))}
@@ -141,7 +141,7 @@ export default function ComputerSystemValidationPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-10"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#184491] mb-4">Our Validation Process</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Our Validation Process</h2>
             <p className="text-gray-700 max-w-2xl mx-auto">
               A proven, systematic approach to ensure complete compliance and documentation
             </p>
@@ -157,7 +157,7 @@ export default function ComputerSystemValidationPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="p-6 bg-gray-50 rounded-xl border border-gray-200 shadow-sm"
               >
-                <div className="text-4xl font-bold text-[#184491] mb-3">
+                <div className="text-4xl font-bold text-brand-navy mb-3">
                   {step.step}
                 </div>
                 <h3 className="text-xl font-semibold text-black mb-2">{step.title}</h3>
@@ -169,7 +169,7 @@ export default function ComputerSystemValidationPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-14 md:py-16 px-6 bg-[#184491]">
+      <section className="py-14 md:py-16 px-6 bg-brand-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -183,7 +183,7 @@ export default function ComputerSystemValidationPage() {
             </p>
             <Link 
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-[#184491] font-semibold rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg shadow-white/25"
+              className="inline-block px-8 py-4 bg-white text-brand-navy font-semibold rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg shadow-white/25"
             >
               Get Started with CSV
             </Link>

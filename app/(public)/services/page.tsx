@@ -126,7 +126,7 @@ export default function ServicesPage() {
                 <div className="lg:col-span-3 space-y-8">
                   {/* Key Capabilities */}
                   <div>
-                    <h4 className="text-xl font-semibold text-[#184491] mb-6">Key Capabilities</h4>
+                    <h4 className="text-xl font-semibold text-brand-navy mb-6">Key Capabilities</h4>
                     <div className="grid md:grid-cols-2 gap-4">
                       {service.features.map((feature, fIndex) => (
                         <motion.div
@@ -135,9 +135,9 @@ export default function ServicesPage() {
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: true }}
                           transition={{ delay: index * 0.12 + fIndex * 0.08 }}
-                          className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-[#184491]/50 transition-all"
+                          className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200 hover:border-brand-navy/50 transition-all"
                         >
-                          <div className="w-3 h-3 rounded-full bg-[#184491]" />
+                          <div className="w-3 h-3 rounded-full bg-brand-navy" />
                           <span className="text-gray-700 font-medium">{feature}</span>
                         </motion.div>
                       ))}
@@ -147,7 +147,7 @@ export default function ServicesPage() {
                   {/* Specialized Sub-Services */}
                   {service.subServices && (
                     <div>
-                      <h4 className="text-xl font-semibold text-[#184491] mb-6">Specialized Sub-Services</h4>
+                      <h4 className="text-xl font-semibold text-brand-navy mb-6">Specialized Sub-Services</h4>
                       <div className="grid md:grid-cols-2 gap-4">
                         {service.subServices.map((subService, sIndex) => (
                           <motion.a
@@ -158,11 +158,11 @@ export default function ServicesPage() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.12 + (service.features.length + sIndex) * 0.08 }}
                             whileHover={{ scale: 1.02 }}
-                            className="flex items-center gap-4 p-5 bg-white rounded-xl border border-gray-200 hover:border-[#184491]/50 transition-all cursor-pointer group"
+                            className="flex items-center gap-4 p-5 bg-white rounded-xl border border-gray-200 hover:border-brand-navy/50 transition-all cursor-pointer group"
                           >
-                            <div className="w-3 h-3 rounded-full bg-[#184491]" />
-                            <span className="text-gray-700 font-medium group-hover:text-[#184491] transition-colors">{subService.name}</span>
-                            <svg className="w-4 h-4 ml-auto text-gray-400 group-hover:text-[#184491] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <div className="w-3 h-3 rounded-full bg-brand-navy" />
+                            <span className="text-gray-700 font-medium group-hover:text-brand-navy transition-colors">{subService.name}</span>
+                            <svg className="w-4 h-4 ml-auto text-gray-400 group-hover:text-brand-navy group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                             </svg>
                           </motion.a>
@@ -182,7 +182,7 @@ export default function ServicesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.7 }}
-          className="mt-32 text-center py-24 px-6 bg-[#184491] rounded-2xl"
+          className="mt-32 text-center py-24 px-6 bg-brand-navy rounded-2xl"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Transform Your Enterprise?</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">

@@ -131,7 +131,7 @@ export default function GetStartedPage() {
   ];
 
   const inputClassName =
-    "mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-[#184491] focus:ring-4 focus:ring-[#184491]/10";
+    "mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-brand-navy focus:ring-4 focus:ring-brand-navy/10";
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#f5f8fc] px-4 pb-16 pt-28 sm:px-6 sm:pb-20 lg:px-8">
@@ -151,13 +151,13 @@ export default function GetStartedPage() {
           transition={{ duration: 0.45 }}
           className="mb-9 text-center sm:mb-12"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#184491] shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-brand-navy shadow-sm">
             <Sparkles aria-hidden="true" className="h-4 w-4" />
             Start a conversation
           </span>
           <h1 className="mt-5 text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-5xl">
             Let’s make your next move
-            <span className="block text-[#184491]">a confident one.</span>
+            <span className="block text-brand-navy">a confident one.</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg">
             Share a little about what you’re planning. We’ll review your
@@ -170,7 +170,7 @@ export default function GetStartedPage() {
             initial={{ opacity: 0, x: -16 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.45, delay: 0.08 }}
-            className="overflow-hidden rounded-3xl bg-[#102b55] p-6 text-white shadow-xl shadow-blue-950/10 sm:p-8 lg:sticky lg:top-24"
+            className="overflow-hidden rounded-3xl bg-brand-navy p-6 text-white shadow-xl shadow-blue-950/10 sm:p-8 lg:sticky lg:top-24"
           >
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-blue-200">
               Build · Transform · Secure · Validate
@@ -233,7 +233,7 @@ export default function GetStartedPage() {
             ) : (
               <>
                 <div className="mb-7 border-b border-slate-100 pb-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#184491]">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-navy">
                     Project enquiry
                   </p>
                   <h2
@@ -407,7 +407,7 @@ export default function GetStartedPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="group flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-[#184491] px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-950/15 transition hover:-translate-y-0.5 hover:bg-[#123975] hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#184491] disabled:cursor-not-allowed disabled:opacity-60"
+                    className="group flex min-h-14 w-full items-center justify-center gap-2 rounded-xl bg-brand-navy px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-950/15 transition hover:-translate-y-0.5 hover:bg-brand-navy-dark hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     {submitting ? "Sending your request..." : "Send project enquiry"}
                     {!submitting && (

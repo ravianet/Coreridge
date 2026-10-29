@@ -73,9 +73,9 @@ export default function AboutUs() {
           <p className="text-gray-600 font-medium tracking-wide text-sm">About Coreridge</p>
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-10 leading-[1.05] tracking-tight">
-          <span className="text-[#184491]">Building technology</span>
+          <span className="text-brand-navy">Building technology</span>
           <br />
-          <span className="bg-gradient-to-r from-[#184491] to-[#2563eb] bg-clip-text text-transparent">that moves businesses forward</span>
+          <span className="bg-gradient-to-r from-brand-navy to-brand-navy-light bg-clip-text text-transparent">that moves businesses forward</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-light">
           We're a team of engineers, designers, and strategists dedicated to creating enterprise solutions that deliver real, measurable results.
@@ -301,7 +301,7 @@ export default function AboutUs() {
                     <ellipse cx="72" cy="60" rx="9" ry="5" fill="#ffb3b3" opacity="0.8" />
                     
                     {/* Modern stylish casual professional top */}
-                    <path d="M20 78 Q50 68 80 78 L76 100 L24 100 Z" fill="#2563eb" />
+                    <path d="M20 78 Q50 68 80 78 L76 100 L24 100 Z" fill="#1C376D" />
                     {/* Modern crop-style collar */}
                     <path d="M35 78 L50 74 L65 78" stroke="#93c5fd" strokeWidth="2" fill="none" />
                     <circle cx="50" cy="82" r="2" fill="#D0B77B" />
@@ -324,7 +324,7 @@ export default function AboutUs() {
                 )}
               </div>
               <h3 className="text-2xl font-bold text-black mb-2">{member.name}</h3>
-              <p className="text-[#184491] font-semibold mb-4">{member.role}</p>
+              <p className="text-brand-navy font-semibold mb-4">{member.role}</p>
               <p className="text-gray-600 text-sm leading-relaxed">{member.description}</p>
             </motion.div>
             );
@@ -341,14 +341,14 @@ export default function AboutUs() {
         transition={{ duration: 0.9 }}
         className="mx-6 mb-16 text-center"
       >
-        <div className="shadow-xl rounded-3xl overflow-hidden bg-gradient-to-r from-[#184491] via-[#2563eb] to-[#3b82f6] border border-white/20 p-12 md:p-16">
+        <div className="shadow-xl rounded-3xl overflow-hidden bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy-mid border border-white/20 p-12 md:p-16">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Ready to transform your business?</h2>
         <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 leading-relaxed">
           Let's discuss how we can help you achieve your digital transformation goals.
         </p>
         <Link
           href="/start"
-          className="inline-flex items-center px-8 py-4 bg-white text-[#184491] text-sm font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+          className="inline-flex items-center px-8 py-4 bg-white text-brand-navy text-sm font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           Get Started
         </Link>

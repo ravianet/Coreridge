@@ -65,7 +65,7 @@ export default function PharmaPage() {
         animate={{ opacity: 1 }}
         className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-[#184491]/5 to-blue-400/5" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/5 to-blue-400/5" />
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -73,10 +73,10 @@ export default function PharmaPage() {
             transition={{ delay: 0.2 }}
             className="text-center"
           >
-            <span className="inline-block px-4 py-2 bg-[#184491]/10 text-[#184491] rounded-full text-sm font-semibold mb-6">
+            <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
               💊 Pharma & Life Sciences
             </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#184491] mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
               Technology for Life Sciences
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
@@ -85,13 +85,13 @@ export default function PharmaPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-[#184491] to-[#2563eb] text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-[#184491]/30 transition-all duration-300"
+                className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
               >
                 Discuss Your Project
               </Link>
               <Link 
                 href="#solutions"
-                className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-[#184491] font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
+                className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
               >
                 View Solutions
               </Link>
@@ -110,7 +110,7 @@ export default function PharmaPage() {
             className="grid md:grid-cols-2 gap-16 items-center"
           >
             <div>
-              <h2 className="text-4xl font-bold text-[#184491] mb-6">Understanding Pharmaceutical Challenges</h2>
+              <h2 className="text-4xl font-bold text-brand-navy mb-6">Understanding Pharmaceutical Challenges</h2>
               <p className="text-lg text-gray-700 mb-6">
                 Life sciences organizations face unique challenges combining cutting-edge research with strict regulatory requirements. Our solutions are designed specifically to address these complex needs.
               </p>
@@ -123,7 +123,7 @@ export default function PharmaPage() {
                   "Digital transformation while maintaining continuous compliance"
                 ].map((item, index) => (
                   <li key={index} className="flex items-start text-gray-700">
-                    <span className="w-6 h-6 bg-[#184491]/10 text-[#184491] rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm">✓</span>
+                    <span className="w-6 h-6 bg-brand-navy/10 text-brand-navy rounded-full flex items-center justify-center mr-3 mt-0.5 text-sm">✓</span>
                     {item}
                   </li>
                 ))}
@@ -164,14 +164,14 @@ export default function PharmaPage() {
                 transition={{ delay: index * 0.15 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-white backdrop-blur-sm p-8 rounded-2xl border border-gray-200 hover:border-[#184491]/50 transition-all duration-300 shadow-sm"
+                className="bg-white backdrop-blur-sm p-8 rounded-2xl border border-gray-200 hover:border-brand-navy/50 transition-all duration-300 shadow-sm"
               >
                 <span className="text-5xl mb-6 block">{solution.icon}</span>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{solution.title}</h3>
                 <p className="text-gray-700 mb-6">{solution.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {solution.features.map((feature, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-[#184491]/10 text-[#184491] rounded-full text-sm">
+                    <span key={idx} className="px-3 py-1 bg-brand-navy/10 text-brand-navy rounded-full text-sm">
                       {feature}
                     </span>
                   ))}
@@ -214,7 +214,7 @@ export default function PharmaPage() {
                 />
                 <div className="p-8">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{study.title}</h3>
-                  <p className="text-[#184491] mb-3">{study.client}</p>
+                  <p className="text-brand-navy mb-3">{study.client}</p>
                   <p className="text-gray-700">{study.outcome}</p>
                 </div>
               </motion.div>
@@ -224,7 +224,7 @@ export default function PharmaPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-[#184491]">
+      <section className="py-24 px-6 bg-brand-navy">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -239,7 +239,7 @@ export default function PharmaPage() {
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-10 py-5 bg-white text-[#184491] font-semibold rounded-xl hover:shadow-lg hover:shadow-white/30 transition-all duration-300 text-lg"
+            className="inline-block px-10 py-5 bg-white text-brand-navy font-semibold rounded-xl hover:shadow-lg hover:shadow-white/30 transition-all duration-300 text-lg"
           >
             Start Your Project
           </Link>

@@ -82,18 +82,18 @@ export default function TransformPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mx-auto mb-12 max-w-4xl text-center md:mb-14"
         >
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-wide text-[#184491]">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-wide text-brand-navy">
             <BrainCircuit aria-hidden="true" className="h-4 w-4" />
             TRANSFORM · SOFTWARE & AI
           </span>
           <h1 className="mb-5 text-4xl font-bold tracking-tight text-slate-950 md:text-5xl lg:text-6xl">
             Make technology work
-            <span className="block text-[#184491]">smarter for your business.</span>
+            <span className="block text-brand-navy">smarter for your business.</span>
           </h1>
           <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
             Move from manual work to connected digital operations with practical software, AI, and transformation services.
           </p>
-          <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#184491] px-6 py-3 font-semibold text-white transition hover:bg-[#12366f]">
+          <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-brand-navy px-6 py-3 font-semibold text-white transition hover:bg-brand-navy-dark">
             Explore your next step <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </motion.div>
@@ -105,7 +105,7 @@ export default function TransformPage() {
           transition={{ delay: 0.2 }}
           className="mb-10 md:mb-12"
         >
-          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Software & enterprise platforms</h2>
+          <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Software & enterprise platforms</h2>
           <div className="grid gap-5 md:grid-cols-2">
             {developmentServices.map((service, index) => (
               <motion.div
@@ -113,18 +113,18 @@ export default function TransformPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#184491]/30 hover:shadow-md"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-navy/30 hover:shadow-md"
               >
-                <service.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <service.icon aria-hidden="true" className="mb-4 h-6 w-6 text-brand-navy" />
                 <h3 className="mb-3 text-xl font-bold text-slate-900">{service.title}</h3>
                 <p className="mb-5 leading-relaxed text-slate-600">{service.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {service.techStack ? service.techStack.map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-xs font-medium bg-[#184491]/10 rounded-full text-[#184491] border border-[#184491]/30">
+                    <span key={tech} className="px-3 py-1 text-xs font-medium bg-brand-navy/10 rounded-full text-brand-navy border border-brand-navy/30">
                       {tech}
                     </span>
                   )) : service.features?.map((feature) => (
-                    <span key={feature} className="px-3 py-1 text-xs font-medium bg-[#184491]/10 rounded-full text-[#184491] border border-[#184491]/30">
+                    <span key={feature} className="px-3 py-1 text-xs font-medium bg-brand-navy/10 rounded-full text-brand-navy border border-brand-navy/30">
                       {feature}
                     </span>
                   ))}
@@ -142,7 +142,7 @@ export default function TransformPage() {
           transition={{ delay: 0.4 }}
           className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
         >
-          <h2 className="mb-3 text-2xl font-bold text-[#184491] md:text-3xl">AI & intelligent automation</h2>
+          <h2 className="mb-3 text-2xl font-bold text-brand-navy md:text-3xl">AI & intelligent automation</h2>
           <p className="mb-6 max-w-3xl leading-7 text-slate-600 md:text-lg">
             Identify focused opportunities to apply analytics, computer vision, and automation to everyday workflows.
           </p>
@@ -153,9 +153,9 @@ export default function TransformPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5 + index * 0.05 }}
-                className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#184491]/30"
+                className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-brand-navy/30"
               >
-                <ai.icon aria-hidden="true" className="mb-3 h-5 w-5 text-[#184491]" />
+                <ai.icon aria-hidden="true" className="mb-3 h-5 w-5 text-brand-navy" />
                 <h3 className="mb-2 text-base font-bold text-slate-900">{ai.title}</h3>
                 <p className="text-slate-600 text-sm leading-relaxed">{ai.description}</p>
               </motion.div>
@@ -170,7 +170,7 @@ export default function TransformPage() {
           transition={{ delay: 0.6 }}
           className="mb-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:mb-12 md:p-8"
         >
-          <h2 className="mb-3 text-2xl font-bold text-[#184491] md:text-3xl">Business digital transformation</h2>
+          <h2 className="mb-3 text-2xl font-bold text-brand-navy md:text-3xl">Business digital transformation</h2>
           <p className="mb-6 max-w-3xl leading-7 text-slate-600 md:text-lg">
             Moving legacy manual workflows to secure, cloud-hosted digital platforms. We help you make a smooth transition to modern, digital-first operations while maintaining business continuity.
           </p>
@@ -194,7 +194,7 @@ export default function TransformPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
-          className="rounded-2xl bg-[#184491] px-6 py-10 text-center md:py-12"
+          className="rounded-2xl bg-brand-navy px-6 py-10 text-center md:py-12"
         >
           <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl">Ready to transform your business?</h2>
           <p className="mx-auto mb-7 max-w-2xl text-lg text-blue-100">
@@ -202,7 +202,7 @@ export default function TransformPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-[#184491] transition hover:bg-blue-50"
+            className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-brand-navy transition hover:bg-blue-50"
           >
             Start a conversation <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>

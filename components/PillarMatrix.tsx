@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { motion } from "framer-motion";
 
 const strategicPillars = [
@@ -66,7 +66,7 @@ export default function PillarMatrix() {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ y: -8, scale: 1.02 }}
-            className="relative bg-white rounded-2xl p-8 border border-gray-200 transition-all duration-500 overflow-hidden group cursor-pointer block hover:border-[#184491]/40 shadow-sm hover:shadow-lg"
+            className="relative bg-white rounded-2xl p-8 border border-gray-200 transition-all duration-500 overflow-hidden group cursor-pointer block hover:border-brand-navy/40 shadow-sm hover:shadow-lg"
           >
             <div className={`absolute inset-0 bg-gradient-to-br ${pillar.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
             <div className="relative z-10">
@@ -78,7 +78,7 @@ export default function PillarMatrix() {
               <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{pillar.description}</p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {pillar.features.map((feature) => (
-                  <span key={feature} className="px-3 py-1 text-xs font-medium bg-[#184491]/10 rounded-full text-[#184491] border border-[#184491]/20">
+                  <span key={feature} className="px-3 py-1 text-xs font-medium bg-brand-navy/10 rounded-full text-brand-navy border border-brand-navy/20">
                     {feature}
                   </span>
                 ))}

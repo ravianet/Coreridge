@@ -291,7 +291,7 @@ export default function WhyCoreRidgePage() {
             transition={{ duration: 0.8 }}
             className="mx-auto max-w-4xl text-center"
           >
-            <span className="mb-5 inline-flex items-center gap-3 rounded-full border border-blue-100 bg-white/90 py-1.5 pl-1.5 pr-4 text-sm font-semibold text-[#184491] shadow-sm">
+            <span className="mb-5 inline-flex items-center gap-3 rounded-full border border-blue-100 bg-white/90 py-1.5 pl-1.5 pr-4 text-sm font-semibold text-brand-navy shadow-sm">
               <IconTile icon={Sparkles} artwork="innovation" secondaryIcon={CircleCheck} accent="blue" size="sm" />
               Your partner for technology that works
             </span>
@@ -416,7 +416,7 @@ export default function WhyCoreRidgePage() {
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
                 <figcaption className="mt-7 flex items-center gap-3 border-t border-slate-100 pt-5">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#184491]/10 text-sm font-bold text-[#184491]">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-navy/10 text-sm font-bold text-brand-navy">
                     {testimonial.mark}
                   </span>
                   <span>

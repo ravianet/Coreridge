@@ -18,7 +18,7 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px",
-          background: "linear-gradient(135deg, #071b3a 0%, #123b73 58%, #542d91 100%)",
+          background: "linear-gradient(135deg, #06143D 0%, #102653 58%, #030B22 100%)",
           color: "#ffffff",
           fontFamily: "Arial",
         }}
@@ -31,9 +31,9 @@ export default function OpenGraphImage() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              border: "2px solid #67e8f9",
+              border: "2px solid #F4B183",
               borderRadius: "14px",
-              color: "#67e8f9",
+              color: "#F4B183",
               fontSize: "28px",
               fontWeight: 700,
             }}
@@ -45,7 +45,7 @@ export default function OpenGraphImage() {
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
-          <div style={{ color: "#67e8f9", fontSize: "24px", letterSpacing: "3px" }}>
+          <div style={{ color: "#F4B183", fontSize: "24px", letterSpacing: "3px" }}>
             ENTERPRISE TECHNOLOGY PARTNER
           </div>
           <div style={{ maxWidth: "940px", fontSize: "64px", fontWeight: 700, lineHeight: 1.15 }}>

@@ -7,13 +7,20 @@
    -------------------------------------------------------------------------- */
 /* Enterprise-grade Design System - Matching Top MNC Standards (iflexion.com, Accenture, Deloitte) */
 @theme {
-          /* Core Brand Colors - Premium Teal Palette (Viatris.in inspired professional enterprise) */
-          --color-primary-50: #f0fdf9;
-          --color-primary-100: #dcfce7;
-          --color-primary-500: #059669;
-          --color-primary-600: #047857;
-          --color-primary-700: #065f46;
-          --color-primary-900: #022c22;
+          /* Core brand palette */
+          --color-brand-navy: #06143D;
+          --color-brand-navy-dark: #030B22;
+          --color-brand-navy-light: #1C376D;
+          --color-brand-navy-mid: #102653;
+          --color-brand-orange: #9C4808;
+          --color-brand-orange-light: #F4B183;
+
+          --color-primary-50: #f1f4fa;
+          --color-primary-100: #e4e9f2;
+          --color-primary-500: #06143D;
+          --color-primary-600: #06143D;
+          --color-primary-700: #030B22;
+          --color-primary-900: #030B22;
           
           /* Light Theme Neutral Palette - Professional bright backgrounds */
           --color-slate-50: #f8fafc;
@@ -30,7 +37,7 @@
           
           /* Accent Colors - Vibrant but professional */
           --color-accent-cyan: #06b6d4;
-          --color-accent-blue: #3b82f6;
+          --color-accent-blue: #1C376D;
           --color-accent-violet: #8b5cf6;
           --color-success-500: #10b981;
           --color-warning-500: #f59e0b;
@@ -83,7 +90,7 @@
     @apply bg-gradient-to-br from-white to-slate-50 backdrop-blur-2xl border border-slate-200 rounded-2xl shadow-2xl shadow-slate-200/50 hover:shadow-slate-200/70 transition-all duration-500 text-slate-900;
   }
   
-  /* Primary CTA button - Enterprise standard (kept white text on green as it's a button) */
+  /* Primary CTA button */
   .btn-primary {
     @apply px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-semibold rounded-xl hover:from-primary-500 hover:to-primary-600 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-lg shadow-primary-600/25 hover:shadow-primary-500/35;
   }

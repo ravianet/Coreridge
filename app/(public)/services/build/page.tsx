@@ -90,18 +90,18 @@ export default function BuildPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mx-auto mb-12 max-w-4xl text-center md:mb-14"
         >
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-wide text-[#184491]">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-wide text-brand-navy">
             <Server aria-hidden="true" className="h-4 w-4" />
             BUILD · INFRASTRUCTURE & MANAGED HARDWARE
           </span>
           <h1 className="mb-5 text-4xl font-bold tracking-tight text-slate-950 md:text-5xl lg:text-6xl">
             Resilient infrastructure,
-            <span className="block text-[#184491]">built for what&apos;s next.</span>
+            <span className="block text-brand-navy">built for what&apos;s next.</span>
           </h1>
           <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
             Practical infrastructure consulting, procurement, deployment, and managed services—aligned to your organization&apos;s needs.
           </p>
-          <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#184491] px-6 py-3 font-semibold text-white transition hover:bg-[#12366f]">
+          <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-brand-navy px-6 py-3 font-semibold text-white transition hover:bg-brand-navy-dark">
             Plan your infrastructure <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </motion.div>
@@ -113,24 +113,24 @@ export default function BuildPage() {
           transition={{ delay: 0.2 }}
           className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
         >
-          <h2 className="mb-3 text-2xl font-bold text-[#184491] md:text-3xl">Consulting & system design</h2>
+          <h2 className="mb-3 text-2xl font-bold text-brand-navy md:text-3xl">Consulting & system design</h2>
           <p className="mb-6 max-w-3xl text-base leading-7 text-slate-600 md:text-lg">
             Expert guidance to design the right infrastructure for your organization. Our team works with you to create scalable, secure, and cost-effective IT architectures.
           </p>
           <div className="grid gap-5 md:grid-cols-3">
-            <div className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#184491]/40">
-              <Network aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
-              <h3 className="text-xl font-bold text-[#184491] mb-2">Network Architecture</h3>
+            <div className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-brand-navy/40">
+              <Network aria-hidden="true" className="mb-4 h-6 w-6 text-brand-navy" />
+              <h3 className="text-xl font-bold text-brand-navy mb-2">Network Architecture</h3>
               <p className="text-gray-700">Design robust, secure network infrastructures that support your business operations at scale.</p>
             </div>
-            <div className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#184491]/40">
-              <BarChart3 aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
-              <h3 className="text-xl font-bold text-[#184491] mb-2">Server Sizing</h3>
+            <div className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-brand-navy/40">
+              <BarChart3 aria-hidden="true" className="mb-4 h-6 w-6 text-brand-navy" />
+              <h3 className="text-xl font-bold text-brand-navy mb-2">Server Sizing</h3>
               <p className="text-gray-700">Right-size your compute resources to optimize performance while controlling costs.</p>
             </div>
-            <div className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#184491]/40">
-              <CloudCog aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
-              <h3 className="text-xl font-bold text-[#184491] mb-2">Cloud Hybrid Planning</h3>
+            <div className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-brand-navy/40">
+              <CloudCog aria-hidden="true" className="mb-4 h-6 w-6 text-brand-navy" />
+              <h3 className="text-xl font-bold text-brand-navy mb-2">Cloud Hybrid Planning</h3>
               <p className="text-gray-700">Develop hybrid cloud strategies that balance on-premise security with cloud scalability.</p>
             </div>
           </div>
@@ -143,7 +143,7 @@ export default function BuildPage() {
           transition={{ delay: 0.3 }}
           className="mb-10 md:mb-12"
         >
-          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Hardware & enterprise licensing</h2>
+          <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Hardware & enterprise licensing</h2>
           <div className="grid gap-5 md:grid-cols-3">
             {hardwareCategories.map((category, index) => (
               <motion.div
@@ -151,14 +151,14 @@ export default function BuildPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 + index * 0.1 }}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#184491]/40 hover:shadow-md"
+                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-navy/40 hover:shadow-md"
               >
-                <category.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <category.icon aria-hidden="true" className="mb-4 h-6 w-6 text-brand-navy" />
                 <h3 className="mb-4 text-lg font-bold text-slate-900">{category.title}</h3>
                 <ul className="space-y-2">
                   {category.items.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-gray-700">
-                      <span className="w-2 h-2 rounded-full bg-[#184491]"></span>
+                      <span className="w-2 h-2 rounded-full bg-brand-navy"></span>
                       {item}
                     </li>
                   ))}
@@ -175,7 +175,7 @@ export default function BuildPage() {
           transition={{ delay: 0.5 }}
           className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
         >
-          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Endpoint & data management</h2>
+          <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Endpoint & data management</h2>
           <div className="grid gap-5 md:grid-cols-2">
             {endpointManagement.map((item, index) => (
               <motion.div
@@ -183,9 +183,9 @@ export default function BuildPage() {
                 initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 + index * 0.1 }}
-                className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#184491]/40"
+                className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-brand-navy/40"
               >
-                <item.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <item.icon aria-hidden="true" className="mb-4 h-6 w-6 text-brand-navy" />
                 <h3 className="mb-2 text-lg font-bold text-slate-900">{item.title}</h3>
                 <p className="text-gray-700 leading-relaxed">{item.description}</p>
               </motion.div>
@@ -200,7 +200,7 @@ export default function BuildPage() {
           transition={{ delay: 0.7 }}
           className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
         >
-          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Infrastructure services</h2>
+          <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Infrastructure services</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {infrastructureServices.map((service, index) => (
               <motion.div
@@ -208,7 +208,7 @@ export default function BuildPage() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8 + index * 0.05 }}
-                className="p-4 bg-white rounded-lg border border-gray-200 text-center hover:border-[#184491]/50 transition-all duration-300"
+                className="p-4 bg-white rounded-lg border border-gray-200 text-center hover:border-brand-navy/50 transition-all duration-300"
               >
                 <span className="text-gray-700 font-medium">{service}</span>
               </motion.div>
@@ -223,7 +223,7 @@ export default function BuildPage() {
           transition={{ delay: 0.8 }}
           className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
         >
-          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Cloud solutions</h2>
+          <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Cloud solutions</h2>
           <div className="grid gap-5 md:grid-cols-2">
             {cloudSolutions.map((cloud, index) => (
               <motion.div
@@ -233,13 +233,13 @@ export default function BuildPage() {
                 transition={{ delay: 0.9 + index * 0.1 }}
                 className="rounded-xl border border-slate-200 bg-white p-5"
               >
-                <cloud.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <cloud.icon aria-hidden="true" className="mb-4 h-6 w-6 text-brand-navy" />
                 <h3 className="mb-2 text-lg font-bold text-slate-900">{cloud.title}</h3>
                 <p className="mb-4 leading-relaxed text-slate-600">{cloud.description}</p>
                 <ul className="space-y-2">
                   {cloud.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-gray-700">
-                      <span className="w-2 h-2 rounded-full bg-[#184491]"></span>
+                      <span className="w-2 h-2 rounded-full bg-brand-navy"></span>
                       {feature}
                     </li>
                   ))}
@@ -256,7 +256,7 @@ export default function BuildPage() {
           transition={{ delay: 0.9 }}
           className="mb-10 rounded-2xl border border-slate-200 bg-white p-6 md:mb-12 md:p-8"
         >
-          <h2 className="mb-6 text-2xl font-bold text-[#184491] md:text-3xl">Infrastructure managed services</h2>
+          <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Infrastructure managed services</h2>
           <div className="grid gap-5">
             {managedServices.map((service, index) => (
               <motion.div
@@ -266,13 +266,13 @@ export default function BuildPage() {
                 transition={{ delay: 1.0 + index * 0.1 }}
                 className="rounded-xl border border-slate-200 bg-slate-50 p-5"
               >
-                <service.icon aria-hidden="true" className="mb-4 h-6 w-6 text-[#184491]" />
+                <service.icon aria-hidden="true" className="mb-4 h-6 w-6 text-brand-navy" />
                 <h3 className="mb-2 text-lg font-bold text-slate-900">{service.title}</h3>
                 <p className="mb-4 leading-relaxed text-slate-600">{service.description}</p>
                 <ul className="grid grid-cols-2 md:grid-cols-3 gap-3">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-gray-700">
-                      <span className="w-2 h-2 rounded-full bg-[#184491]"></span>
+                      <span className="w-2 h-2 rounded-full bg-brand-navy"></span>
                       {feature}
                     </li>
                   ))}
@@ -287,7 +287,7 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1 }}
-          className="rounded-2xl bg-[#184491] px-6 py-10 text-center md:py-12"
+          className="rounded-2xl bg-brand-navy px-6 py-10 text-center md:py-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Build Your IT Infrastructure?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
@@ -295,7 +295,7 @@ export default function BuildPage() {
           </p>
           <a
             href="/contact"
-            className="inline-block px-8 py-4 bg-white text-[#184491] rounded-xl font-semibold text-lg hover:scale-105 transition-transform shadow-lg shadow-white/25"
+            className="inline-block px-8 py-4 bg-white text-brand-navy rounded-xl font-semibold text-lg hover:scale-105 transition-transform shadow-lg shadow-white/25"
           >
             Schedule a Consultation
           </a>
