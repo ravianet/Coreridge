@@ -202,7 +202,7 @@ export default function ValidatePage() {
       </section>
 
       {/* Validation Process Timeline */}
-      <section className="px-6 py-12 md:py-14">
+      <section className="bg-white px-6 py-16 md:py-20">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -247,27 +247,30 @@ export default function ValidatePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-brand-navy px-6 py-12 md:py-14">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
-            Need support with validation?
-          </h2>
-          <p className="mb-7 text-lg text-blue-100">
-            Talk with our team about your systems, compliance needs, and validation priorities.
-          </p>
-          <Link 
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-brand-navy transition hover:bg-blue-50"
+      {/* CTA Section - Figma Style */}
+      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-20 md:py-24">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-3xl shadow-lg p-12 text-center"
           >
-            Discuss your project <ArrowRight aria-hidden="true" className="h-4 w-4" />
-          </Link>
-        </motion.div>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+              Need support with validation?
+            </h2>
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+              Talk with our team about your systems, compliance needs, and validation priorities.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 transition-all duration-300 shadow-lg"
+            >
+              Discuss your project <ArrowRight aria-hidden="true" className="h-4 w-4" />
+            </Link>
+          </motion.div>
+        </div>
       </section>
     </div>
   );

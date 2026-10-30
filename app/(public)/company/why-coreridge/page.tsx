@@ -21,6 +21,11 @@ import {
   Target,
   Trophy,
   UsersRound,
+  MapPin,
+  Cloud,
+  Cpu,
+  Rocket,
+  ExternalLink,
 } from 'lucide-react';
 
 type IconTileProps = {
@@ -281,7 +286,7 @@ export default function WhyCoreRidgePage() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white">
-      <section className="relative isolate overflow-hidden bg-slate-50 px-4 pb-14 pt-24 sm:px-6 md:pb-16 md:pt-28">
+      <section className="relative isolate overflow-hidden bg-slate-50 px-4 pb-10 pt-24 sm:px-6 md:pb-12 md:pt-28">
         <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 -z-10 h-96 w-96 rounded-full bg-blue-200/40 blur-3xl" />
         <div aria-hidden="true" className="pointer-events-none absolute -bottom-52 -left-24 -z-10 h-80 w-80 rounded-full bg-cyan-100/70 blur-3xl" />
         <div className="relative z-10 mx-auto max-w-7xl">
@@ -291,7 +296,7 @@ export default function WhyCoreRidgePage() {
             transition={{ duration: 0.8 }}
             className="mx-auto max-w-4xl text-center"
           >
-            <span className="mb-5 inline-flex items-center gap-3 rounded-full border border-blue-100 bg-white/90 py-1.5 pl-1.5 pr-4 text-sm font-semibold text-brand-navy shadow-sm">
+            <span className="mb-5 inline-flex items-center gap-3 rounded-full border border-slate-300 bg-white/70 py-1.5 pl-1.5 pr-4 text-sm font-semibold text-slate-800 shadow-sm backdrop-blur-sm">
               <IconTile icon={Sparkles} artwork="innovation" secondaryIcon={CircleCheck} accent="blue" size="sm" />
               Your partner for technology that works
             </span>
@@ -310,7 +315,7 @@ export default function WhyCoreRidgePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="border-y border-slate-200/80 bg-white px-4 py-8 sm:px-6 md:py-10">
+      <section className="border-y border-slate-200/80 bg-white px-4 py-6 sm:px-6 md:py-7">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
             {stats.map((stat, index) => (
@@ -333,15 +338,14 @@ export default function WhyCoreRidgePage() {
       </section>
 
       {/* Core Differentiators */}
-      <section className="bg-slate-50 px-4 py-14 sm:px-6 md:py-16">
+      <section className="bg-slate-50 px-4 py-10 sm:px-6 md:py-12">
         <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-9 text-center md:mb-11"
-          >
+            className="mb-6 text-center md:mb-8">
             <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">What Sets Us Apart</h2>
             <p className="mx-auto max-w-2xl text-slate-600 md:text-lg">
               Our unique combination of industry expertise, technical excellence, and client-first approach 
@@ -378,70 +382,17 @@ export default function WhyCoreRidgePage() {
         </div>
       </section>
 
-      {/* Client Success Stories */}
-      <section className="relative isolate overflow-hidden bg-slate-950 px-4 py-14 sm:px-6 md:py-16">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/50 via-slate-950 to-slate-950" />
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mx-auto mb-9 max-w-3xl text-center md:mb-11"
-          >
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-blue-100">
-              <Building2 aria-hidden="true" className="h-4 w-4" />
-              Client partnerships
-            </span>
-            <h2 className="mb-3 text-3xl font-bold tracking-tight text-white md:text-4xl">
-              Client success stories
-              <span className="block text-blue-300">across global IT solutions</span>
-            </h2>
-            <p className="mx-auto max-w-2xl text-slate-300 md:text-lg">
-              Here&apos;s what our clients say about working with Coreridge on their technology and support needs.
-            </p>
-          </motion.div>
 
-          <div className="grid items-stretch gap-5 lg:grid-cols-2">
-            {testimonials.map((testimonial, index) => (
-              <motion.figure
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45, delay: index * 0.1 }}
-                className="relative flex h-full flex-col rounded-2xl border border-white/10 bg-white p-6 shadow-[0_24px_70px_-35px_rgba(0,0,0,0.75)] transition duration-300 hover:-translate-y-1 sm:p-8"
-              >
-                <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-[#D0B77B]" />
-                <blockquote className="flex-1 text-base leading-7 text-slate-700 md:text-lg">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </blockquote>
-                <figcaption className="mt-7 flex items-center gap-3 border-t border-slate-100 pt-5">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-navy/10 text-sm font-bold text-brand-navy">
-                    {testimonial.mark}
-                  </span>
-                  <span>
-                    <span className="block font-semibold text-slate-900">{testimonial.name}</span>
-                    <span className="block text-sm text-slate-600">
-                      {testimonial.role}, {testimonial.company}
-                    </span>
-                  </span>
-                </figcaption>
-              </motion.figure>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Our Values */}
-      <section className="bg-white px-4 py-14 sm:px-6 md:py-16">
+      <section className="bg-white px-4 py-10 sm:px-6 md:py-12">
         <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-9 text-center md:mb-11"
-          >
+            className="mb-6 text-center md:mb-8">
             <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">Our Core Values</h2>
             <p className="mx-auto max-w-2xl text-slate-600 md:text-lg">
               These principles guide everything we do and define how we partner with our clients.
@@ -469,29 +420,216 @@ export default function WhyCoreRidgePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="relative isolate overflow-hidden bg-slate-950 px-4 py-14 sm:px-6 md:py-16">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-blue-900/50 via-slate-950 to-slate-950" />
-        <div aria-hidden="true" className="pointer-events-none absolute -right-16 top-0 -z-10 h-64 w-64 rounded-full border border-white/10" />
-        <div aria-hidden="true" className="pointer-events-none absolute -right-8 top-8 -z-10 h-48 w-48 rounded-full border border-white/10" />
-        <div className="relative z-10 mx-auto max-w-4xl text-center">
+      {/* Client Success Stories */}
+      <section className="relative isolate overflow-hidden bg-gray-100 px-4 py-10 sm:px-6 md:py-12">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/50 via-gray-100 to-gray-100" />
+        <div aria-hidden="true" className="pointer-events-none absolute -left-80 -top-80 h-[600px] w-[600px] rounded-full bg-cyan-200/25 blur-[100px]" />
+        <div aria-hidden="true" className="pointer-events-none absolute -bottom-80 -right-80 h-[600px] w-[600px] rounded-full bg-violet-200/25 blur-[100px]" />
+        <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[800px] w-[800px] rounded-full bg-blue-200/10 blur-[120px]" />
+        <div aria-hidden="true" className="pointer-events-none absolute left-1/4 top-1/3 h-[400px] w-[400px] rounded-full bg-fuchsia-200/10 blur-[80px]" />
+        
+        <div className="relative z-10 mx-auto max-w-7xl">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-          >
-            <h2 className="mb-5 text-3xl font-bold tracking-tight text-white md:text-4xl">Ready to Start Your Transformation?</h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg leading-7 text-slate-300">
-              Let's discuss how CoreRidge can help your organization achieve its digital goals.
+            className="mx-auto mb-6 max-w-3xl text-center md:mb-8">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50/70 px-4 py-2 text-sm font-semibold text-orange-700 shadow-sm backdrop-blur-sm">
+              <Building2 aria-hidden="true" className="h-4 w-4 text-orange-600" />
+              Client partnerships
+            </span>
+            <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+              Client success stories
+              <span className="block text-blue-700">across global IT solutions</span>
+            </h2>
+            <p className="mx-auto max-w-2xl text-slate-600 md:text-lg">
+              Here's what our clients say about working with Coreridge on their technology and support needs.
             </p>
-            <Link 
-              href="/contact"
-              className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#D0B77B] to-[#C4A86A] px-6 py-3.5 font-semibold text-slate-950 shadow-lg shadow-black/20 transition hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          </motion.div>
+
+          {/* Client Testimonials */}
+          <div className="grid items-stretch gap-5 lg:grid-cols-2">
+            {testimonials.map((testimonial, index) => (
+              <motion.figure
+                key={testimonial.name}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: index * 0.1 }}
+                className="relative flex h-full flex-col rounded-2xl border border-white/30 bg-white/20 p-6 shadow-lg backdrop-blur-3xl transition duration-300 hover:-translate-y-1 sm:p-8"
+              >
+                <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-slate-400" />
+                <blockquote className="flex-1 text-base leading-7 text-slate-700 md:text-lg">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-7 flex items-center gap-3 border-t border-slate-300 pt-5">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-lg font-semibold text-slate-800">
+                    {testimonial.mark}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-slate-900">{testimonial.name}</div>
+                    <div className="text-sm text-slate-600">{testimonial.role}, {testimonial.company}</div>
+                  </div>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </div>
+
+          {/* Our Journey Timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto mb-6 max-w-3xl text-center md:mb-8"
+          >
+            <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+              Our Journey
+              <span className="block text-blue-700">years of expertise, now as CoreRidge</span>
+            </h2>
+            <p className="mx-auto max-w-2xl text-slate-600 md:text-lg">
+              Built by industry veterans with decades of IT experience, we founded CoreRidge in 2023 to deliver exceptional digital transformation.
+            </p>
+          </motion.div>
+
+          {/* Timeline */}
+          <div className="mx-auto mb-16 max-w-4xl">
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-8 top-0 h-full w-0.5 bg-slate-200 md:left-1/2"></div>
+              
+              {/* Timeline items */}
+              <div className="space-y-8">
+                {/* 2023 - Founded */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="relative flex items-center md:justify-center"
+                >
+                  <div className="ml-20 w-full md:ml-0 md:w-5/12 md:pr-8 md:text-right">
+                    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                      <span className="mb-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">2023</span>
+                      <h3 className="mb-2 text-xl font-bold text-slate-950">CoreRidge Founded</h3>
+                      <p className="text-slate-600">Launched our vision to transform enterprise technology with seasoned leadership driving every decision.</p>
+                    </div>
+                  </div>
+                  <div className="absolute left-6 flex h-6 w-6 items-center justify-center rounded-full bg-blue-700 md:left-1/2 md:-ml-3">
+                    <Rocket className="h-3 w-3 text-white" />
+                  </div>
+                </motion.div>
+
+                {/* Leadership Experience Combined */}
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="relative flex items-center md:justify-center"
+                >
+                  <div className="ml-20 w-full md:ml-auto md:w-5/12 md:pl-8">
+                    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                      <span className="mb-2 inline-block rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-700">Leadership Legacy</span>
+                      <h3 className="mb-2 text-xl font-bold text-slate-950">40+ Years Combined Experience</h3>
+                      <p className="text-slate-600">Our CEO brings 19 years of industry expertise, and our CTO contributes 20+ years of technical leadership in IT.</p>
+                    </div>
+                  </div>
+                  <div className="absolute left-6 flex h-6 w-6 items-center justify-center rounded-full bg-cyan-600 md:left-1/2 md:-ml-3">
+                    <UsersRound className="h-3 w-3 text-white" />
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+
+          {/* Leadership Team */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto mb-6 max-w-3xl text-center md:mb-8"
+          >
+            <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+              Meet Our
+              <span className="block text-blue-700">Leadership Team</span>
+            </h2>
+            <p className="mx-auto max-w-2xl text-slate-600 md:text-lg">
+              Industry veterans dedicated to delivering excellence in every digital transformation project.
+            </p>
+          </motion.div>
+
+          <div className="grid gap-6 md:grid-cols-2 mb-16">
+            {/* CEO Profile */}
+            <motion.a
+              href="https://ravianet.github.io/resume/"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"
             >
-              Get in Touch
-              <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+              <div className="flex items-start justify-between">
+                <div>
+                  <h3 className="mb-1 text-xl font-bold text-slate-950">Ravi Teja</h3>
+                  <p className="mb-3 text-sm font-semibold text-blue-700">Chief Executive Officer</p>
+                  <p className="mb-4 text-slate-600">19 years of extensive experience in the IT industry, leading enterprise transformations and building successful technology teams.</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-slate-400 group-hover:text-blue-700 transition-colors" />
+              </div>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-700">
+                View full profile
+              </span>
+            </motion.a>
+
+            {/* CTO Profile */}
+            <motion.a
+              href="https://nagadeepthi-git.github.io/deepthi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"
+            >
+              <div className="flex items-start justify-between">
+                <div>
+                  <h3 className="mb-1 text-xl font-bold text-slate-950">Naga Deepthi</h3>
+                  <p className="mb-3 text-sm font-semibold text-blue-700">Chief Technology Officer</p>
+                  <p className="mb-4 text-slate-600">20+ years of technical expertise architecting scalable solutions, driving innovation, and leading complex technology initiatives.</p>
+                </div>
+                <ExternalLink className="h-5 w-5 text-slate-400 group-hover:text-blue-700 transition-colors" />
+              </div>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-700">
+                View full profile
+              </span>
+            </motion.a>
+          </div>
+
+          {/* Final CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+            className="mt-0 rounded-3xl border border-slate-200 bg-white p-10 shadow-lg sm:p-14">
+            <div className="text-center">
+              <h3 className="mb-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Ready to Start Your Transformation?</h3>
+              <p className="mb-8 text-lg text-slate-600">Let's discuss how CoreRidge can help your organization achieve its digital goals.</p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-full bg-blue-700 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+              >
+                Get in Touch
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>

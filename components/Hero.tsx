@@ -62,7 +62,7 @@ export default function Hero() {
         onClick={toggleVideoPlayback}
         aria-label={`${isPlaying ? "Pause" : "Play"} background video`}
         aria-pressed={!isPlaying}
-        className="absolute bottom-4 right-5 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-white/25 text-brand-navy/70 backdrop-blur-sm transition hover:border-white/60 hover:bg-white/60 hover:text-brand-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange motion-reduce:hidden sm:right-8 lg:right-10"
+        className="absolute bottom-4 right-14 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/30 bg-white/25 text-brand-navy/70 backdrop-blur-sm transition hover:border-white/60 hover:bg-white/60 hover:text-brand-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange motion-reduce:hidden sm:right-16"
       >
         {isPlaying ? (
           <Pause aria-hidden="true" className="h-3.5 w-3.5" />
@@ -72,7 +72,7 @@ export default function Hero() {
       </button>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-white/55 via-white/35 to-blue-50/45"
+        className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-white/70 via-white/55 to-blue-50/60"
       />
       <div
         aria-hidden="true"
@@ -90,14 +90,15 @@ export default function Hero() {
             Your partner for technology that works
           </div>
 
-          <h1 className="text-4xl font-bold leading-[1.06] tracking-[-0.045em] text-brand-navy drop-shadow-[0_1px_1px_rgba(255,255,255,0.65)] sm:text-6xl lg:text-6xl xl:text-7xl">
+          <h1 className="text-balance text-4xl font-extrabold leading-[1.08] tracking-[-0.05em] text-brand-navy drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)] sm:text-5xl lg:text-[3.35rem] xl:text-6xl">
             Move forward with
-            <span className="mt-1 block text-brand-navy">
-              confidence in every system.
+            <span className="mt-1 block">
+              <span className="text-brand-orange">confidence</span> in every
+              system.
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-800 drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)] sm:text-xl lg:text-[1.35rem]">
+          <p className="mx-auto mt-6 max-w-xl text-base font-medium leading-7 text-slate-800 drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)] sm:text-lg sm:leading-8 lg:text-xl">
             From modernizing enterprise technology to validating critical
             systems, Coreridge helps your teams make complex change feel clear,
             secure, and manageable.
@@ -134,7 +135,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-lg lg:ml-auto">
+        <div className="relative mx-auto w-full max-w-md lg:ml-auto">
           <div className="relative overflow-hidden rounded-[1.5rem] border border-white/70 bg-white/35 p-3 shadow-lg shadow-brand-navy/10 backdrop-blur-sm sm:p-4">
             <div className="flex items-center justify-between gap-3 border-b border-brand-navy/15 pb-3">
               <div>
@@ -186,7 +187,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          <div className="absolute -bottom-5 -left-4 hidden items-center gap-3 rounded-2xl border border-brand-navy/10 bg-white/90 px-4 py-3 shadow-xl sm:flex">
+          <div className="relative ml-4 mt-3 hidden w-fit items-center gap-3 rounded-2xl border border-brand-navy/10 bg-white/90 px-4 py-3 shadow-xl sm:flex">
             <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-orange/10 text-brand-orange">
               <Check aria-hidden="true" className="h-5 w-5" />
             </span>

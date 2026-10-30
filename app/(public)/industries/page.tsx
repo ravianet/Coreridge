@@ -43,20 +43,15 @@ export default function IndustriesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-32">
-      {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="py-20 px-6"
-      >
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-center"
-          >
+    <div className="min-h-screen bg-white pt-28 pb-20">
+      <div className="container-pro">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-center mb-24"
+        >
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
               Industry-Specific Solutions
             </h1>
@@ -64,11 +59,9 @@ export default function IndustriesPage() {
               Tailored technology and compliance solutions designed for the unique challenges of your industry.
             </p>
           </motion.div>
-        </div>
-      </motion.section>
 
       {/* Industries Grid */}
-      <section className="py-12 px-6">
+      <section className="bg-gray-50 px-6 py-16 md:py-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-10">
             {industries.map((industry, index) => (
@@ -125,28 +118,28 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-gradient-to-r from-cyan-600/20 to-violet-600/20">
-        <motion.div 
+      <section className="py-16 px-6 bg-white/30 backdrop-blur-lg border border-gray-200 rounded-xl mx-auto max-w-4xl">
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
+          className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
             Not Sure Which Solution Fits Your Industry?
           </h2>
-          <p className="text-xl text-black mb-10">
+          <p className="text-xl text-gray-700 mb-10">
             Our industry experts will assess your specific needs and recommend the perfect technology and compliance strategy for your organization.
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-10 py-5 bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 text-lg"
+            className="inline-block px-10 py-5 bg-brand-navy text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300 text-lg"
           >
             Schedule a Consultation
           </Link>
         </motion.div>
       </section>
+      </div>
     </div>
   );
 }
-

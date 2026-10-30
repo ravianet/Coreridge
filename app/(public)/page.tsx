@@ -204,7 +204,7 @@ export default function Home() {
             {clientLogos.map((logo) => (
               <div
                 key={logo.name}
-                className="flex h-24 w-32 snap-start flex-col items-center justify-center gap-2 rounded-xl border border-slate-100 bg-white px-3 py-3 transition duration-300 hover:border-blue-200 hover:shadow-md sm:h-28 sm:w-36"
+                className="flex h-24 w-32 snap-start flex-col items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 shadow-[0_4px_16px_-12px_rgba(15,23,42,0.28)] transition duration-300 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md sm:h-28 sm:w-36"
               >
                 <Image
                   src={logo.src}
@@ -246,7 +246,7 @@ export default function Home() {
               <Link
                 key={eyebrow}
                 href={href}
-                className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-slate-50/60 p-5 transition duration-300 hover:border-blue-200 hover:bg-white hover:shadow-[0_16px_40px_-28px_rgba(15,42,86,0.35)] sm:p-6"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-white to-blue-50/70 p-5 shadow-[0_8px_24px_-18px_rgba(15,42,86,0.5)] transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-[0_18px_40px_-24px_rgba(15,42,86,0.42)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy sm:p-6"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold tracking-[0.16em] text-slate-500">
@@ -315,7 +315,7 @@ export default function Home() {
               <Link
                 key={name}
                 href={href}
-                className="group flex h-full flex-col rounded-2xl border border-slate-200/80 bg-white/80 p-4 transition duration-300 hover:border-blue-200 hover:bg-white hover:shadow-md sm:p-5"
+                className="group flex h-full flex-col rounded-2xl border border-slate-300/80 bg-white/75 p-4 shadow-[0_8px_24px_-18px_rgba(15,42,86,0.45)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-white hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy sm:p-5"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-brand-navy">
                   <Icon aria-hidden="true" className="h-5 w-5" />
@@ -362,11 +362,11 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/60 divide-y divide-slate-200">
+          <div className="overflow-hidden rounded-2xl border border-slate-300/80 bg-white/75 shadow-[0_12px_32px_-24px_rgba(15,42,86,0.55)] backdrop-blur-md divide-y divide-slate-200">
             {principles.map((principle, index) => (
               <div
                 key={principle.title}
-                className="flex gap-4 p-4 transition-colors hover:bg-white sm:gap-5 sm:p-5"
+                className="flex gap-4 p-4 transition-colors hover:bg-blue-50/60 sm:gap-5 sm:p-5"
               >
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-100/70 text-xs font-bold text-brand-navy">
                   0{index + 1}
@@ -386,7 +386,7 @@ export default function Home() {
       </section>
 
       <section className="px-5 pb-10 sm:px-8 sm:pb-12 lg:px-10 lg:pb-14">
-        <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[1.5rem] border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-indigo-50 px-6 py-7 sm:px-8 sm:py-9 lg:px-10">
+        <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[1.5rem] border border-blue-200/80 bg-gradient-to-br from-blue-100/75 via-white/95 to-indigo-100/70 px-6 py-7 shadow-[0_18px_48px_-32px_rgba(15,42,86,0.42)] backdrop-blur-xl sm:px-8 sm:py-9 lg:px-10">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -right-28 -top-36 -z-10 h-80 w-80 rounded-full bg-blue-200/35 blur-3xl"

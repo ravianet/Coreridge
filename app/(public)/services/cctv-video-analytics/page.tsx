@@ -83,8 +83,11 @@ export default function CCTVVideoAnalyticsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative pt-24 pb-12 md:pt-28 md:pb-14 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-navy/5 via-transparent to-transparent" />
+      <section className="relative py-20 md:py-24">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_20%_5%,rgba(59,130,246,0.08),transparent_45%),radial-gradient(ellipse_at_80%_95%,rgba(147,197,253,0.06),transparent_40%),radial-gradient(ellipse_at_50%_50%,rgba(255,255,255,0.8),transparent_60%)]"
+        />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -92,23 +95,23 @@ export default function CCTVVideoAnalyticsPage() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <span className="inline-block px-4 py-2 mb-4 bg-brand-navy/10 border border-brand-navy/20 rounded-full text-brand-navy text-xs sm:text-sm font-semibold uppercase tracking-widest">
+            <span className="inline-block px-4 py-2 mb-4 bg-brand-orange/10 border border-brand-orange/20 rounded-full text-brand-orange text-xs sm:text-sm font-semibold uppercase tracking-widest">
               Video surveillance & analytics
             </span>
-            <h1 className="text-4xl md:text-6xl font-bold text-brand-navy mb-5">
+            <h1 className="text-4xl md:text-5xl font-bold text-brand-navy mb-5">
               CCTV & AI
-              <span className="block bg-gradient-to-r from-brand-navy to-brand-navy-light bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-brand-navy to-blue-700 bg-clip-text text-transparent">
                 Video Analytics
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
               Design a more useful video security system with centralized camera management, optional map views, and analytics tailored to your site and privacy requirements.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
-              <Link href="/contact" className="rounded-xl bg-brand-navy px-6 py-3 font-semibold text-white transition hover:bg-brand-navy-dark">
+              <Link href="/contact" className="rounded-xl bg-gradient-to-r from-brand-navy to-blue-700 px-6 py-3 font-semibold text-white transition hover:shadow-lg hover:shadow-brand-navy/30">
                 Discuss your requirements
               </Link>
-              <Link href="#capabilities" className="rounded-xl border border-brand-navy/20 bg-white/80 px-6 py-3 font-semibold text-brand-navy transition hover:bg-white">
+              <Link href="#capabilities" className="rounded-xl border border-gray-200 bg-white/80 backdrop-blur-xl px-6 py-3 font-semibold text-brand-orange transition hover:bg-brand-orange/5">
                 Explore capabilities
               </Link>
             </div>
@@ -116,18 +119,18 @@ export default function CCTVVideoAnalyticsPage() {
         </div>
       </section>
 
-      {/* Core Capabilities */}
-      <section id="capabilities" className="py-12 md:py-14 bg-white">
+      {/* Core Capabilities - Glass-effect cards */}
+      <section id="capabilities" className="py-20 px-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-9"
+            className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-3">A connected approach to video security</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Align cameras, video management, storage, and optional analytics around your operational and security needs.
             </p>
           </motion.div>
@@ -140,11 +143,11 @@ export default function CCTVVideoAnalyticsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-navy/50 transition-all duration-300"
+                className="p-8 bg-white/85 backdrop-blur-xl rounded-3xl border border-gray-200/60 shadow-2xl shadow-brand-navy/10 hover:shadow-brand-navy/15 hover:scale-[1.02] transition-all duration-300"
               >
                 <div className="text-4xl mb-4">{capability.icon}</div>
                 <h3 className="text-2xl font-bold text-brand-navy mb-3">{capability.title}</h3>
-                <p className="text-slate-600 mb-6">{capability.description}</p>
+                <p className="text-gray-600 mb-6">{capability.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {capability.features.map((feature) => (
                     <span key={feature} className="px-3 py-1 bg-brand-navy/10 text-brand-navy rounded-full text-sm border border-brand-navy/30">
@@ -159,7 +162,7 @@ export default function CCTVVideoAnalyticsPage() {
       </section>
 
       {/* Google Maps Integration Highlight */}
-      <section className="py-12 md:py-14 bg-gray-50">
+      <section className="py-20 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
@@ -203,7 +206,7 @@ export default function CCTVVideoAnalyticsPage() {
       </section>
 
       {/* AI Capabilities Grid */}
-      <section className="py-12 md:py-14 bg-white">
+      <section className="py-20 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -238,7 +241,7 @@ export default function CCTVVideoAnalyticsPage() {
       </section>
 
       {/* Project Highlights */}
-      <section className="py-12 md:py-14 bg-gray-50">
+      <section className="py-20 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -278,15 +281,23 @@ export default function CCTVVideoAnalyticsPage() {
         </div>
       </section>
 
-      <section className="px-4 py-10 sm:px-6 md:py-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-5 rounded-2xl bg-brand-navy px-6 py-7 text-white sm:px-8 md:flex-row md:items-center">
-          <div>
-            <h2 className="text-2xl font-bold">Planning a video security upgrade?</h2>
-            <p className="mt-2 max-w-2xl text-blue-100">Share your site, coverage, and operational requirements to explore an appropriate approach.</p>
-          </div>
-          <Link href="/contact" className="shrink-0 rounded-xl bg-white px-5 py-3 font-semibold text-brand-navy transition hover:bg-blue-50">
-            Talk to our team
-          </Link>
+      <section className="py-20 md:py-24 bg-gradient-to-br from-blue-50 to-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-3xl shadow-lg p-12 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Ready to strengthen your security?</h2>
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+              Let\'s review your priorities and identify practical next steps for your environment.
+            </p>
+            <Link href="/contact" className="inline-block px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg">
+              Talk to our team
+            </Link>
+          </motion.div>
         </div>
       </section>
 

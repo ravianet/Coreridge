@@ -176,22 +176,22 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        {/* CTA Section - Professional enterprise closing */}
+        {/* CTA Section - Figma Style */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.7 }}
-          className="mt-32 text-center py-24 px-6 bg-brand-navy rounded-2xl"
+          className="mt-20 md:mt-24 text-center py-20 md:py-24 px-6 bg-gradient-to-br from-blue-50 to-white rounded-2xl shadow-lg"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Transform Your Enterprise?</h2>
-          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-brand-navy mb-6">Ready to Transform Your Enterprise?</h2>
+          <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
             Let's discuss how our enterprise solutions can help your business thrive in the digital age. Partner with Coreridge for your technology journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="btn-primary inline-flex items-center justify-center gap-2"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg"
             >
               Schedule a Consultation
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,7 +200,7 @@ export default function ServicesPage() {
             </a>
             <a
               href="/company/about-us"
-              className="btn-secondary inline-flex items-center justify-center gap-2"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-brand-navy font-semibold rounded-xl border border-gray-300 hover:bg-gray-50 transition-all duration-300 shadow-lg"
             >
               Learn About Us
             </a>

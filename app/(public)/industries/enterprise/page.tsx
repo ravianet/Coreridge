@@ -43,50 +43,42 @@ export default function EnterprisePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-32">
-      {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/5 to-blue-400/5" />
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-center"
-          >
-            <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
-              🏢 Enterprise
-            </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
-              Enterprise-Grade Solutions
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
-              Scalable technology solutions for large organizations across all sectors, supporting digital transformation at scale.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
-              >
-                Enterprise Consultation
-              </Link>
-              <Link 
-                href="#solutions"
-                className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
-              >
-                View Solutions
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
+    <div className="min-h-screen bg-white pt-28 pb-20">
+      <div className="container-pro">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-center mb-24"
+        >
+          <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
+            🏢 Enterprise
+          </span>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
+            Enterprise IT Solutions
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
+            Strategic IT solutions designed for large enterprises, focusing on scalability, security, and digital transformation.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
+            >
+              Discuss Your Enterprise Needs
+            </Link>
+            <Link
+              href="#solutions"
+              className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
+            >
+              View Solutions
+            </Link>
+          </div>
+        </motion.div>
 
       {/* Core Solutions Grid */}
-      <section id="solutions" className="py-24 px-6">
+      <section id="solutions" className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -128,27 +120,28 @@ export default function EnterprisePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-brand-navy">
+      <section className="py-20 px-6 bg-gray-50">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
+          className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
             Ready to Transform Your Enterprise?
           </h2>
-          <p className="text-xl text-blue-100 mb-10">
+          <p className="text-xl text-gray-700 mb-10">
             Our enterprise technology team has the experience and expertise to support even the most complex organizational IT requirements.
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-10 py-5 bg-white text-brand-navy font-semibold rounded-xl hover:shadow-lg hover:shadow-white/30 transition-all duration-300 text-lg"
+            className="inline-block px-10 py-5 bg-brand-navy text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300 text-lg"
           >
             Schedule Enterprise Discussion
           </Link>
         </motion.div>
       </section>
+    </div>
     </div>
   );
 }

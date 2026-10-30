@@ -83,12 +83,12 @@ export default function BuildPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white px-4 pb-14 pt-24 sm:px-6 md:pt-28 lg:px-8">
+    <div className="min-h-screen bg-white px-4 pt-24 sm:px-6 md:pt-28 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mx-auto mb-12 max-w-4xl text-center md:mb-14"
+          className="mx-auto mb-8 max-w-4xl text-center md:mb-10"
         >
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-wide text-brand-navy">
             <Server aria-hidden="true" className="h-4 w-4" />
@@ -111,7 +111,7 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
+          className="mb-8 rounded-2xl border border-slate-200 bg-white py-12 px-6 md:mb-10 md:py-16 md:px-8"
         >
           <h2 className="mb-3 text-2xl font-bold text-brand-navy md:text-3xl">Consulting & system design</h2>
           <p className="mb-6 max-w-3xl text-base leading-7 text-slate-600 md:text-lg">
@@ -141,7 +141,7 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="mb-10 md:mb-12"
+          className="mb-8 md:mb-10"
         >
           <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Hardware & enterprise licensing</h2>
           <div className="grid gap-5 md:grid-cols-3">
@@ -173,7 +173,7 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
+          className="mb-8 rounded-2xl border border-slate-200 bg-white py-12 px-6 md:mb-10 md:py-16 md:px-8"
         >
           <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Endpoint & data management</h2>
           <div className="grid gap-5 md:grid-cols-2">
@@ -198,7 +198,7 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}
-          className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
+          className="mb-8 rounded-2xl border border-slate-200 bg-white py-12 px-6 md:mb-10 md:py-16 md:px-8"
         >
           <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Infrastructure services</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -221,7 +221,7 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
+          className="mb-8 rounded-2xl border border-slate-200 bg-white py-12 px-6 md:mb-10 md:py-16 md:px-8"
         >
           <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Cloud solutions</h2>
           <div className="grid gap-5 md:grid-cols-2">
@@ -254,7 +254,7 @@ export default function BuildPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9 }}
-          className="mb-10 rounded-2xl border border-slate-200 bg-white p-6 md:mb-12 md:p-8"
+          className="mb-8 rounded-2xl border border-slate-200 bg-white py-12 px-6 md:mb-10 md:py-16 md:px-8"
         >
           <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Infrastructure managed services</h2>
           <div className="grid gap-5">
@@ -282,24 +282,29 @@ export default function BuildPage() {
           </div>
         </motion.section>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1 }}
-          className="rounded-2xl bg-brand-navy px-6 py-10 text-center md:py-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Build Your IT Infrastructure?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can help you build a resilient, scalable IT foundation for your enterprise.
-          </p>
-          <a
-            href="/contact"
-            className="inline-block px-8 py-4 bg-white text-brand-navy rounded-xl font-semibold text-lg hover:scale-105 transition-transform shadow-lg shadow-white/25"
-          >
-            Schedule a Consultation
-          </a>
-        </motion.div>
+        {/* CTA Section - Figma Style */}
+        <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-16 md:py-20 -mx-4 sm:-mx-6 lg:-mx-8">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-3xl shadow-lg p-12 text-center"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Ready to Build Your IT Infrastructure?</h2>
+              <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+                Let's discuss how we can help you build a resilient, scalable IT foundation for your enterprise.
+              </p>
+              <a
+                href="/contact"
+                className="inline-block px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg"
+              >
+                Schedule a Consultation
+              </a>
+            </motion.div>
+          </div>
+        </section>
 
       </div>
     </div>

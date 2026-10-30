@@ -43,50 +43,42 @@ export default function AviationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-32">
-      {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/5 to-blue-400/5" />
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-center"
-          >
-            <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
-              ✈️ AVIATION & AEROSPACE
-            </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
-              Aviation Technology Solutions
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
-              39+ combined years of experience delivering mission-critical systems for aviation leaders and global airline networks. Our founders bring deep expertise in aviation systems, AI engineering, and enterprise IT infrastructure to power commercial aerospace operations.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
-              >
-                Discuss Your Aviation Projects
-              </Link>
-              <Link 
-                href="#solutions"
-                className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
-              >
-                View Solutions
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
+    <div className="min-h-screen bg-white pt-28 pb-20">
+      <div className="container-pro">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="text-center mb-24"
+        >
+          <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
+            ✈️ AVIATION & AEROSPACE
+          </span>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
+            Aviation Technology Solutions
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
+            39+ combined years of experience delivering mission-critical systems for aviation leaders and global airline networks. Our founders bring deep expertise in aviation systems, AI engineering, and enterprise IT infrastructure to power commercial aerospace operations.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
+            >
+              Discuss Your Aviation Projects
+            </Link>
+            <Link
+              href="#solutions"
+              className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
+            >
+              View Solutions
+            </Link>
+          </div>
+        </motion.div>
 
       {/* Core Solutions Grid */}
-      <section id="solutions" className="py-24 px-6 bg-gray-50">
+      <section id="solutions" className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -127,28 +119,26 @@ export default function AviationPage() {
       </section>
 
       {/* Boeing & Global Airlines Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-20 px-6 bg-gray-50">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.9 }}
-          className="max-w-7xl mx-auto"
+          className="text-center"
         >
-          <div className="shadow-xl rounded-3xl overflow-hidden bg-gradient-to-r from-brand-navy via-brand-navy-light to-brand-navy-mid border border-white/20 p-12 md:p-16 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Trusted by Aviation Leaders</h2>
-            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Our team has delivered enterprise solutions for major international airlines including United Airlines, Singapore Airlines, LATAM, and many more global carriers.
-            </p>
-            <Link
-              href="/start"
-              className="inline-flex items-center px-8 py-4 bg-white text-brand-navy text-sm font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+          <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-8">Trusted by Aviation Leaders</h2>
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Our team has delivered enterprise solutions for major international airlines including United Airlines, Singapore Airlines, LATAM, and many more global carriers.
+          </p>
+          <Link
+              href="/contact"
+              className="inline-flex items-center px-8 py-4 bg-brand-navy text-white text-sm font-bold rounded-lg hover:bg-brand-navy/90 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Start Your Aviation Transformation
             </Link>
-          </div>
-        </motion.div>
-      </section>
+          </motion.div>
+        </section>
+    </div>
     </div>
   );
 }

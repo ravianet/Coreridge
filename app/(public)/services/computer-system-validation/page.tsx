@@ -65,47 +65,47 @@ export default function ComputerSystemValidationPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative pt-24 pb-12 md:pt-28 md:pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-transparent to-transparent" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
-              Computer System Validation
-                <span className="block text-brand-navy">
-                  Ensuring Regulatory Compliance
-                </span>
-              </h1>
-              <p className="text-xl text-gray-700 leading-relaxed">
-              Complete validation services for all pharmaceutical systems ensuring FDA, GxP, and 21 CFR Part 11 compliance. 
-              Our expert team delivers comprehensive validation documentation and execution for all regulated systems.
-            </p>
-          </motion.div>
+      {/* Hero Section - Matches site's glass-effect and color scheme */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="container-pro mx-auto py-20 md:py-24 px-4 sm:px-6 lg:px-8"
+      >
+        <div className="text-center max-w-4xl mx-auto">
+          <span className="inline-block px-4 py-2 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold mb-6">
+            💻 Regulatory Compliance
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+            Computer System Validation
+            <span className="block text-gray-800 mt-2">
+              Ensuring Regulatory Compliance
+            </span>
+          </h1>
+          <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Complete validation services for all pharmaceutical systems ensuring FDA, GxP, and 21 CFR Part 11 compliance. 
+            Our expert team delivers comprehensive validation documentation and execution for all regulated systems.
+          </p>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Core Capabilities */}
-      <section className="py-14 md:py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Core Capabilities - Glass-effect cards matching site design */}
+      <section className="py-20 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Core Capabilities</h2>
-            <p className="text-gray-700 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               End-to-end validation services that ensure your critical systems meet all regulatory requirements
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {coreCapabilities.map((capability, index) => (
               <motion.div
                 key={capability.title}
@@ -113,14 +113,14 @@ export default function ComputerSystemValidationPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 bg-white rounded-2xl border border-gray-200 hover:border-brand-navy/50 transition-all duration-300 shadow-sm"
+                className="p-8 bg-white/85 backdrop-blur-xl rounded-3xl border border-gray-200/60 hover:border-brand-navy/50 transition-all duration-300 shadow-2xl shadow-brand-navy/10 hover:shadow-brand-navy/15 hover:scale-[1.02]"
               >
                 <div className="text-4xl mb-4">{capability.icon}</div>
                 <h3 className="text-2xl font-bold text-brand-navy mb-3">{capability.title}</h3>
-                <p className="text-gray-700 mb-6">{capability.description}</p>
+                <p className="text-gray-600 mb-6">{capability.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {capability.features.map((feature) => (
-                    <span key={feature} className="px-3 py-1 bg-brand-navy/10 text-brand-navy rounded-full text-sm">
+                    <span key={feature} className="px-3 py-1 bg-brand-orange/10 text-brand-orange rounded-full text-sm">
                       {feature}
                     </span>
                   ))}
@@ -131,23 +131,23 @@ export default function ComputerSystemValidationPage() {
         </div>
       </section>
 
-      {/* Validation Process Timeline */}
-      <section className="py-14 md:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Validation Process Timeline - Glass-effect cards */}
+      <section className="py-20 md:py-24 bg-white">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Our Validation Process</h2>
-            <p className="text-gray-700 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               A proven, systematic approach to ensure complete compliance and documentation
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {validationProcess.map((step, index) => (
               <motion.div
                 key={step.step}
@@ -155,35 +155,36 @@ export default function ComputerSystemValidationPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-6 bg-gray-50 rounded-xl border border-gray-200 shadow-sm"
+                className="p-8 bg-white/85 backdrop-blur-xl rounded-3xl border border-gray-200/60 shadow-2xl shadow-brand-navy/10 hover:shadow-brand-navy/15 hover:scale-[1.02] transition-all duration-300"
               >
                 <div className="text-4xl font-bold text-brand-navy mb-3">
                   {step.step}
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-2">{step.title}</h3>
-                <p className="text-gray-700 text-sm">{step.description}</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">{step.title}</h3>
+                <p className="text-gray-600 text-sm">{step.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-14 md:py-16 px-6 bg-brand-navy">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* CTA Section - Figma Style */}
+      <section className="py-20 md:py-24 bg-gradient-to-br from-blue-50 to-white">
+        <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="bg-white rounded-3xl shadow-lg p-12 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Validate Your Systems?</h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Ready to Validate Your Systems?</h2>
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
               Contact our CSV experts to discuss your validation needs and ensure regulatory compliance.
             </p>
             <Link 
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-brand-navy font-semibold rounded-xl hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-lg shadow-white/25"
+              className="inline-block px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg"
             >
               Get Started with CSV
             </Link>

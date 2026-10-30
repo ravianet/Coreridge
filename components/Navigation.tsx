@@ -145,7 +145,7 @@ export default function Navigation() {
       }`}
     >
       <nav aria-label="Main navigation" className="container-pro">
-        <div className="flex min-h-12 items-center justify-between gap-5">
+        <div className="flex min-h-10 items-center justify-between gap-5">
           <Link
             href="/"
             aria-label="Coreridge Technologies home"
@@ -155,7 +155,7 @@ export default function Navigation() {
             <img
               src="/logos/cr1.png"
               alt="Coreridge Technologies"
-              className="h-9 w-auto max-w-[180px] object-contain"
+              className="h-7 w-auto max-w-[140px] object-contain"
             />
           </Link>
 

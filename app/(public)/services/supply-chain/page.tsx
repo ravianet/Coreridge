@@ -42,7 +42,7 @@ export default function SupplyChainPage() {
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative pt-24 pb-12 md:pt-28 md:pb-14 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
+        className="relative py-20 md:py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/5 to-blue-400/5" />
         <div className="max-w-7xl mx-auto relative z-10">
@@ -80,7 +80,7 @@ export default function SupplyChainPage() {
       </motion.section>
 
       {/* Core Services Grid */}
-      <section id="solutions" className="py-14 md:py-16 px-6">
+      <section id="solutions" className="py-20 md:py-24 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -121,27 +121,30 @@ export default function SupplyChainPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-14 md:py-16 px-6 bg-gradient-to-r from-brand-navy/10 to-blue-400/10">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
-            Ready to Transform Your Supply Chain?
-          </h2>
-          <p className="text-xl text-gray-700 mb-8">
-            Our supply chain experts help organizations streamline operations, reduce costs, and improve customer satisfaction.
-          </p>
-          <Link 
-            href="/contact"
-            className="inline-block px-8 py-4 bg-brand-navy text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300 text-lg"
+      {/* CTA Section - Figma Style */}
+      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-20 md:py-24">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-3xl shadow-lg p-12 text-center"
           >
-            Start Your Supply Chain Transformation
-          </Link>
-        </motion.div>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+              Ready to Transform Your Supply Chain?
+            </h2>
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+              Our supply chain experts help organizations streamline operations, reduce costs, and improve customer satisfaction.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg"
+            >
+              Start Your Supply Chain Transformation
+            </Link>
+          </motion.div>
+        </div>
       </section>
     </div>
   );

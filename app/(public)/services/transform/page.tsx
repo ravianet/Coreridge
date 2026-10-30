@@ -75,12 +75,12 @@ export default function TransformPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white px-4 pb-14 pt-24 sm:px-6 md:pt-28 lg:px-8">
+    <div className="min-h-screen bg-white px-4 py-20 sm:px-6 md:py-24 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mx-auto mb-12 max-w-4xl text-center md:mb-14"
+          className="mx-auto mb-16 max-w-4xl text-center md:mb-20"
         >
           <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-semibold tracking-wide text-brand-navy">
             <BrainCircuit aria-hidden="true" className="h-4 w-4" />
@@ -103,7 +103,7 @@ export default function TransformPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mb-10 md:mb-12"
+          className="mb-16 md:mb-20"
         >
           <h2 className="mb-6 text-2xl font-bold text-brand-navy md:text-3xl">Software & enterprise platforms</h2>
           <div className="grid gap-5 md:grid-cols-2">
@@ -140,7 +140,7 @@ export default function TransformPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 md:mb-12 md:p-8"
+          className="mb-16 rounded-2xl border border-slate-200 bg-white p-6 md:mb-20 md:p-8"
         >
           <h2 className="mb-3 text-2xl font-bold text-brand-navy md:text-3xl">AI & intelligent automation</h2>
           <p className="mb-6 max-w-3xl leading-7 text-slate-600 md:text-lg">
@@ -168,7 +168,7 @@ export default function TransformPage() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="mb-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:mb-12 md:p-8"
+          className="mb-16 rounded-2xl border border-slate-200 bg-gray-50 p-6 shadow-sm md:mb-20 md:p-8"
         >
           <h2 className="mb-3 text-2xl font-bold text-brand-navy md:text-3xl">Business digital transformation</h2>
           <p className="mb-6 max-w-3xl leading-7 text-slate-600 md:text-lg">
@@ -189,24 +189,29 @@ export default function TransformPage() {
           </div>
         </motion.section>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9 }}
-          className="rounded-2xl bg-brand-navy px-6 py-10 text-center md:py-12"
-        >
-          <h2 className="mb-4 text-2xl font-bold text-white md:text-3xl">Ready to transform your business?</h2>
-          <p className="mx-auto mb-7 max-w-2xl text-lg text-blue-100">
-            Let's discuss how our digital transformation services can help you innovate and grow in the digital age.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-brand-navy transition hover:bg-blue-50"
-          >
-            Start a conversation <ArrowRight aria-hidden="true" className="h-4 w-4" />
-          </Link>
-        </motion.div>
+        {/* CTA Section - Figma Style */}
+        <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-20 md:py-24">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-white rounded-3xl shadow-lg p-12 text-center"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Ready to transform your business?</h2>
+              <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+                Let's discuss how our digital transformation services can help you innovate and grow in the digital age.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 transition-all duration-300 shadow-lg"
+              >
+                Start a conversation <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Link>
+            </motion.div>
+          </div>
+        </section>
       </div>
     </div>
   );

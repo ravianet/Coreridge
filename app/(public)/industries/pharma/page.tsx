@@ -58,47 +58,38 @@ export default function PharmaPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-32">
-      {/* Hero Section */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/5 to-blue-400/5" />
-        <div className="max-w-7xl mx-auto relative z-10">
-          <motion.div
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-center"
-          >
-            <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
-              💊 Pharma & Life Sciences
-            </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
-              Technology for Life Sciences
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
-              Comprehensive IT and compliance solutions supporting pharmaceutical research, development, and manufacturing worldwide.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
-              >
-                Discuss Your Project
-              </Link>
-              <Link 
-                href="#solutions"
-                className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
-              >
-                View Solutions
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
+    <div className="min-h-screen bg-white pt-28 pb-20">
+      <div className="container-pro">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
+            💊 Pharma & Life Sciences
+          </span>
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
+            Technology for Life Sciences
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
+            Comprehensive IT and compliance solutions supporting pharmaceutical research, development, and manufacturing worldwide.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/contact"
+              className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
+            >
+              Discuss Your Project
+            </Link>
+            <Link
+              href="#solutions"
+              className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
+            >
+              View Solutions
+            </Link>
+          </div>
+        </motion.div>
 
       {/* Challenges & Solutions Overview */}
       <section className="py-20 px-6">
@@ -141,7 +132,7 @@ export default function PharmaPage() {
       </section>
 
       {/* Core Solutions Grid */}
-      <section id="solutions" className="py-24 px-6 bg-slate-800/30">
+      <section id="solutions" className="py-16 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -150,7 +141,7 @@ export default function PharmaPage() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Pharma-Specific Solutions</h2>
-            <p className="text-xl text-black max-w-3xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Tailored technology and compliance services that understand the unique requirements of life sciences organizations.
             </p>
           </motion.div>
@@ -183,7 +174,7 @@ export default function PharmaPage() {
       </section>
 
       {/* Case Studies */}
-      <section className="py-24 px-6">
+      <section className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -223,28 +214,30 @@ export default function PharmaPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 px-6 bg-brand-navy">
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Transform Your Pharma Operations?
-          </h2>
-          <p className="text-xl text-blue-100 mb-10">
-            Our team of pharma IT and compliance experts is ready to help your organization navigate the complex landscape of life sciences technology.
-          </p>
-          <Link 
-            href="/contact"
-            className="inline-block px-10 py-5 bg-white text-brand-navy font-semibold rounded-xl hover:shadow-lg hover:shadow-white/30 transition-all duration-300 text-lg"
+      {/* CTA Section - Figma Style */}
+      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-16 md:py-20 -mx-4 sm:-mx-6 lg:-mx-8">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-white rounded-3xl shadow-lg p-12 text-center"
           >
-            Start Your Project
-          </Link>
-        </motion.div>
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Ready to Transform Your Pharma Operations?</h2>
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+              Our team of pharma IT and compliance experts is ready to help your organization navigate the complex landscape of life sciences technology.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg"
+            >
+              Start Your Project
+            </Link>
+          </motion.div>
+        </div>
       </section>
+    </div>
     </div>
   );
 }
