@@ -173,9 +173,9 @@ export default function ClientsPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="p-6 bg-white/5 rounded-xl flex justify-center items-center h-36 hover:bg-white/10 transition-colors border border-white/10 hover:border-cyan-400/30 cursor-pointer"
+                className="p-4 bg-white/5 rounded-xl flex justify-center items-center h-28 hover:bg-white/10 transition-colors border border-white/10 hover:border-cyan-400/30 cursor-pointer"
               >
-                <img src={client.logoUrl} alt={client.name} className="max-h-16 w-auto object-contain" />
+                <img src={client.logoUrl} alt={client.name} className="max-h-12 w-auto object-contain" />
               </motion.a>
             ))}
           </motion.div>
