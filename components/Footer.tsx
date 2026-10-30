@@ -36,7 +36,7 @@ export default function Footer() {
               <img
                 src="/logos/cr1.png"
                 alt="Coreridge Technologies"
-                className="h-9 w-auto max-w-[170px] object-contain"
+                className="h-7 w-auto max-w-[140px] object-contain"
               />
             </Link>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-gray-600">
