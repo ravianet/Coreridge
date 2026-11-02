@@ -6,7 +6,7 @@ import { ExternalLink, ArrowRight, Check } from "lucide-react";
 
 const companyStats = [
   { number: "40+", label: "Years of combined leadership experience" },
-  { number: "50,000+", label: "Users supported in leadership experience" },
+  { number: "15,000+", label: "Users supported in leadership experience" },
   { number: "600+", label: "Locations supported in leadership experience" },
   { number: "2023", label: "Founded" },
 ];
