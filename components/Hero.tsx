@@ -51,7 +51,6 @@ export default function Hero() {
       connection?.effectiveType ?? "",
     );
     const canPlayBackground =
-      window.matchMedia("(min-width: 768px)").matches &&
       !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
       !connection?.saveData &&
       !isSlowConnection;
