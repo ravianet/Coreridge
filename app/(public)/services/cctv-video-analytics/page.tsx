@@ -83,7 +83,7 @@ export default function CCTVVideoAnalyticsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative py-20 md:py-24">
+      <section className="relative py-14 md:py-16">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_20%_5%,rgba(59,130,246,0.08),transparent_45%),radial-gradient(ellipse_at_80%_95%,rgba(147,197,253,0.06),transparent_40%),radial-gradient(ellipse_at_50%_50%,rgba(255,255,255,0.8),transparent_60%)]"
@@ -120,7 +120,7 @@ export default function CCTVVideoAnalyticsPage() {
       </section>
 
       {/* Core Capabilities - Glass-effect cards */}
-      <section id="capabilities" className="py-20 px-6">
+      <section id="capabilities" className="py-14 md:py-16 px-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -162,7 +162,7 @@ export default function CCTVVideoAnalyticsPage() {
       </section>
 
       {/* Google Maps Integration Highlight */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-14 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <motion.div
@@ -206,7 +206,7 @@ export default function CCTVVideoAnalyticsPage() {
       </section>
 
       {/* AI Capabilities Grid */}
-      <section className="py-20 md:py-24 bg-gray-50">
+      <section className="py-14 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -241,7 +241,7 @@ export default function CCTVVideoAnalyticsPage() {
       </section>
 
       {/* Project Highlights */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-14 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -281,7 +281,7 @@ export default function CCTVVideoAnalyticsPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-24 bg-gradient-to-br from-blue-50 to-white">
+      <section className="py-14 md:py-16 bg-gradient-to-br from-blue-50 to-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

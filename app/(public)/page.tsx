@@ -16,28 +16,28 @@ import type { Metadata } from "next";
 import Hero from "../../components/Hero";
 
 export const metadata: Metadata = {
-  title: "IT Infrastructure, Cybersecurity, AI & CSV Services",
+  title: "IT, AI, Cybersecurity & CSV Services",
   description:
-    "Build, transform, secure, and validate your business technology with Coreridge. Explore IT infrastructure, software and AI solutions, cybersecurity, and computer system validation (CSV).",
+    "Coreridge helps organizations modernize IT infrastructure, build AI and software solutions, strengthen cybersecurity, and validate critical systems.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Build. Transform. Secure. Validate. | Coreridge Technologies",
+    title: "Coreridge Technologies | IT, AI, Cybersecurity & CSV",
     description:
-      "Your technology partner for IT infrastructure, AI and software development, cybersecurity, and computer system validation.",
+      "Modern IT infrastructure, AI and software solutions, cybersecurity, and system validation for organizations.",
     url: "/",
   },
   twitter: {
-    title: "Build. Transform. Secure. Validate. | Coreridge Technologies",
+    title: "Coreridge Technologies | IT, AI, Cybersecurity & CSV",
     description:
-      "IT infrastructure, AI and software development, cybersecurity, and computer system validation—all with one technology partner.",
+      "IT infrastructure, AI and software solutions, cybersecurity, and system validation from Coreridge Technologies.",
   },
 };
 
 const clientLogos = [
-  { name: "Tlog", src: "/clients/tlog.png" },
   { name: "Natoli", src: "/clients/natoli.png" },
+  { name: "Tlog", src: "/clients/tlog.png" },
   { name: "Ami Polymers", src: "/logos/ami-logo.jpg" },
   { name: "Pacific", src: "/clients/pacific.png" },
   { name: "Skandanana", src: "/clients/skandana.png" },
@@ -45,9 +45,7 @@ const clientLogos = [
   { name: "Shapes Style Lounge", src: "/clients/shapes.png" },
   { name: "Cadmach", src: "/clients/cadmach-logo.png" },
   { name: "Leroy Merlin South Africa", src: "/logos/Leroy Merlin South Africa.svg" },
-  { name: "DLF Hospitality", src: "/logos/DLF Hospitality.png" },
-  { name: "Bundle Technologies", src: "/logos/Bundle Technologies.jpg" },
-  { name: "Client", src: "/clients/logo-1.png" },
+
   { name: "Sri Chaitanya", src: "/logos/Sri Chaitanya.jpg" },
   { name: "DistoPharma", src: "/logos/distoPharma.jpg" },
   { name: "Prozonic", src: "/logos/prozonic.svg" },
@@ -62,7 +60,7 @@ const capabilities = [
     href: "/services/build",
     linkLabel: "Explore BUILD services",
     icon: Layers3,
-    tone: "bg-blue-50 text-brand-navy",
+    tone: "bg-brand-navy/5 text-brand-navy",
     features: [
       "Network & security hardware",
       "Compute & storage solutions",
@@ -78,7 +76,7 @@ const capabilities = [
     href: "/services/transform",
     linkLabel: "Explore TRANSFORM services",
     icon: ArrowUpRight,
-    tone: "bg-violet-50 text-violet-700",
+    tone: "bg-brand-navy/5 text-brand-navy",
     features: [
       "Custom web & mobile apps",
       "Enterprise ERP/CRM systems",
@@ -94,7 +92,7 @@ const capabilities = [
     href: "/services/secure",
     linkLabel: "Explore SECURE services",
     icon: ShieldCheck,
-    tone: "bg-emerald-50 text-emerald-700",
+    tone: "bg-brand-navy/5 text-brand-navy",
     features: [
       "Perimeter & network security",
       "Endpoint security (EDR/XDR)",
@@ -110,7 +108,7 @@ const capabilities = [
     href: "/services/validate",
     linkLabel: "Explore VALIDATE services",
     icon: ClipboardCheck,
-    tone: "bg-amber-50 text-amber-700",
+    tone: "bg-brand-orange/10 text-brand-orange",
     features: [
       "GxP / software validation",
       "IQ/OQ/PQ qualifications",
@@ -172,12 +170,12 @@ export default function Home() {
 
       <section
         aria-labelledby="client-organizations-title"
-        className="border-b border-slate-100 bg-white px-5 py-7 sm:px-8 sm:py-9 lg:px-10"
+        className="border-b border-slate-200/80 bg-white px-5 py-12 sm:px-8 sm:py-14 lg:px-10"
       >
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-start justify-between gap-4 text-left sm:flex-row sm:items-end">
             <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-navy">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-orange">
                 Our clients
               </p>
               <h2
@@ -189,7 +187,7 @@ export default function Home() {
             </div>
             <Link
               href="/clients"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-navy-dark"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-navy transition-colors hover:text-brand-orange"
             >
               Meet all our clients
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
@@ -204,7 +202,7 @@ export default function Home() {
             {clientLogos.map((logo) => (
               <div
                 key={logo.name}
-                className="flex h-24 w-32 snap-start flex-col items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-3 shadow-[0_4px_16px_-12px_rgba(15,23,42,0.28)] transition duration-300 hover:-translate-y-0.5 hover:border-blue-300 hover:shadow-md sm:h-28 sm:w-36"
+                className="flex h-24 w-32 snap-start flex-col items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-3 py-3 transition duration-300 hover:-translate-y-0.5 hover:border-brand-navy/30 hover:shadow-lg hover:shadow-brand-navy/5 sm:h-28 sm:w-36"
               >
                 <Image
                   src={logo.src}
@@ -223,14 +221,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+      <section className="px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-navy">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-orange">
                 What we do
               </p>
-              <h2 className="mt-3 max-w-xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
+              <h2 className="mt-3 max-w-xl text-3xl font-semibold leading-tight tracking-[-0.04em] text-brand-navy sm:text-4xl">
                 Technology that moves your business forward.
               </h2>
             </div>
@@ -241,22 +239,22 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {capabilities.map(({ eyebrow, title, description, href, linkLabel, icon: Icon, tone, features }) => (
               <Link
                 key={eyebrow}
                 href={href}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white via-white to-blue-50/70 p-5 shadow-[0_8px_24px_-18px_rgba(15,42,86,0.5)] transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:shadow-[0_18px_40px_-24px_rgba(15,42,86,0.42)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy sm:p-6"
+                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_12px_30px_-24px_rgba(6,20,61,0.35)] transition duration-300 hover:-translate-y-1 hover:border-brand-navy/25 hover:shadow-[0_20px_44px_-28px_rgba(6,20,61,0.38)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy sm:p-6"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold tracking-[0.16em] text-slate-500">
+                  <span className="text-xs font-semibold tracking-[0.16em] text-slate-500">
                     {eyebrow}
                   </span>
                   <span className={`flex h-10 w-10 items-center justify-center rounded-xl ${tone}`}>
                     <Icon aria-hidden="true" className="h-5 w-5" />
                   </span>
                 </div>
-                <h3 className="mt-4 max-w-md text-lg font-semibold leading-snug tracking-tight text-slate-900 sm:text-xl">
+                <h3 className="mt-4 max-w-md text-lg font-semibold leading-snug tracking-tight text-brand-navy sm:text-xl">
                   {title}
                 </h3>
                 <p className="mt-3 max-w-lg text-sm leading-6 text-slate-600">
@@ -273,7 +271,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <span className="mt-auto inline-flex items-center gap-2 pt-4 text-sm font-semibold text-brand-navy">
+                <span className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-brand-navy">
                   {linkLabel}
                   <ArrowRight
                     aria-hidden="true"
@@ -286,14 +284,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#f7f9fc] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+      <section className="bg-slate-50 px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div className="max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-navy">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-orange">
                 Who we work with
               </p>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.04em] text-brand-navy sm:text-4xl">
                 Built around the realities of your industry.
               </h2>
               <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
@@ -303,24 +301,24 @@ export default function Home() {
             </div>
             <Link
               href="/industries"
-              className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-brand-navy hover:text-brand-navy-dark"
+              className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-brand-navy transition-colors hover:text-brand-orange"
             >
               See all industries
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
           </div>
 
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {industries.map(({ name, detail, href, icon: Icon }) => (
               <Link
                 key={name}
                 href={href}
-                className="group flex h-full flex-col rounded-2xl border border-slate-300/80 bg-white/75 p-4 shadow-[0_8px_24px_-18px_rgba(15,42,86,0.45)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-white hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy sm:p-5"
+                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-5 shadow-[0_12px_30px_-24px_rgba(6,20,61,0.35)] transition duration-300 hover:-translate-y-1 hover:border-brand-navy/25 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy sm:p-6"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-brand-navy">
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-navy/5 text-brand-navy">
                   <Icon aria-hidden="true" className="h-5 w-5" />
                 </span>
-                <h3 className="mt-4 text-lg font-semibold text-slate-900">
+                <h3 className="mt-4 text-lg font-semibold text-brand-navy">
                   {name}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">
@@ -339,13 +337,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
+      <section className="px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-12">
           <div className="max-w-xl">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-navy">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-orange">
               The Coreridge approach
             </p>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.04em] text-brand-navy sm:text-4xl">
               Good partnerships feel clear from day one.
             </h2>
             <p className="mt-5 text-base leading-7 text-slate-600">
@@ -355,24 +353,24 @@ export default function Home() {
             </p>
             <Link
               href="/company/why-coreridge"
-              className="mt-5 inline-flex items-center gap-2 rounded-lg text-sm font-semibold text-brand-navy hover:text-brand-navy-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-navy"
+              className="mt-5 inline-flex items-center gap-2 rounded-lg text-sm font-semibold text-brand-navy transition-colors hover:text-brand-orange focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-navy"
             >
               Why work with Coreridge
               <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-slate-300/80 bg-white/75 shadow-[0_12px_32px_-24px_rgba(15,42,86,0.55)] backdrop-blur-md divide-y divide-slate-200">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_12px_32px_-24px_rgba(6,20,61,0.35)] divide-y divide-slate-200">
             {principles.map((principle, index) => (
               <div
                 key={principle.title}
-                className="flex gap-4 p-4 transition-colors hover:bg-blue-50/60 sm:gap-5 sm:p-5"
+                className="flex gap-4 p-5 transition-colors hover:bg-slate-50 sm:gap-5 sm:p-6"
               >
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-100/70 text-xs font-bold text-brand-navy">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-navy/5 text-xs font-semibold text-brand-navy">
                   0{index + 1}
                 </span>
                 <div>
-                  <h3 className="text-base font-semibold text-slate-900 sm:text-lg">
+                  <h3 className="text-base font-semibold text-brand-navy sm:text-lg">
                     {principle.title}
                   </h3>
                   <p className="mt-1.5 text-sm leading-6 text-slate-600">
@@ -386,21 +384,21 @@ export default function Home() {
       </section>
 
       <section className="px-5 pb-10 sm:px-8 sm:pb-12 lg:px-10 lg:pb-14">
-        <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-[1.5rem] border border-blue-200/80 bg-gradient-to-br from-blue-100/75 via-white/95 to-indigo-100/70 px-6 py-7 shadow-[0_18px_48px_-32px_rgba(15,42,86,0.42)] backdrop-blur-xl sm:px-8 sm:py-9 lg:px-10">
+        <div className="relative isolate mx-auto max-w-7xl overflow-hidden rounded-3xl border border-brand-navy/10 bg-[#E8EDF2] px-6 py-8 text-brand-navy shadow-[0_20px_54px_-32px_rgba(6,20,61,0.28)] sm:px-8 sm:py-10 lg:px-10">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-28 -top-36 -z-10 h-80 w-80 rounded-full bg-blue-200/35 blur-3xl"
+            className="pointer-events-none absolute -right-28 -top-36 -z-10 h-80 w-80 rounded-full bg-[#D98A5D]/25 blur-3xl"
           />
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
             <div className="max-w-2xl">
-              <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-navy">
-                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-brand-orange" />
+              <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#A95122]">
+                <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#C56735]" />
                 Have a project in mind?
               </p>
-              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.035em] text-slate-950 sm:text-4xl">
+              <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-[-0.04em] text-brand-navy sm:text-4xl">
                 Let’s make your next move a confident one.
               </h2>
-              <p className="mt-3 max-w-xl text-base leading-7 text-slate-600">
+              <p className="mt-3 max-w-xl text-base leading-7 text-slate-700">
                 Tell us where you want to go. We’ll help you explore a practical
                 way to get there.
               </p>
@@ -408,21 +406,21 @@ export default function Home() {
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand-navy px-5 py-3 text-sm font-semibold text-white shadow-sm shadow-blue-900/15 transition hover:-translate-y-0.5 hover:bg-brand-navy-dark hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#C56735] px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#B4582A] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A95122]"
               >
                 Start a conversation
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-300 bg-white/80 px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-blue-300 hover:bg-white hover:text-brand-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-navy/15 bg-white/70 px-5 py-3 text-sm font-semibold text-brand-navy transition hover:border-brand-navy/25 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
               >
                 Browse services
               </Link>
             </div>
           </div>
-          <div className="mt-6 flex items-center gap-2 border-t border-blue-200/70 pt-4 text-xs font-medium text-slate-600 sm:text-sm">
-            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+          <div className="mt-6 flex items-center gap-2 border-t border-brand-navy/10 pt-4 text-xs font-medium text-slate-700 sm:text-sm">
+            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/70 text-[#A95122]">
               <Check aria-hidden="true" className="h-3.5 w-3.5" />
             </span>
             No pressure—just a thoughtful first conversation.

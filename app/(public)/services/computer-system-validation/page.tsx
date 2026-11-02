@@ -70,7 +70,7 @@ export default function ComputerSystemValidationPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="container-pro mx-auto py-20 md:py-24 px-4 sm:px-6 lg:px-8"
+        className="container-pro mx-auto py-14 md:py-16 px-4 sm:px-6 lg:px-8"
       >
         <div className="text-center max-w-4xl mx-auto">
           <span className="inline-block px-4 py-2 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold mb-6">
@@ -90,7 +90,7 @@ export default function ComputerSystemValidationPage() {
       </motion.section>
 
       {/* Core Capabilities - Glass-effect cards matching site design */}
-      <section className="py-20 md:py-24 bg-gray-50">
+      <section className="py-14 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -113,7 +113,7 @@ export default function ComputerSystemValidationPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-8 bg-white/85 backdrop-blur-xl rounded-3xl border border-gray-200/60 hover:border-brand-navy/50 transition-all duration-300 shadow-2xl shadow-brand-navy/10 hover:shadow-brand-navy/15 hover:scale-[1.02]"
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-navy/30 hover:shadow-lg sm:p-7"
               >
                 <div className="text-4xl mb-4">{capability.icon}</div>
                 <h3 className="text-2xl font-bold text-brand-navy mb-3">{capability.title}</h3>
@@ -132,7 +132,7 @@ export default function ComputerSystemValidationPage() {
       </section>
 
       {/* Validation Process Timeline - Glass-effect cards */}
-      <section className="py-20 md:py-24 bg-white">
+      <section className="py-14 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -151,11 +151,11 @@ export default function ComputerSystemValidationPage() {
             {validationProcess.map((step, index) => (
               <motion.div
                 key={step.step}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="p-8 bg-white/85 backdrop-blur-xl rounded-3xl border border-gray-200/60 shadow-2xl shadow-brand-navy/10 hover:shadow-brand-navy/15 hover:scale-[1.02] transition-all duration-300"
+                className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-navy/30 hover:shadow-lg sm:p-7"
               >
                 <div className="text-4xl font-bold text-brand-navy mb-3">
                   {step.step}
@@ -169,7 +169,7 @@ export default function ComputerSystemValidationPage() {
       </section>
 
       {/* CTA Section - Figma Style */}
-      <section className="py-20 md:py-24 bg-gradient-to-br from-blue-50 to-white">
+      <section className="py-14 md:py-16 bg-gradient-to-br from-blue-50 to-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

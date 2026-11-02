@@ -1,6 +1,5 @@
-"use client";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 // 100% EXACT 1:1 MAPPING FROM YOUR LOCAL HTML FILE - NO MISMATCHES!
 // Every entry is copied directly from D:\coreridge\Alliances _ VNextGen_files\Alliances _ VNextGen.html
@@ -121,55 +120,104 @@ const alliances = [
 ];
 
 export default function AlliancesPage() {
-  const [cacheBust, setCacheBust] = useState("");
-
-  useEffect(() => {
-    // Set static cache-bust value on client mount to avoid hydration mismatch
-    setCacheBust(Date.now().toString());
-  }, []);
-
   return (
-    <div className="min-h-screen bg-white pt-28 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-20"
-        >
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">
-              Our Alliances
+    <div className="min-h-screen bg-white">
+      <section className="relative isolate overflow-hidden bg-[#E8EDF2] px-5 pb-12 pt-16 sm:px-8 sm:pb-14 sm:pt-20 lg:px-10 lg:pb-16 lg:pt-20">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_88%_10%,rgba(213,133,91,0.18),transparent_35%),radial-gradient(ellipse_at_8%_95%,rgba(28,55,109,0.09),transparent_40%)]"
+        />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_auto] lg:gap-16">
+          <div className="max-w-3xl">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/80 bg-white/75 px-4 py-2 text-sm font-semibold text-[#A95122] shadow-sm">
+              Technology ecosystem
+            </p>
+            <h1 className="text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-brand-navy sm:text-5xl lg:text-6xl">
+              Strong partnerships.
+              <span className="mt-1 block text-[#A95122]">
+                Better-fit solutions.
+              </span>
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
+              We work with established technology providers across security,
+              networking, infrastructure, and cloud to match the right
+              technologies to your business.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 min-[480px]:flex-row">
+              <Link
+                href="/contact"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-[#C56735] px-5 py-3 text-sm font-semibold text-white shadow-md shadow-[#A95122]/15 transition hover:-translate-y-0.5 hover:bg-[#B4582A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A95122]"
+              >
+                Discuss your requirements
+                <ArrowRight
+                  aria-hidden="true"
+                  className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                />
+              </Link>
+              <Link
+                href="/company/why-coreridge"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-navy/15 bg-white/80 px-5 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
+              >
+                Why Coreridge
+              </Link>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 rounded-2xl border border-white/90 bg-white/75 px-5 py-4 shadow-sm backdrop-blur-sm lg:min-w-56 lg:flex-col lg:items-start lg:gap-1 lg:px-7 lg:py-6">
+            <span className="text-4xl font-semibold tracking-tight text-brand-navy sm:text-5xl">
+              {alliances.length}
             </span>
-          </h1>
-          <p className="text-xl text-black max-w-3xl mx-auto">
-            We partner with industry leaders to deliver best-in-class solutions.
-          </p>
-        </motion.div>
+            <span className="text-sm font-medium leading-5 text-slate-600">
+              technology brands
+              <br className="hidden lg:block" /> in our ecosystem
+            </span>
+          </div>
+        </div>
+      </section>
 
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8"
-        >
-          {alliances.map((alliance, index) => (
-            <motion.div
-              key={alliance.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 + index * 0.05 }}
-              className="glass-card rounded-xl p-6 flex flex-col items-center justify-center text-center hover:scale-105 transition-transform"
-            >
-              <img 
-                src={`${alliance.src}?v=${cacheBust}`} 
-                alt={`${alliance.name} logo`}
-                className="h-16 w-full object-contain mb-4 grayscale hover:grayscale-0 transition-all duration-300"
-              />
-              <h3 className="text-lg font-semibold text-gray-800">{alliance.name}</h3>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+      <section
+        aria-labelledby="alliance-list-title"
+        className="bg-white px-5 py-14 sm:px-8 sm:py-16 lg:px-10 lg:py-16"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 flex flex-col gap-3 border-b border-slate-200 pb-6 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A95122]">
+                Partner network
+              </p>
+              <h2
+                id="alliance-list-title"
+                className="mt-2 text-2xl font-semibold tracking-tight text-brand-navy sm:text-3xl"
+              >
+                Technology brands
+              </h2>
+            </div>
+            <p className="max-w-lg text-sm leading-6 text-slate-600">
+              A broad ecosystem helps us design practical solutions around
+              your requirements.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+            {alliances.map((alliance) => (
+              <article
+                key={alliance.name}
+                className="group flex min-h-32 flex-col items-center justify-center rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#F7F8FA] p-4 text-center shadow-[0_8px_24px_-22px_rgba(6,20,61,0.4)] transition duration-300 hover:-translate-y-1 hover:border-brand-navy/20 hover:bg-white hover:shadow-lg hover:shadow-brand-navy/5 sm:min-h-36 sm:p-5"
+              >
+                <img
+                  src={alliance.src}
+                  alt={`${alliance.name} logo`}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-12 w-full object-contain transition-transform duration-300 group-hover:scale-105 sm:h-14"
+                />
+                <h3 className="mt-3 text-sm font-semibold text-slate-700">
+                  {alliance.name}
+                </h3>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

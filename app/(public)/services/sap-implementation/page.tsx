@@ -20,7 +20,7 @@ export default function SAPImplementationPage() {
       title: "Managed Cloud Services",
       description: "Comprehensive managed services for your SAP landscape in the cloud environment.",
       icon: "☁️",
-      features: ["24/7 Monitoring", "Performance Optimization", "Security Management", "Regular Updates"]
+      features: ["System monitoring", "Performance Optimization", "Security Management", "Regular Updates"]
     },
     {
       title: "Process Optimization",
@@ -36,7 +36,7 @@ export default function SAPImplementationPage() {
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative py-20 md:py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
+        className="relative py-14 md:py-16 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/5 to-blue-400/5" />
         <div className="max-w-7xl mx-auto relative z-10">
@@ -74,7 +74,7 @@ export default function SAPImplementationPage() {
       </motion.section>
 
       {/* Core Services Grid */}
-      <section id="solutions" className="py-20 md:py-24 px-6 bg-gray-50">
+      <section id="solutions" className="py-14 md:py-16 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -116,7 +116,7 @@ export default function SAPImplementationPage() {
       </section>
 
       {/* CTA Section - Figma Style */}
-      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-20 md:py-24">
+      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-14 md:py-16">
         <div className="max-w-4xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}

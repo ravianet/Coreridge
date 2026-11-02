@@ -7,7 +7,6 @@ const publicPaths = [
   "/company/about-us",
   "/company/alliances",
   "/company/careers",
-  "/company/clients",
   "/company/why-coreridge",
   "/contact",
   "/industries",
@@ -28,6 +27,8 @@ const publicPaths = [
   "/services/transform",
   "/services/validate",
   "/start",
+  "/privacy",
+  "/terms",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

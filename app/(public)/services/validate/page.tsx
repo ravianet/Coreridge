@@ -65,7 +65,7 @@ export default function ValidatePage() {
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 pb-12 pt-24 md:pb-14 md:pt-28"
+        className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 pb-10 pt-16 md:pb-12 md:pt-20"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/5 to-blue-400/5" />
         <div className="max-w-7xl mx-auto relative z-10">
@@ -202,7 +202,7 @@ export default function ValidatePage() {
       </section>
 
       {/* Validation Process Timeline */}
-      <section className="bg-white px-6 py-16 md:py-20">
+      <section className="bg-white px-6 py-14 md:py-16">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -248,7 +248,7 @@ export default function ValidatePage() {
       </section>
 
       {/* CTA Section - Figma Style */}
-      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-20 md:py-24">
+      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-14 md:py-16">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

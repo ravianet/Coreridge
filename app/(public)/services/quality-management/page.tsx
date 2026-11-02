@@ -42,7 +42,7 @@ export default function QMSPage() {
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative py-20 md:py-24 px-6"
+        className="relative py-14 md:py-16 px-6"
       >
         <div
           aria-hidden="true"
@@ -83,7 +83,7 @@ export default function QMSPage() {
       </motion.section>
 
       {/* Core Services Grid - Glass-effect cards */}
-      <section id="solutions" className="py-20 md:py-24 px-6 bg-gray-50">
+      <section id="solutions" className="py-14 md:py-16 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,7 +125,7 @@ export default function QMSPage() {
       </section>
 
       {/* CTA Section - Figma Style */}
-      <section className="py-20 md:py-24 px-6 bg-gradient-to-br from-blue-50 to-white">
+      <section className="py-14 md:py-16 px-6 bg-gradient-to-br from-blue-50 to-white">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

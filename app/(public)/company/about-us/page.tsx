@@ -5,10 +5,10 @@ import Link from "next/link";
 import { ExternalLink, ArrowRight, Check } from "lucide-react";
 
 const companyStats = [
-  { number: "40+", label: "Years Combined Expertise" },
-  { number: "99.9%", label: "Uptime SLA" },
+  { number: "40+", label: "Years of combined leadership experience" },
+  { number: "50,000+", label: "Users supported in leadership experience" },
+  { number: "600+", label: "Locations supported in leadership experience" },
   { number: "2023", label: "Founded" },
-  { number: "24/7", label: "Support Available" },
 ];
 
 const milestones = [
@@ -66,7 +66,7 @@ export default function AboutUs() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: "easeOut" }}
-        className="text-center mb-16 pt-24 px-6"
+        className="text-center mb-14 pt-16 px-6"
       >
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 mb-10">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -93,7 +93,7 @@ export default function AboutUs() {
         <div className="shadow-xl rounded-3xl overflow-hidden bg-white border border-gray-100">
           <div className="grid grid-cols-2 md:grid-cols-4">
             {companyStats.map((stat, index) => {
-              const isLastInRow = index % 4 === 3;
+              const isLastInRow = index === companyStats.length - 1;
               return (
             <motion.div
               key={stat.label}

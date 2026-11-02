@@ -1,6 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import {
+  internationalPhoneError,
+  isValidInternationalPhone,
+} from "../../../lib/phone-validation";
 import { 
   Phone, MessageCircle, Mail, MapPin, 
   Globe, Zap, Shield, Monitor, ArrowRight, 
@@ -10,7 +14,7 @@ import {
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     firstName: "", lastName: "", email: "", 
-    company: "", serviceInterest: "", message: ""
+    phone: "", company: "", serviceInterest: "", message: ""
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -18,6 +22,10 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!isValidInternationalPhone(formData.phone)) {
+      setSubmitError(internationalPhoneError);
+      return;
+    }
     setSubmitting(true);
     setSubmitError("");
 
@@ -26,6 +34,7 @@ export default function ContactPage() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          formType: "contact",
           ...formData,
           serviceType: formData.serviceInterest,
         }),
@@ -44,6 +53,7 @@ export default function ContactPage() {
         firstName: "",
         lastName: "",
         email: "",
+        phone: "",
         company: "",
         serviceInterest: "",
         message: "",
@@ -74,7 +84,7 @@ export default function ContactPage() {
   const serviceInterests = ["AI Solutions", "IT Infrastructure", "Cyber Security", "App Development", "CCTV Video Analytics", "CSV", "Other"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 pt-28 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100 pt-20 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Modern floating background elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-brand-navy/8 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-400/6 rounded-full blur-3xl pointer-events-none" />
@@ -166,15 +176,41 @@ export default function ContactPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-gray-700 mb-2 font-medium text-xs">Company *</label>
+                      <label className="block text-gray-700 mb-2 font-medium text-xs">Phone Number *</label>
                       <input
-                        type="text" required
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        type="tel"
+                        autoComplete="tel"
+                        inputMode="tel"
+                        required
+                        value={formData.phone}
+                        onChange={(e) => {
+                          e.currentTarget.setCustomValidity("");
+                          setFormData({ ...formData, phone: e.target.value });
+                        }}
+                        onBlur={(e) => e.currentTarget.setCustomValidity(
+                          !e.currentTarget.value || isValidInternationalPhone(e.currentTarget.value)
+                            ? ""
+                            : internationalPhoneError,
+                        )}
                         className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 focus:outline-none focus:border-brand-navy focus:ring-4 focus:ring-brand-navy/5 transition-all text-sm"
-                        placeholder="Your Company"
+                        placeholder="+1 415 555 0132"
+                        aria-describedby="contact-phone-hint"
                       />
+                      <p id="contact-phone-hint" className="mt-1 text-xs text-gray-500">
+                        Include your country calling code.
+                      </p>
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-gray-700 mb-2 font-medium text-xs">Company *</label>
+                    <input
+                      type="text" required
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-gray-800 focus:outline-none focus:border-brand-navy focus:ring-4 focus:ring-brand-navy/5 transition-all text-sm"
+                      placeholder="Your Company"
+                    />
                   </div>
 
                   <div>

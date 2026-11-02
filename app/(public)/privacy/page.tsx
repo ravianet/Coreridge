@@ -62,8 +62,12 @@ export default function PrivacyPolicy() {
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
               <p className="mt-2">
-                <strong>Email:</strong> privacy@coreridge.com<br />
-                <strong>Address:</strong> Coreridge Technologies, Corporate Headquarters
+                <strong>Email:</strong>{" "}
+                <a className="text-brand-navy underline" href="mailto:info@coreridgetech.com">
+                  info@coreridgetech.com
+                </a>
+                <br />
+                <strong>Address:</strong> Hyderabad, Telangana 500090, India
               </p>
             </div>
           </div>

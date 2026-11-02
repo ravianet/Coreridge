@@ -11,6 +11,10 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useState } from "react";
+import {
+  internationalPhoneError,
+  isValidInternationalPhone,
+} from "../../../lib/phone-validation";
 
 export default function GetStartedPage() {
   const [formData, setFormData] = useState({
@@ -30,32 +34,30 @@ export default function GetStartedPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!isValidInternationalPhone(formData.phone)) {
+      setSubmitError(internationalPhoneError);
+      return;
+    }
     setSubmitting(true);
     setSubmitError("");
 
     const [firstName, ...lastNameParts] = formData.userName.trim().split(/\s+/);
     const lastName = lastNameParts.join(" ") || "Not provided";
-    const message = [
-      `Phone: ${formData.phone}`,
-      formData.projectBudget && `Budget: ${formData.projectBudget}`,
-      formData.timeline && `Timeline: ${formData.timeline}`,
-      "",
-      formData.message,
-    ]
-      .filter(Boolean)
-      .join("\n");
-
     try {
       const response = await fetch("/api/inquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          formType: "get-started",
           firstName,
           lastName,
           email: formData.email,
           company: formData.company,
           serviceType: formData.serviceInterest,
-          message,
+          phone: formData.phone,
+          projectBudget: formData.projectBudget,
+          timeline: formData.timeline,
+          message: formData.message,
         }),
       });
       const result: { success?: boolean; message?: string } = await response.json();
@@ -134,7 +136,7 @@ export default function GetStartedPage() {
     "mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 hover:border-slate-300 focus:border-brand-navy focus:ring-4 focus:ring-brand-navy/10";
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#f5f8fc] px-4 pb-16 pt-28 sm:px-6 sm:pb-20 lg:px-8">
+    <div className="relative min-h-screen overflow-hidden bg-[#f5f8fc] px-4 pb-12 pt-20 sm:px-6 sm:pb-14 lg:px-8">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-40 top-12 h-96 w-96 rounded-full bg-blue-200/40 blur-3xl"
@@ -266,12 +268,25 @@ export default function GetStartedPage() {
                         name="phone"
                         type="tel"
                         autoComplete="tel"
+                        inputMode="tel"
                         required
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        onChange={(e) => {
+                          e.currentTarget.setCustomValidity("");
+                          setFormData({ ...formData, phone: e.target.value });
+                        }}
+                        onBlur={(e) => e.currentTarget.setCustomValidity(
+                          !e.currentTarget.value || isValidInternationalPhone(e.currentTarget.value)
+                            ? ""
+                            : internationalPhoneError,
+                        )}
                         className={inputClassName}
-                        placeholder="+91 800 000 0000"
+                        placeholder="+1 415 555 0132"
+                        aria-describedby="phone-hint"
                       />
+                      <p id="phone-hint" className="mt-1 text-xs text-slate-500">
+                        Include your country calling code.
+                      </p>
                     </div>
                   </div>
                 </fieldset>

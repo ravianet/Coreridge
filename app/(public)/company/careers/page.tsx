@@ -1,7 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import {
+  internationalPhoneError,
+  isValidInternationalPhone,
+} from "../../../../lib/phone-validation";
 
 export default function CareersPage() {
   const [formData, setFormData] = useState({
@@ -11,37 +15,73 @@ export default function CareersPage() {
     position: "",
     experience: "",
     message: "",
-    resume: null
+    resume: null as File | null
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const resumeInputRef = useRef<HTMLInputElement>(null);
 
-
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!isValidInternationalPhone(formData.phone)) {
+      setSubmitError(internationalPhoneError);
+      return;
+    }
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      position: "",
-      experience: "",
-      message: "",
-      resume: null
-    });
-    
-    // Reset submission status after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+    setSubmitError("");
+
+    try {
+      if (!formData.resume) {
+        setSubmitError("Please attach your resume or CV.");
+        return;
+      }
+
+      const application = new FormData();
+      application.set("fullName", formData.fullName);
+      application.set("email", formData.email);
+      application.set("phone", formData.phone);
+      application.set("position", formData.position);
+      application.set("experience", formData.experience);
+      application.set("message", formData.message);
+      application.set("resume", formData.resume);
+
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        body: application,
+      });
+      const result: { success?: boolean; message?: string } = await response.json();
+
+      if (!response.ok || !result.success) {
+        setSubmitError(
+          result.message || "We couldn't submit your application. Please try again.",
+        );
+        return;
+      }
+
+      setIsSubmitted(true);
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        position: "",
+        experience: "",
+        message: "",
+        resume: null,
+      });
+      if (resumeInputRef.current) resumeInputRef.current.value = "";
+      window.setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Career application submission failed:", error);
+      setSubmitError(
+        "We couldn't submit your application. Please try again or email info@coreridgetech.com.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, resume: e.target.files[0] });
   };
 
@@ -51,13 +91,13 @@ export default function CareersPage() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="container-pro mx-auto mb-24 pt-32 pb-20 px-4 sm:px-6 lg:px-8"
+        className="mx-auto max-w-5xl px-4 pt-14 pb-12 sm:px-6 sm:pt-16 sm:pb-14 lg:px-8"
       >
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-brand-navy mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold text-brand-navy mb-4">
             Join Our Team
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Build the future of enterprise technology. We're always looking for talented individuals to join our growing team of innovators.
           </p>
         </div>
@@ -69,29 +109,29 @@ export default function CareersPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="py-20 px-6 bg-white"
+        className="py-14 sm:py-16 px-6 bg-white"
       >
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4 text-center">Why Build Your Career at Coreridge?</h2>
-          <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto">We invest in our team members with comprehensive benefits and endless growth opportunities</p>
+          <p className="text-gray-600 text-center mb-10 max-w-2xl mx-auto">Explore opportunities to contribute to practical technology projects, collaborate with experienced professionals, and grow your skills.</p>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
             {[
               { 
-                title: "Competitive Benefits", 
-                desc: "Comprehensive health, dental, and vision insurance plus 401k matching, wellness stipends, and parental leave.", 
-                icon: "🏥",
+                title: "Meaningful work", 
+                desc: "Contribute to technology projects that help organizations improve the systems they rely on.", 
+                icon: "💻",
                 color: "bg-blue-50 text-blue-600"
               },
               { 
-                title: "Flexible Work Culture", 
-                desc: "Remote-first environment with flexible hours, unlimited PTO, and quarterly team retreats around the world.", 
+                title: "Collaborative teams", 
+                desc: "Work alongside colleagues across infrastructure, software, cybersecurity, and validation.", 
                 icon: "🏠",
                 color: "bg-green-50 text-green-600"
               },
               { 
-                title: "Growth Opportunities", 
-                desc: "$5,000 annual learning budget, mentorship programs, and clear career progression paths.", 
+                title: "Professional growth", 
+                desc: "Build your experience through hands-on work, shared knowledge, and new technical challenges.", 
                 icon: "📈",
                 color: "bg-purple-50 text-purple-600"
               },
@@ -102,12 +142,12 @@ export default function CareersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * (index + 1) }}
-                className="p-8 bg-gray-50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+                className="p-6 bg-gray-50 rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className={`w-16 h-16 ${benefit.color} rounded-2xl flex items-center justify-center text-3xl mb-6`}>
+                <div className={`w-14 h-14 ${benefit.color} rounded-2xl flex items-center justify-center text-3xl mb-4`}>
                   {benefit.icon}
                 </div>
-                <h3 className="text-2xl font-bold text-brand-navy mb-4">{benefit.title}</h3>
+                <h3 className="text-xl font-bold text-brand-navy mb-3">{benefit.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{benefit.desc}</p>
               </motion.div>
             ))}
@@ -124,23 +164,33 @@ export default function CareersPage() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.3 }}
-        className="py-20 px-6 bg-gradient-to-b from-gray-50 to-white"
+        className="py-14 sm:py-16 px-6 bg-gradient-to-b from-gray-50 to-white"
       >
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-4">Submit Your Application</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-3">Submit Your Application</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">Ready to join our team? Fill out the form below and we'll get back to you within 48 hours</p>
           </div>
           
           <form 
             onSubmit={handleSubmit} 
-            className="bg-white/85 backdrop-blur-2xl border border-gray-200/60 rounded-3xl p-8 md:p-14 shadow-2xl shadow-brand-navy/10 hover:shadow-[0_30px_60px_-15px_rgba(30,64,175,0.15)] transition-all duration-500"
+            className="bg-white/90 backdrop-blur-xl border border-gray-200/70 rounded-2xl p-5 sm:p-7 md:p-9 shadow-xl shadow-brand-navy/10 hover:shadow-2xl transition-shadow duration-300"
           >
+            {submitError && (
+              <p
+                role="alert"
+                className="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+              >
+                {submitError}
+              </p>
+            )}
             {isSubmitted && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="mb-8 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-center"
+                role="status"
+                aria-live="polite"
               >
                 <span className="font-semibold">Thank you for your submission!</span> We'll review your application and get back to you soon.
               </motion.div>
@@ -174,11 +224,25 @@ export default function CareersPage() {
                 <input
                   required
                   type="tel"
+                  autoComplete="tel"
+                  inputMode="tel"
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={(e) => {
+                    e.currentTarget.setCustomValidity("");
+                    setFormData({ ...formData, phone: e.target.value });
+                  }}
+                  onBlur={(e) => e.currentTarget.setCustomValidity(
+                    !e.currentTarget.value || isValidInternationalPhone(e.currentTarget.value)
+                      ? ""
+                      : internationalPhoneError,
+                  )}
                   className="w-full px-5 py-4 bg-gray-50/80 border border-gray-200 rounded-xl text-gray-800 focus:outline-none focus:border-brand-navy focus:bg-white focus:ring-4 focus:ring-brand-navy/10 transition-all duration-300 placeholder:text-gray-400 hover:border-gray-300"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+1 415 555 0132"
+                  aria-describedby="career-phone-hint"
                 />
+                <p id="career-phone-hint" className="mt-2 text-sm text-gray-500">
+                  Include your country calling code.
+                </p>
               </div>
               <div>
                 <label className="block text-gray-800 mb-3 font-semibold">Position Applying For *</label>
@@ -217,8 +281,10 @@ export default function CareersPage() {
               <label className="block text-gray-800 mb-3 font-semibold">Upload Resume/CV *</label>
               <div className="relative">
                 <input
+                  ref={resumeInputRef}
                   required
                   type="file"
+                  name="resume"
                   accept=".pdf,.doc,.docx"
                   onChange={handleFileChange}
                   className="w-full px-5 py-4 bg-gray-50/80 border border-gray-200 rounded-xl text-gray-800 focus:outline-none focus:border-brand-navy focus:bg-white focus:ring-4 focus:ring-brand-navy/10 transition-all duration-300 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-brand-navy/10 file:text-brand-navy hover:file:bg-brand-navy/20 file:cursor-pointer file:transition-colors cursor-pointer hover:border-gray-300"
@@ -228,7 +294,7 @@ export default function CareersPage() {
                 <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Accepted formats: PDF, DOC, DOCX (Max 5MB)
+                Accepted formats: PDF, DOC, DOCX (Max 4MB)
               </p>
             </div>
 
@@ -274,7 +340,7 @@ export default function CareersPage() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="py-20 px-6 bg-gradient-to-br from-brand-navy via-[#1e3a5f] to-[#0f172a] backdrop-blur-2xl border border-white/10 rounded-3xl mx-auto max-w-4xl mb-20 shadow-2xl shadow-brand-navy/20"
+        className="mx-4 mb-14 max-w-4xl rounded-3xl border border-white/10 bg-gradient-to-br from-brand-navy via-[#1e3a5f] to-[#0f172a] px-6 py-12 shadow-xl shadow-brand-navy/20 sm:mx-auto sm:mb-16 sm:px-10 sm:py-14"
       >
         <div className="text-center">
           <h3 className="text-3xl font-bold text-white mb-4">Have Questions Before Applying?</h3>

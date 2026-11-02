@@ -42,7 +42,7 @@ export default function SecurePage() {
       title: "Managed Security Services",
       description: "We provide a wide range of Managed Security service offerings covering applications, networks, endpoints, data, end-users, infrastructure, the cloud, perimeters, and much more.",
       icon: ShieldCheck,
-      features: ["24/7 Security Operations", "Cloud Security Management", "Threat Intelligence", "Incident Response", "Security Monitoring"],
+      features: ["Security operations planning", "Cloud Security Management", "Threat Intelligence", "Incident Response", "Security Monitoring"],
     },
     {
       title: "IT Consulting & Implementation",
@@ -64,7 +64,7 @@ export default function SecurePage() {
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative py-20 md:py-24 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
+        className="relative py-14 md:py-16 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
       >
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
@@ -120,7 +120,7 @@ export default function SecurePage() {
       </section>
 
       {/* Services Grid */}
-      <section id="services" className="bg-white px-6 py-16 md:py-20">
+      <section id="services" className="bg-white px-6 py-14 md:py-16">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -163,7 +163,7 @@ export default function SecurePage() {
       </section>
 
       {/* CTA Section - Figma Style */}
-<section className="bg-gradient-to-br from-blue-50 to-white px-6 py-20 md:py-24">
+<section className="bg-gradient-to-br from-blue-50 to-white px-6 py-14 md:py-16">
   <div className="max-w-4xl mx-auto">
     <motion.div
       initial={{ opacity: 0, y: 20 }}

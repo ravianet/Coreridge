@@ -4,8 +4,8 @@ import Link from "next/link";
 
 // Your client logos from your existing clientLogos array + all clients
 const clientLogos = [
-  { name: "Tlog", src: "/clients/tlog.png" },
   { name: "Natoli", src: "/clients/natoli.png" },
+  { name: "Tlog", src: "/clients/tlog.png" },
   { name: "Ami Polymers", src: "/logos/ami-logo.jpg" },
   { name: "Pacific", src: "/clients/pacific.png" },
   { name: "Skandanana", src: "/clients/skandana.png" },
@@ -13,10 +13,7 @@ const clientLogos = [
   { name: "Shapes Style Lounge", src: "/clients/shapes.png" },
   { name: "Cadmach", src: "/clients/cadmach-logo.png" },
   { name: "Leroy Merlin South Africa", src: "/logos/Leroy Merlin South Africa.svg" },
-  { name: "DLF Hospitality", src: "/logos/DLF Hospitality.png" },
-  { name: "Bundle Technologies", src: "/logos/Bundle Technologies.jpg" },
-  // Your new clients added with their actual logo files
-    { name: "New Client 1", src: "/clients/logo-1.png" },
+
     { name: "Sri Chaitanya", src: "/logos/Sri Chaitanya.jpg" },
     { name: "DistoPharma", src: "/logos/distoPharma.jpg" },
     { name: "Prozonic", src: "/logos/prozonic.svg" },];
@@ -67,11 +64,8 @@ export default function ClientsPage() {
 
 
           <div className="shadow-xl rounded-3xl overflow-hidden bg-white border border-gray-100">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 divide-x divide-y divide-gray-100">
               {clientLogos.map((client, index) => {
-                const total = clientLogos.length;
-                const isLastInRow = index % 3 === 2; // For desktop 3-column grid
-                const isLastRow = index >= total - (total % 3 || 3); // Last row regardless of items
                 return (
                 <motion.div
                   key={client.name}
@@ -80,16 +74,14 @@ export default function ClientsPage() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08, ease: "easeOut" }}
                   whileHover={{ scale: 1.03 }}
-                  className={`p-10 bg-white hover:bg-slate-50 transition-all duration-400 flex flex-col items-center justify-center min-h-[200px]
-                  ${!isLastInRow ? 'border-r border-b border-gray-100' : (isLastRow ? 'border-b-0 border-r-0' : 'border-b border-gray-100 border-r-0')}
-                  ${isLastRow && !isLastInRow ? 'border-r border-gray-100 border-b-0' : ''}`}
+                  className="p-6 bg-white hover:bg-slate-50 transition-all duration-400 flex flex-col items-center justify-center min-h-[120px]"
               >
               <img
                 src={client.src}
                 alt={client.name}
-                className="h-28 w-full max-w-[240px] mb-2 object-contain"
+                className="h-12 w-full max-w-[120px] mb-2 object-contain"
               />
-                <h3 className="text-base font-semibold text-slate-700 tracking-wide">{client.name}</h3>
+                <h3 className="text-sm font-semibold text-slate-700 tracking-wide">{client.name}</h3>
               </motion.div>
               );
             })}
@@ -99,7 +91,7 @@ export default function ClientsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 bg-gradient-to-b from-white to-blue-50">
+      <section className="py-14 md:py-16 px-6 bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

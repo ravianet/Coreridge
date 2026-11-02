@@ -75,7 +75,7 @@ export default function TransformPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white px-4 py-20 sm:px-6 md:py-24 lg:px-8">
+    <div className="min-h-screen bg-white px-4 py-14 sm:px-6 md:py-16 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -190,7 +190,7 @@ export default function TransformPage() {
         </motion.section>
 
         {/* CTA Section - Figma Style */}
-        <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-20 md:py-24">
+        <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-14 md:py-16">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -6,9 +6,43 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhatsAppButton";
 
 const inter = Inter({ subsets: ["latin"] });
+const organizationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Coreridge Technologies",
+  url: "https://coreridgetech.com",
+  logo: "https://coreridgetech.com/logos/cr1.png",
+  email: "info@coreridgetech.com",
+  telephone: "+918008856333",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Hyderabad",
+    addressRegion: "Telangana",
+    postalCode: "500090",
+    addressCountry: "IN",
+  },
+  sameAs: ["https://www.linkedin.com/company/coreridge-technologies"],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://coreridgetech.com'),
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon-64x64.png", type: "image/png", sizes: "64x64" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: ["/favicon.ico"],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
+  manifest: "/site.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "Coreridge",
+    statusBarStyle: "default",
+  },
   title: {
     default: "Coreridge Technologies | Build, Transform, Secure, Validate",
     template: "%s | Coreridge Technologies",
@@ -38,6 +72,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
+        />
         <Navigation />
         <main>{children}</main>
         <Footer />

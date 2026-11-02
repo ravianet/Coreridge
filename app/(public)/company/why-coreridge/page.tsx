@@ -201,25 +201,25 @@ export default function WhyCoreRidgePage() {
       artwork: "partnership" as const,
       secondaryIcon: HeartHandshake,
       accent: "blue" as const,
-      features: ["Strategic Consulting", "Implementation Services", "24/7 Support", "Continuous Optimization"]
+      features: ["Strategic Consulting", "Implementation Services", "Ongoing Support", "Continuous Improvement"]
     },
     {
-      title: "Proven Track Record",
-      description: "Our experience spans infrastructure, security, cloud, software, and validation projects across multiple industries.",
+      title: "Broad Delivery Experience",
+      description: "Our leadership experience spans infrastructure, software, cybersecurity, and validation across multiple industries.",
       icon: Trophy,
       artwork: "achievement" as const,
       secondaryIcon: BriefcaseBusiness,
       accent: "gold" as const,
-      features: ["50+ Projects Completed", "15+ Client Partnerships", "Global Reach", "Local Expertise"]
+      features: ["Enterprise infrastructure", "Software & AI", "Cybersecurity", "System validation"]
     },
     {
       title: "Security First Approach",
-      description: "Security is built into everything we do. Our solutions incorporate industry-leading security practices to protect your critical data and systems.",
+      description: "We consider security throughout solution design and delivery, helping protect the data and systems your business relies on.",
       icon: ShieldCheck,
       artwork: "security" as const,
       secondaryIcon: LockKeyhole,
       accent: "green" as const,
-      features: ["Zero Trust Architecture", "24/7 Monitoring", "Compliance Audits", "Data Encryption"]
+      features: ["Security architecture", "Risk assessments", "Compliance support", "Data protection"]
     }
   ];
 
@@ -234,7 +234,7 @@ export default function WhyCoreRidgePage() {
     },
     {
       title: "Excellence",
-      description: "We strive for excellence in every project, delivering solutions that exceed expectations.",
+      description: "We focus on thoughtful delivery, clear communication, and solutions shaped around each client's needs.",
       icon: Sparkles,
       artwork: "excellence" as const,
       secondaryIcon: Trophy,
@@ -250,7 +250,7 @@ export default function WhyCoreRidgePage() {
     },
     {
       title: "Reliability",
-      description: "You can count on us to deliver on time, every time. We take ownership of your project's success.",
+      description: "We work to deliver dependable outcomes and communicate clearly about progress, risks, and changes.",
       icon: CircleCheck,
       artwork: "reliability" as const,
       secondaryIcon: ShieldCheck,
@@ -259,10 +259,10 @@ export default function WhyCoreRidgePage() {
   ];
 
   const stats = [
-    { number: "15+", label: "Years Experience", icon: CalendarDays, artwork: "experience" as const, accent: "blue" as const, secondaryIcon: Sparkles },
-    { number: "50+", label: "Projects Completed", icon: BriefcaseBusiness, artwork: "projects" as const, accent: "cyan" as const, secondaryIcon: CodeXml },
-    { number: "15+", label: "Happy Clients", icon: UsersRound, artwork: "clients" as const, accent: "gold" as const, secondaryIcon: HeartHandshake },
-    { number: "98%", label: "Client Retention", icon: HeartHandshake, artwork: "retention" as const, accent: "green" as const, secondaryIcon: ShieldCheck }
+    { number: "40+", label: "Combined leadership experience", icon: CalendarDays, artwork: "experience" as const, accent: "blue" as const, secondaryIcon: Sparkles },
+    { number: "50,000+", label: "Users supported across leadership experience", icon: UsersRound, artwork: "clients" as const, accent: "cyan" as const, secondaryIcon: HeartHandshake },
+    { number: "600+", label: "Locations supported across leadership experience", icon: Building2, artwork: "industry" as const, accent: "gold" as const, secondaryIcon: MapPin },
+    { number: "2023", label: "Coreridge founded", icon: CalendarDays, artwork: "projects" as const, accent: "green" as const, secondaryIcon: Rocket }
   ];
 
   const testimonials = [
@@ -286,36 +286,76 @@ export default function WhyCoreRidgePage() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-white">
-      <section className="relative isolate overflow-hidden bg-slate-50 px-4 pb-10 pt-24 sm:px-6 md:pb-12 md:pt-28">
-        <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-32 -z-10 h-96 w-96 rounded-full bg-blue-200/40 blur-3xl" />
-        <div aria-hidden="true" className="pointer-events-none absolute -bottom-52 -left-24 -z-10 h-80 w-80 rounded-full bg-cyan-100/70 blur-3xl" />
-        <div className="relative z-10 mx-auto max-w-7xl">
+      <section className="relative isolate overflow-hidden bg-[#E8EDF2] px-5 pb-14 pt-16 sm:px-8 sm:pb-16 sm:pt-20 lg:px-10 lg:pb-16 lg:pt-20">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_88%_12%,rgba(213,133,91,0.18),transparent_35%),radial-gradient(ellipse_at_10%_90%,rgba(28,55,109,0.10),transparent_40%)]" />
+        <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mx-auto max-w-4xl text-center"
+            className="max-w-2xl"
           >
-            <span className="mb-5 inline-flex items-center gap-3 rounded-full border border-slate-300 bg-white/70 py-1.5 pl-1.5 pr-4 text-sm font-semibold text-slate-800 shadow-sm backdrop-blur-sm">
+            <span className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/80 bg-white/75 py-1.5 pl-1.5 pr-4 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur-sm">
               <IconTile icon={Sparkles} artwork="innovation" secondaryIcon={CircleCheck} accent="blue" size="sm" />
               Your partner for technology that works
             </span>
-            <h1 className="mb-5 text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl md:text-6xl">
-              Why Choose
-              <span className="block text-[#C4A86A]">
-                CoreRidge
-              </span>
+            <h1 className="mb-5 text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-brand-navy sm:text-5xl lg:text-6xl">
+              A technology partner
+              <span className="mt-1 block text-[#A95122]">built around you.</span>
             </h1>
-            <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
-              We're not just another IT services provider. We're your strategic partner in digital transformation, 
-              bringing decades of industry expertise and a proven methodology that delivers measurable results.
+            <p className="max-w-2xl text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
+              We bring industry expertise and practical technology delivery
+              together—helping your team make complex change clear, secure, and
+              manageable.
             </p>
+            <div className="mt-8 flex flex-col gap-3 min-[480px]:flex-row">
+              <Link
+                href="/contact"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-xl bg-[#C56735] px-5 py-3 text-sm font-semibold text-white shadow-md shadow-[#A95122]/15 transition hover:-translate-y-0.5 hover:bg-[#B4582A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A95122]"
+              >
+                Talk to our team
+                <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/services"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-brand-navy/15 bg-white/80 px-5 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
+              >
+                Explore our services
+              </Link>
+            </div>
           </motion.div>
+          <div className="relative mx-auto w-full max-w-lg lg:ml-auto">
+            <div className="rounded-3xl border border-white/90 bg-white/85 p-5 shadow-[0_24px_70px_-34px_rgba(6,20,61,0.28)] backdrop-blur-md sm:p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#A95122]">
+                Why Coreridge
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold leading-tight tracking-[-0.03em] text-brand-navy sm:text-3xl">
+                Clear advice. Thoughtful delivery.
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-slate-600 sm:text-base">
+                From first conversation to ongoing support, we work alongside
+                your team to make technology work for your business.
+              </p>
+              <div className="mt-6 grid grid-cols-2 gap-3">
+                {[
+                  ["01", "Industry expertise"],
+                  ["02", "End-to-end support"],
+                  ["03", "Security-minded"],
+                  ["04", "Built around you"],
+                ].map(([number, label]) => (
+                  <div key={number} className="rounded-xl border border-slate-200/80 bg-[#F7F8FA] p-3">
+                    <span className="text-xs font-bold tracking-wider text-[#A95122]">{number}</span>
+                    <p className="mt-1 text-sm font-semibold text-brand-navy">{label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="border-y border-slate-200/80 bg-white px-4 py-6 sm:px-6 md:py-7">
+      <section className="border-y border-slate-200/80 bg-white px-5 py-8 sm:px-8 md:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
             {stats.map((stat, index) => (
@@ -325,7 +365,7 @@ export default function WhyCoreRidgePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 px-3 py-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-950/5 sm:py-6">
+                className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#F7F8FA] px-3 py-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-navy/20 hover:shadow-lg hover:shadow-brand-navy/5 sm:py-6">
                 <IconTile icon={stat.icon} artwork={stat.artwork} secondaryIcon={stat.secondaryIcon} accent={stat.accent} size="md" />
                 <div className="mb-1 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
                   {stat.number}
@@ -338,15 +378,16 @@ export default function WhyCoreRidgePage() {
       </section>
 
       {/* Core Differentiators */}
-      <section className="bg-slate-50 px-4 py-10 sm:px-6 md:py-12">
+      <section className="bg-[#F3F5F7] px-5 py-14 sm:px-8 md:py-16">
         <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-6 text-center md:mb-8">
-            <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">What Sets Us Apart</h2>
+            className="mb-8 max-w-3xl text-left md:mb-10">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#A95122]">The Coreridge difference</p>
+            <h2 className="mb-3 text-3xl font-semibold tracking-tight text-brand-navy md:text-4xl">What sets us apart</h2>
             <p className="mx-auto max-w-2xl text-slate-600 md:text-lg">
               Our unique combination of industry expertise, technical excellence, and client-first approach 
               delivers results that drive your business forward.
@@ -361,7 +402,7 @@ export default function WhyCoreRidgePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-950/5 sm:p-7"
+                className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_12px_30px_-24px_rgba(6,20,61,0.35)] transition duration-300 hover:-translate-y-1 hover:border-brand-navy/20 hover:shadow-xl hover:shadow-brand-navy/5 sm:p-7"
               >
                 <div className="mb-5">
                   <IconTile icon={differentiator.icon} artwork={differentiator.artwork} secondaryIcon={differentiator.secondaryIcon} accent={differentiator.accent} size="lg" />
@@ -385,15 +426,16 @@ export default function WhyCoreRidgePage() {
 
 
       {/* Our Values */}
-      <section className="bg-white px-4 py-10 sm:px-6 md:py-12">
+      <section className="bg-white px-5 py-14 sm:px-8 md:py-16">
         <div className="mx-auto max-w-7xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mb-6 text-center md:mb-8">
-            <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">Our Core Values</h2>
+            className="mb-8 max-w-3xl text-left md:mb-10">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#A95122]">How we work</p>
+            <h2 className="mb-3 text-3xl font-semibold tracking-tight text-brand-navy md:text-4xl">Our core values</h2>
             <p className="mx-auto max-w-2xl text-slate-600 md:text-lg">
               These principles guide everything we do and define how we partner with our clients.
             </p>
@@ -407,7 +449,7 @@ export default function WhyCoreRidgePage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-950/5 sm:p-6"
+                className="group rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-[#F7F8FA] p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-navy/20 hover:shadow-lg hover:shadow-brand-navy/5 sm:p-6"
               >
                 <div className="mb-4">
                   <IconTile icon={value.icon} artwork={value.artwork} secondaryIcon={value.secondaryIcon} accent={value.accent} size="md" />
@@ -421,12 +463,8 @@ export default function WhyCoreRidgePage() {
       </section>
 
       {/* Client Success Stories */}
-      <section className="relative isolate overflow-hidden bg-gray-100 px-4 py-10 sm:px-6 md:py-12">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/50 via-gray-100 to-gray-100" />
-        <div aria-hidden="true" className="pointer-events-none absolute -left-80 -top-80 h-[600px] w-[600px] rounded-full bg-cyan-200/25 blur-[100px]" />
-        <div aria-hidden="true" className="pointer-events-none absolute -bottom-80 -right-80 h-[600px] w-[600px] rounded-full bg-violet-200/25 blur-[100px]" />
-        <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[800px] w-[800px] rounded-full bg-blue-200/10 blur-[120px]" />
-        <div aria-hidden="true" className="pointer-events-none absolute left-1/4 top-1/3 h-[400px] w-[400px] rounded-full bg-fuchsia-200/10 blur-[80px]" />
+      <section className="relative isolate overflow-hidden bg-[#E8EDF2] px-5 py-14 sm:px-8 md:py-16">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_8%_0%,rgba(213,133,91,0.12),transparent_35%),radial-gradient(ellipse_at_95%_95%,rgba(28,55,109,0.08),transparent_40%)]" />
         
         <div className="relative z-10 mx-auto max-w-7xl">
           {/* Section Header */}
@@ -435,14 +473,14 @@ export default function WhyCoreRidgePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mx-auto mb-6 max-w-3xl text-center md:mb-8">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50/70 px-4 py-2 text-sm font-semibold text-orange-700 shadow-sm backdrop-blur-sm">
-              <Building2 aria-hidden="true" className="h-4 w-4 text-orange-600" />
+            className="mx-auto mb-8 max-w-3xl text-left md:mb-10">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#A95122]/15 bg-white/75 px-4 py-2 text-sm font-semibold text-[#A95122] shadow-sm backdrop-blur-sm">
+              <Building2 aria-hidden="true" className="h-4 w-4" />
               Client partnerships
             </span>
-            <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+            <h2 className="mb-3 text-3xl font-semibold tracking-tight text-brand-navy md:text-4xl">
               Client success stories
-              <span className="block text-blue-700">across global IT solutions</span>
+              <span className="block text-[#A95122]">built on lasting partnerships</span>
             </h2>
             <p className="mx-auto max-w-2xl text-slate-600 md:text-lg">
               Here's what our clients say about working with Coreridge on their technology and support needs.
@@ -458,7 +496,7 @@ export default function WhyCoreRidgePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: index * 0.1 }}
-                className="relative flex h-full flex-col rounded-2xl border border-white/30 bg-white/20 p-6 shadow-lg backdrop-blur-3xl transition duration-300 hover:-translate-y-1 sm:p-8"
+                className="relative flex h-full flex-col rounded-2xl border border-white/90 bg-white/85 p-6 shadow-[0_16px_40px_-28px_rgba(6,20,61,0.35)] backdrop-blur-md transition duration-300 hover:-translate-y-1 sm:p-8"
               >
                 <Quote aria-hidden="true" className="mb-4 h-8 w-8 text-slate-400" />
                 <blockquote className="flex-1 text-base leading-7 text-slate-700 md:text-lg">
@@ -483,11 +521,12 @@ export default function WhyCoreRidgePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mx-auto mb-6 max-w-3xl text-center md:mb-8"
+            className="mx-auto mb-8 max-w-3xl text-left md:mb-10"
           >
-            <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#A95122]">Our story</p>
+            <h2 className="mb-3 text-3xl font-semibold tracking-tight text-brand-navy md:text-4xl">
               Our Journey
-              <span className="block text-blue-700">years of expertise, now as CoreRidge</span>
+              <span className="block text-[#A95122]">years of expertise, now as CoreRidge</span>
             </h2>
             <p className="mx-auto max-w-2xl text-slate-600 md:text-lg">
               Built by industry veterans with decades of IT experience, we founded CoreRidge in 2023 to deliver exceptional digital transformation.
@@ -498,26 +537,26 @@ export default function WhyCoreRidgePage() {
           <div className="mx-auto mb-16 max-w-4xl">
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-8 top-0 h-full w-0.5 bg-slate-200 md:left-1/2"></div>
+              <div className="absolute bottom-0 left-3 top-0 w-0.5 bg-slate-200 md:left-1/2"></div>
               
               {/* Timeline items */}
-              <div className="space-y-8">
+              <div className="space-y-6 md:space-y-8">
                 {/* 2023 - Founded */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="relative flex items-center md:justify-center"
+                  className="relative grid grid-cols-[24px_minmax(0,1fr)] items-center gap-4 md:grid-cols-[1fr_24px_1fr] md:gap-6"
                 >
-                  <div className="ml-20 w-full md:ml-0 md:w-5/12 md:pr-8 md:text-right">
-                    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                      <span className="mb-2 inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">2023</span>
-                      <h3 className="mb-2 text-xl font-bold text-slate-950">CoreRidge Founded</h3>
+                  <div className="col-start-2 row-start-1 min-w-0 md:col-start-3">
+                    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+                      <span className="mb-2 inline-block rounded-full bg-[#C56735]/10 px-3 py-1 text-xs font-semibold text-[#A95122]">2023</span>
+                      <h3 className="mb-2 text-xl font-bold text-brand-navy">CoreRidge Founded</h3>
                       <p className="text-slate-600">Launched our vision to transform enterprise technology with seasoned leadership driving every decision.</p>
                     </div>
                   </div>
-                  <div className="absolute left-6 flex h-6 w-6 items-center justify-center rounded-full bg-blue-700 md:left-1/2 md:-ml-3">
+                  <div className="relative z-10 col-start-1 row-start-1 flex h-6 w-6 items-center justify-center rounded-full bg-brand-navy md:col-start-2 md:justify-self-center">
                     <Rocket className="h-3 w-3 text-white" />
                   </div>
                 </motion.div>
@@ -528,16 +567,16 @@ export default function WhyCoreRidgePage() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="relative flex items-center md:justify-center"
+                  className="relative grid grid-cols-[24px_minmax(0,1fr)] items-center gap-4 md:grid-cols-[1fr_24px_1fr] md:gap-6"
                 >
-                  <div className="ml-20 w-full md:ml-auto md:w-5/12 md:pl-8">
-                    <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                      <span className="mb-2 inline-block rounded-full bg-cyan-100 px-3 py-1 text-xs font-semibold text-cyan-700">Leadership Legacy</span>
-                      <h3 className="mb-2 text-xl font-bold text-slate-950">40+ Years Combined Experience</h3>
+                  <div className="col-start-2 row-start-1 min-w-0 md:col-start-1">
+                    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+                      <span className="mb-2 inline-block rounded-full bg-[#C56735]/10 px-3 py-1 text-xs font-semibold text-[#A95122]">Leadership Legacy</span>
+                      <h3 className="mb-2 text-xl font-bold text-brand-navy">40+ Years Combined Experience</h3>
                       <p className="text-slate-600">Our CEO brings 19 years of industry expertise, and our CTO contributes 20+ years of technical leadership in IT.</p>
                     </div>
                   </div>
-                  <div className="absolute left-6 flex h-6 w-6 items-center justify-center rounded-full bg-cyan-600 md:left-1/2 md:-ml-3">
+                  <div className="relative z-10 col-start-1 row-start-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#C56735] md:col-start-2 md:justify-self-center">
                     <UsersRound className="h-3 w-3 text-white" />
                   </div>
                 </motion.div>
@@ -551,11 +590,12 @@ export default function WhyCoreRidgePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mx-auto mb-6 max-w-3xl text-center md:mb-8"
+            className="mx-auto mb-8 max-w-3xl text-left md:mb-10"
           >
-            <h2 className="mb-3 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#A95122]">Leadership</p>
+            <h2 className="mb-3 text-3xl font-semibold tracking-tight text-brand-navy md:text-4xl">
               Meet Our
-              <span className="block text-blue-700">Leadership Team</span>
+              <span className="block text-[#A95122]">Leadership Team</span>
             </h2>
             <p className="mx-auto max-w-2xl text-slate-600 md:text-lg">
               Industry veterans dedicated to delivering excellence in every digital transformation project.
@@ -572,15 +612,15 @@ export default function WhyCoreRidgePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"
+              className="group rounded-2xl border border-white/90 bg-white/85 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-navy/20 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
             >
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="mb-1 text-xl font-bold text-slate-950">Ravi Teja</h3>
-                  <p className="mb-3 text-sm font-semibold text-blue-700">Chief Executive Officer</p>
+                  <h3 className="mb-1 text-xl font-bold text-slate-950">RAVI KUMAR VALLURU</h3>
+                  <p className="mb-3 text-sm font-semibold text-[#A95122]">Founder and CEO</p>
                   <p className="mb-4 text-slate-600">19 years of extensive experience in the IT industry, leading enterprise transformations and building successful technology teams.</p>
                 </div>
-                <ExternalLink className="h-5 w-5 text-slate-400 group-hover:text-blue-700 transition-colors" />
+                <ExternalLink className="h-5 w-5 text-slate-400 transition-colors group-hover:text-[#A95122]" />
               </div>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-700">
                 View full profile
@@ -596,15 +636,15 @@ export default function WhyCoreRidgePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="group rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg"
+              className="group rounded-2xl border border-white/90 bg-white/85 p-7 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-brand-navy/20 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
             >
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="mb-1 text-xl font-bold text-slate-950">Naga Deepthi</h3>
-                  <p className="mb-3 text-sm font-semibold text-blue-700">Chief Technology Officer</p>
+                  <h3 className="mb-1 text-xl font-bold text-slate-950">NAGA DEEPTHI VALLURU</h3>
+                  <p className="mb-3 text-sm font-semibold text-[#A95122]">CTO</p>
                   <p className="mb-4 text-slate-600">20+ years of technical expertise architecting scalable solutions, driving innovation, and leading complex technology initiatives.</p>
                 </div>
-                <ExternalLink className="h-5 w-5 text-slate-400 group-hover:text-blue-700 transition-colors" />
+                <ExternalLink className="h-5 w-5 text-slate-400 transition-colors group-hover:text-[#A95122]" />
               </div>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-medium text-slate-700">
                 View full profile
@@ -612,25 +652,6 @@ export default function WhyCoreRidgePage() {
             </motion.a>
           </div>
 
-          {/* Final CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="mt-0 rounded-3xl border border-slate-200 bg-white p-10 shadow-lg sm:p-14">
-            <div className="text-center">
-              <h3 className="mb-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Ready to Start Your Transformation?</h3>
-              <p className="mb-8 text-lg text-slate-600">Let's discuss how CoreRidge can help your organization achieve its digital goals.</p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-full bg-blue-700 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
-              >
-                Get in Touch
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>

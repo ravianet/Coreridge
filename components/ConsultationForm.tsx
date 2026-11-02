@@ -4,11 +4,19 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
+import {
+  internationalPhoneError,
+  isValidInternationalPhone,
+} from "../lib/phone-validation";
 
 const consultationSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
   lastName: z.string().min(1, "Last name is required"),
   email: z.string().email("Please enter a valid email"),
+  phone: z.string().trim().min(1, "Phone number is required").refine(
+    isValidInternationalPhone,
+    internationalPhoneError,
+  ),
   company: z.string().optional(),
   serviceType: z.string().min(1, "Please select a service"),
   message: z.string().optional(),
@@ -43,7 +51,7 @@ export default function ConsultationForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, formType: "consultation" }),
       });
 
       const result = await response.json();
@@ -119,6 +127,26 @@ export default function ConsultationForm() {
         />
         {errors.email && (
             <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+          )}
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-slate-700 mb-2">Phone Number *</label>
+          <input
+            {...register("phone")}
+            type="tel"
+            autoComplete="tel"
+            inputMode="tel"
+            className={`w-full px-4 py-3 bg-white border rounded-lg focus:outline-none focus:border-primary-500 transition-colors text-slate-900 ${
+              errors.phone ? "border-red-500" : "border-slate-300"
+            }`}
+            placeholder="+1 415 555 0132"
+            aria-describedby="consultation-phone-hint"
+          />
+          <p id="consultation-phone-hint" className="mt-1 text-xs text-slate-500">
+            Include your country calling code.
+          </p>
+          {errors.phone && (
+            <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
           )}
         </div>
         <div>

@@ -43,14 +43,14 @@ export default function EducationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-28 pb-20">
+    <div className="min-h-screen bg-white pt-20 pb-14">
       <div className="container-pro">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-center mb-24"
+          className="text-center mb-16"
         >
             <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
               🎓 Education
@@ -120,7 +120,7 @@ export default function EducationPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-14 md:py-16 px-6 bg-gray-50">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

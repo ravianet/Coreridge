@@ -74,8 +74,12 @@ export default function TermsOfService() {
                 If you have any questions about these Terms of Service, please contact us at:
               </p>
               <p className="mt-2">
-                <strong>Email:</strong> legal@coreridge.com<br />
-                <strong>Address:</strong> Coreridge Technologies, Corporate Headquarters
+                <strong>Email:</strong>{" "}
+                <a className="text-brand-navy underline" href="mailto:info@coreridgetech.com">
+                  info@coreridgetech.com
+                </a>
+                <br />
+                <strong>Address:</strong> Hyderabad, Telangana 500090, India
               </p>
             </div>
           </div>

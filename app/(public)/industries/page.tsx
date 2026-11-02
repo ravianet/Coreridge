@@ -8,62 +8,57 @@ export default function IndustriesPage() {
       name: "Pharma & Life Sciences",
       icon: "💊",
       description: "Comprehensive IT and compliance solutions for pharmaceutical research, development, and manufacturing organizations.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800&h=500",
       href: "/industries/pharma",
-      color: "from-blue-500 to-cyan-500",
       keyServices: ["Computer System Validation (CSV)", "GxP Compliance", "Laboratory Information Systems", "Regulatory Audit Support"]
     },
     {
       name: "Education",
       icon: "🎓",
       description: "Technology solutions tailored for educational institutions, from K-12 to universities and research centers.",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800&h=500",
       href: "/industries/education",
-      color: "from-purple-500 to-pink-500",
       keyServices: ["Campus Infrastructure", "Student Information Systems", "Data Security & Privacy", "E-Learning Platforms"]
     },
     {
       name: "Manufacturing",
       icon: "🏭",
       description: "Industrial IT solutions for modern manufacturing facilities, supporting Industry 4.0 and smart factory initiatives.",
-      image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&q=80&w=800&h=500",
       href: "/industries/manufacturing",
-      color: "from-orange-500 to-red-500",
       keyServices: ["ERP Implementation", "Supply Chain Management", "Industrial IoT", "Process Automation"]
     },
     {
       name: "Enterprise",
       icon: "🏢",
       description: "Scalable enterprise solutions for large organizations across all sectors, supporting digital transformation at scale.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800&h=500",
       href: "/industries/enterprise",
-      color: "from-green-500 to-emerald-500",
       keyServices: ["Cloud Migration", "Cybersecurity", "Digital Transformation", "Managed IT Services"]
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-28 pb-20">
+    <div className="min-h-screen bg-white pb-14 pt-16 sm:pt-20">
       <div className="container-pro">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-center mb-24"
+          className="mx-auto mb-14 max-w-4xl text-center sm:mb-16"
         >
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-black mb-6">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand-orange">
+              Who we work with
+            </p>
+            <h1 className="mb-5 text-3xl font-semibold leading-tight tracking-[-0.04em] text-brand-navy md:text-5xl lg:text-6xl">
               Industry-Specific Solutions
             </h1>
-            <p className="text-xl md:text-2xl text-black max-w-4xl mx-auto mb-10">
+            <p className="mx-auto mb-8 max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
               Tailored technology and compliance solutions designed for the unique challenges of your industry.
             </p>
           </motion.div>
 
       {/* Industries Grid */}
-      <section className="bg-gray-50 px-6 py-16 md:py-20">
+      <section className="rounded-3xl bg-slate-50 px-4 py-8 sm:px-6 sm:py-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid gap-5 md:grid-cols-2">
             {industries.map((industry, index) => (
               <motion.div
                 key={industry.name}
@@ -75,34 +70,32 @@ export default function IndustriesPage() {
                 className="group"
               >
                 <Link href={industry.href}>
-                  <div className="bg-gray-50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 hover:border-cyan-500/50 transition-all duration-300 shadow-sm">
-                    <div className="relative h-64 overflow-hidden">
-                      <img 
-                        src={industry.image} 
-                        alt={industry.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
-                      <div className="absolute bottom-6 left-6">
-                        <span className="text-5xl mb-4 block">{industry.icon}</span>
-                        <h3 className={`text-3xl font-bold bg-gradient-to-r ${industry.color} bg-clip-text text-transparent`}>
+                  <div className="h-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:border-brand-navy/25 group-hover:shadow-xl group-hover:shadow-brand-navy/5">
+                    <div className="relative flex min-h-40 items-end overflow-hidden bg-gradient-to-br from-brand-navy via-brand-navy-mid to-brand-navy-light p-6 sm:min-h-48">
+                      <div aria-hidden="true" className="pointer-events-none absolute -right-12 -top-20 h-56 w-56 rounded-full border border-white/10 bg-white/[0.04]" />
+                      <div aria-hidden="true" className="pointer-events-none absolute -right-4 -top-12 h-40 w-40 rounded-full border border-brand-orange-light/20" />
+                      <div className="relative">
+                        <span className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-2xl text-white backdrop-blur-sm">
+                          {industry.icon}
+                        </span>
+                        <h3 className="text-2xl font-semibold tracking-tight text-white">
                           {industry.name}
                         </h3>
                       </div>
                     </div>
-                    <div className="p-8">
-                      <p className="text-black text-lg mb-6">{industry.description}</p>
-                      <div className="mb-6">
-                        <h4 className="text-black font-semibold mb-3">Key Services:</h4>
+                    <div className="p-6">
+                      <p className="mb-5 text-base leading-7 text-slate-600">{industry.description}</p>
+                      <div className="mb-5">
+                        <h4 className="mb-3 text-sm font-semibold text-brand-navy">Key services</h4>
                         <div className="flex flex-wrap gap-2">
                           {industry.keyServices.map((service, idx) => (
-                            <span key={idx} className="px-3 py-1 bg-gray-200 text-black rounded-full text-sm">
+                            <span key={idx} className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600">
                               {service}
                             </span>
                           ))}
                         </div>
                       </div>
-                      <div className={`inline-flex items-center gap-2 font-semibold bg-gradient-to-r ${industry.color} bg-clip-text text-transparent group-hover:gap-4 transition-all`}>
+                      <div className="inline-flex items-center gap-2 font-semibold text-brand-navy transition-all group-hover:gap-3 group-hover:text-brand-orange">
                         Explore Solutions
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -118,22 +111,22 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-6 bg-white/30 backdrop-blur-lg border border-gray-200 rounded-xl mx-auto max-w-4xl">
+      <section className="mx-auto mt-12 max-w-4xl rounded-3xl border border-slate-200 bg-white px-6 py-12 shadow-[0_16px_40px_-32px_rgba(6,20,61,0.35)] sm:px-10 sm:py-14">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+          <h2 className="mb-5 text-3xl font-semibold leading-tight tracking-[-0.04em] text-brand-navy md:text-4xl">
             Not Sure Which Solution Fits Your Industry?
           </h2>
-          <p className="text-xl text-gray-700 mb-10">
+          <p className="mb-8 text-lg leading-8 text-slate-600">
             Our industry experts will assess your specific needs and recommend the perfect technology and compliance strategy for your organization.
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-10 py-5 bg-brand-navy text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300 text-lg"
+            className="inline-flex min-h-12 items-center justify-center rounded-xl bg-brand-orange px-7 py-3.5 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#ad550f] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange"
           >
             Schedule a Consultation
           </Link>

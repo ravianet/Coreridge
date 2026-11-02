@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { ClipboardCheck, Database, FlaskConical, ShieldCheck } from "lucide-react";
 
 export default function PharmaPage() {
   const coreSolutions = [
@@ -42,23 +43,8 @@ export default function PharmaPage() {
     }
   ];
 
-  const caseStudies = [
-    {
-      title: "Enterprise ERP Implementation",
-      client: "Global Pharmaceutical Manufacturer",
-      outcome: "Successful SAP S/4HANA deployment with full CSV compliance",
-      image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&q=80&w=600&h=400"
-    },
-    {
-      title: "Laboratory Modernization",
-      client: "Biotech Research Organization",
-      outcome: "Integrated LIMS platform supporting 500+ scientists across 3 locations",
-      image: "https://images.unsplash.com/photo-1579154204601-01588f351967?auto=format&fit=crop&q=80&w=600&h=400"
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-white pt-28 pb-20">
+    <div className="min-h-screen bg-white pt-20 pb-14">
       <div className="container-pro">
         {/* Hero Section */}
         <motion.div
@@ -92,7 +78,7 @@ export default function PharmaPage() {
         </motion.div>
 
       {/* Challenges & Solutions Overview */}
-      <section className="py-20 px-6">
+      <section className="py-14 md:py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -120,12 +106,30 @@ export default function PharmaPage() {
                 ))}
               </ul>
             </div>
-            <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800&h=600" 
-                alt="Pharmaceutical laboratory"
-                className="rounded-2xl shadow-2xl"
-              />
+            <div className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-brand-navy via-[#18376a] to-[#315579] p-7 text-white shadow-2xl sm:p-9">
+              <div aria-hidden="true" className="absolute -right-16 -top-20 -z-10 h-64 w-64 rounded-full border border-white/10 bg-white/5" />
+              <div aria-hidden="true" className="absolute -bottom-28 -left-20 -z-10 h-72 w-72 rounded-full border border-white/10 bg-white/5" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-orange-200">
+                <FlaskConical aria-hidden="true" className="h-7 w-7" />
+              </div>
+              <h3 className="mt-8 max-w-sm text-2xl font-semibold leading-tight sm:text-3xl">
+                Technology that supports trusted life sciences operations
+              </h3>
+              <p className="mt-3 max-w-md text-sm leading-6 text-blue-100 sm:text-base">
+                Connect dependable infrastructure with validated systems and secure, traceable data practices.
+              </p>
+              <ul className="mt-7 space-y-3">
+                {[
+                  { label: "System validation", icon: ClipboardCheck },
+                  { label: "Data integrity", icon: Database },
+                  { label: "Secure operations", icon: ShieldCheck },
+                ].map(({ label, icon: Icon }) => (
+                  <li key={label} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white">
+                    <Icon aria-hidden="true" className="h-4 w-4 text-orange-200" />
+                    {label}
+                  </li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         </div>
@@ -140,7 +144,7 @@ export default function PharmaPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Pharma-Specific Solutions</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-4">Pharma-Specific Solutions</h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Tailored technology and compliance services that understand the unique requirements of life sciences organizations.
             </p>
@@ -173,49 +177,8 @@ export default function PharmaPage() {
         </div>
       </section>
 
-      {/* Case Studies */}
-      <section className="py-16 px-6">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Success Stories</h2>
-            <p className="text-xl text-black max-w-3xl mx-auto">
-              See how we've helped pharmaceutical organizations achieve their technology and compliance goals.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {caseStudies.map((study, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15 }}
-                viewport={{ once: true }}
-                className="bg-white backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-200 shadow-sm"
-              >
-                <img 
-                  src={study.image} 
-                  alt={study.title}
-                  className="w-full h-56 object-cover"
-                />
-                <div className="p-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{study.title}</h3>
-                  <p className="text-brand-navy mb-3">{study.client}</p>
-                  <p className="text-gray-700">{study.outcome}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section - Figma Style */}
-      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-16 md:py-20 -mx-4 sm:-mx-6 lg:-mx-8">
+      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-14 md:py-16 -mx-4 sm:-mx-6 lg:-mx-8">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -226,11 +189,11 @@ export default function PharmaPage() {
           >
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Ready to Transform Your Pharma Operations?</h2>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-              Our team of pharma IT and compliance experts is ready to help your organization navigate the complex landscape of life sciences technology.
+              Talk with our team about the technology and compliance needs of your life sciences organization.
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg"
+              className="inline-block px-8 py-4 bg-brand-orange text-white rounded-xl font-semibold text-lg transition-all duration-300 shadow-lg hover:bg-[#ad550f]"
             >
               Start Your Project
             </Link>
