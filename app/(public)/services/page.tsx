@@ -68,13 +68,13 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-white pb-14 pt-16 sm:pt-20">
+    <div className="min-h-screen bg-white pb-6 pt-10 sm:pt-12">
       <div className="container-pro">
         {/* Hero Section - Professional enterprise header like iflexion.com */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mx-auto mb-14 max-w-4xl text-center sm:mb-16"
+          className="mx-auto mb-10 max-w-4xl text-center sm:mb-12"
         >
           <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-orange/20 bg-brand-orange/10 px-4 py-2 text-sm font-semibold text-brand-orange">
             Our Expertise
@@ -114,7 +114,7 @@ export default function ServicesPage() {
                   <p className="mb-6 text-sm leading-7 text-slate-600">{service.description}</p>
                   <Link
                     href={service.href}
-                    className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-brand-navy px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-navy-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
+                    className="cta-button min-h-11 px-4 py-2.5"
                   >
                     Learn More
                     <svg aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -183,16 +183,16 @@ export default function ServicesPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.6, duration: 0.7 }}
-          className="mt-16 rounded-3xl bg-brand-navy px-6 py-12 text-center shadow-[0_20px_54px_-32px_rgba(6,20,61,0.55)] sm:px-10 sm:py-16 md:mt-20"
+          className="cta-surface mt-10 rounded-3xl px-6 py-9 text-center sm:px-10 sm:py-11"
         >
-          <h2 className="mb-5 text-3xl font-semibold tracking-tight text-white md:text-4xl">Ready to Transform Your Enterprise?</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg leading-8 text-slate-300">
+          <h2 className="mb-5 text-3xl font-semibold tracking-tight text-brand-navy md:text-4xl">Ready to Transform Your Enterprise?</h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg leading-8 text-slate-600">
             Let's discuss how our enterprise solutions can help your business thrive in the digital age. Partner with Coreridge for your technology journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand-orange px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#ad550f] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange-light"
+              className="cta-button"
             >
               Schedule a Consultation
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -201,7 +201,7 @@ export default function ServicesPage() {
             </Link>
             <Link
               href="/company/about-us"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/[0.06] px-6 py-3 text-sm font-semibold text-white transition hover:border-white/35 hover:bg-white/[0.12] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-brand-navy transition hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
             >
               Learn About Us
             </Link>

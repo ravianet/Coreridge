@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import CapabilityHeroVisual from '../../../../components/CapabilityHeroVisual';
 
 export default function ManufacturingPage() {
   const coreSolutions = [
@@ -43,38 +44,41 @@ export default function ManufacturingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-20 pb-14">
+    <div className="min-h-screen bg-white pt-8 pb-6">
       <div className="container-pro">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-center mb-16"
+          className="mb-8 grid items-center gap-8 rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-white via-[#F8FAFD] to-[#EAF1F8] p-6 shadow-xl shadow-brand-navy/[0.06] sm:p-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:p-10"
         >
-          <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
-            🏭 MANUFACTURING
-          </span>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
-            Smart Manufacturing Solutions
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
-            Transform your production facilities with Industry 4.0 technologies. Optimize operations, reduce costs, and scale your manufacturing capabilities.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
-            >
-              Discuss Your Operations
-            </Link>
-            <Link
-              href="#solutions"
-              className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
-            >
-              View Solutions
-            </Link>
+          <div>
+            <span className="mb-5 inline-flex items-center rounded-full border border-brand-navy/10 bg-white/80 px-4 py-2 text-sm font-semibold text-brand-navy shadow-sm">
+              🏭 MANUFACTURING
+            </span>
+            <h1 className="mb-5 text-3xl font-bold leading-tight tracking-tight text-brand-navy sm:text-4xl lg:text-5xl">
+              Smart Manufacturing Solutions
+            </h1>
+            <p className="mb-7 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              Transform your production facilities with Industry 4.0 technologies. Optimize operations, reduce costs, and scale your manufacturing capabilities.
+            </p>
+            <div className="flex flex-col gap-3 min-[480px]:flex-row">
+              <Link
+                href="/contact"
+                className="cta-button px-5"
+              >
+                Discuss Your Operations
+              </Link>
+              <Link
+                href="#solutions"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-navy/10 bg-white/80 px-5 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+              >
+                View Solutions
+              </Link>
+            </div>
           </div>
+          <CapabilityHeroVisual domain="Manufacturing" solutions={coreSolutions.slice(0, 3)} />
         </motion.div>
 
       {/* Core Solutions Grid */}
@@ -120,12 +124,12 @@ export default function ManufacturingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-14 md:py-16 px-6 bg-gray-50">
+      <section className="px-6 py-8 md:py-10">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="cta-surface relative isolate overflow-hidden rounded-[2rem] px-6 py-8 text-center sm:px-10 sm:py-10"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
             Ready to Modernize Your Manufacturing?
@@ -135,7 +139,7 @@ export default function ManufacturingPage() {
           </p>
           <Link 
             href="/contact"
-            className="inline-block px-10 py-5 bg-brand-navy text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300 text-lg"
+            className="cta-button"
           >
             Start Your Smart Factory Journey
           </Link>

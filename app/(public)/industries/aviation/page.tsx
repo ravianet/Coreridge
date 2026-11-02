@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import CapabilityHeroVisual from '../../../../components/CapabilityHeroVisual';
 
 export default function AviationPage() {
   const coreSolutions = [
@@ -43,38 +44,41 @@ export default function AviationPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pt-20 pb-14">
+    <div className="min-h-screen bg-white pt-8 pb-6">
       <div className="container-pro">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-center mb-16"
+          className="mb-8 grid items-center gap-8 rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-white via-[#F8FAFD] to-[#EAF1F8] p-6 shadow-xl shadow-brand-navy/[0.06] sm:p-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10 lg:p-10"
         >
-          <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
-            ✈️ AVIATION & AEROSPACE
-          </span>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
-            Aviation Technology Solutions
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
-            39+ combined years of experience delivering mission-critical systems for aviation leaders and global airline networks. Our founders bring deep expertise in aviation systems, AI engineering, and enterprise IT infrastructure to power commercial aerospace operations.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
-            >
-              Discuss Your Aviation Projects
-            </Link>
-            <Link
-              href="#solutions"
-              className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
-            >
-              View Solutions
-            </Link>
+          <div>
+            <span className="mb-5 inline-flex items-center rounded-full border border-brand-navy/10 bg-white/80 px-4 py-2 text-sm font-semibold text-brand-navy shadow-sm">
+              ✈️ AVIATION &amp; AEROSPACE
+            </span>
+            <h1 className="mb-5 text-3xl font-bold leading-tight tracking-tight text-brand-navy sm:text-4xl lg:text-5xl">
+              Aviation Technology Solutions
+            </h1>
+            <p className="mb-7 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              39+ combined years of experience delivering mission-critical systems for aviation leaders and global airline networks. Our founders bring deep expertise in aviation systems, AI engineering, and enterprise IT infrastructure to power commercial aerospace operations.
+            </p>
+            <div className="flex flex-col gap-3 min-[480px]:flex-row">
+              <Link
+                href="/contact"
+                className="cta-button px-5"
+              >
+                Discuss Your Aviation Projects
+              </Link>
+              <Link
+                href="#solutions"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-navy/10 bg-white/80 px-5 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
+              >
+                View Solutions
+              </Link>
+            </div>
           </div>
+          <CapabilityHeroVisual domain="Aviation" solutions={coreSolutions.slice(0, 3)} />
         </motion.div>
 
       {/* Core Solutions Grid */}
@@ -119,12 +123,12 @@ export default function AviationPage() {
       </section>
 
       {/* Boeing & Global Airlines Section */}
-      <section className="py-14 md:py-16 px-6 bg-gray-50">
+      <section className="px-6 py-8 md:py-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="cta-surface relative isolate overflow-hidden rounded-[2rem] px-6 py-8 text-center sm:px-10 sm:py-10"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-8">Trusted by Aviation Leaders</h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
@@ -132,7 +136,7 @@ export default function AviationPage() {
           </p>
           <Link
               href="/contact"
-              className="inline-flex items-center px-8 py-4 bg-brand-navy text-white text-sm font-bold rounded-lg hover:bg-brand-navy/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="cta-button"
             >
               Start Your Aviation Transformation
             </Link>

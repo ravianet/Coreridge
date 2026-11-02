@@ -35,14 +35,14 @@ export default function IndustriesPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white pb-14 pt-16 sm:pt-20">
+    <div className="min-h-screen bg-white pb-6 pt-10 sm:pt-12">
       <div className="container-pro">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mx-auto mb-14 max-w-4xl text-center sm:mb-16"
+          className="mx-auto mb-10 max-w-4xl text-center sm:mb-12"
         >
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand-orange">
               Who we work with
@@ -111,7 +111,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="mx-auto mt-12 max-w-4xl rounded-3xl border border-slate-200 bg-white px-6 py-12 shadow-[0_16px_40px_-32px_rgba(6,20,61,0.35)] sm:px-10 sm:py-14">
+      <section className="mx-auto mt-8 max-w-4xl rounded-3xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 px-6 py-8 shadow-[0_16px_40px_-32px_rgba(6,20,61,0.35)] sm:px-10 sm:py-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -126,7 +126,7 @@ export default function IndustriesPage() {
           </p>
           <Link 
             href="/contact"
-            className="inline-flex min-h-12 items-center justify-center rounded-xl bg-brand-orange px-7 py-3.5 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#ad550f] hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange"
+            className="cta-button px-7 py-3.5 text-base"
           >
             Schedule a Consultation
           </Link>

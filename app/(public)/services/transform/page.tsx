@@ -75,7 +75,7 @@ export default function TransformPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white px-4 py-14 sm:px-6 md:py-16 lg:px-8">
+    <div className="min-h-screen bg-white px-4 py-8 sm:px-6 md:py-10 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -93,7 +93,7 @@ export default function TransformPage() {
           <p className="mx-auto max-w-3xl text-lg leading-8 text-slate-600 md:text-xl">
             Move from manual work to connected digital operations with practical software, AI, and transformation services.
           </p>
-          <Link href="/contact" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-brand-navy px-6 py-3 font-semibold text-white transition hover:bg-brand-navy-dark">
+          <Link href="/contact" className="cta-button mt-7">
             Explore your next step <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </motion.div>
@@ -190,14 +190,14 @@ export default function TransformPage() {
         </motion.section>
 
         {/* CTA Section - Figma Style */}
-        <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-14 md:py-16">
+        <section className="px-6 py-8 md:py-10">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-3xl shadow-lg p-12 text-center"
+              className="cta-surface rounded-3xl p-7 text-center sm:p-10"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Ready to transform your business?</h2>
               <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
@@ -205,7 +205,7 @@ export default function TransformPage() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 transition-all duration-300 shadow-lg"
+                className="cta-button"
               >
                 Start a conversation <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </Link>

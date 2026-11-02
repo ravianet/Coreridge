@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import CapabilityHeroVisual from '../../../../components/CapabilityHeroVisual';
 
 export default function SAPImplementationPage() {
   const sapServices = [
@@ -36,40 +37,41 @@ export default function SAPImplementationPage() {
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative py-14 md:py-16 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
+        className="relative py-8 md:py-10 px-6 overflow-hidden bg-gradient-to-b from-blue-50 to-white"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/5 to-blue-400/5" />
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mx-auto relative z-10 grid max-w-7xl items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-center"
+            className="text-left"
           >
-            <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
+            <span className="mb-5 inline-flex rounded-full border border-brand-navy/10 bg-white/80 px-4 py-2 text-sm font-semibold text-brand-navy shadow-sm">
               💼 SAP Implementation & Rollout
             </span>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
+            <h1 className="mb-5 text-3xl font-bold leading-tight tracking-tight text-brand-navy sm:text-4xl lg:text-5xl">
               End-to-End SAP Expertise
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
+            <p className="mb-7 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
               We deliver end-to-end SAP expertise across implementation, rollout, and managed services to guide your digital transformation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col gap-3 min-[480px]:flex-row">
               <Link 
                 href="/contact"
-                className="px-8 py-4 bg-brand-navy text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
+                className="cta-button px-5"
               >
                 Discuss Your SAP Needs
               </Link>
               <Link 
                 href="#solutions"
-                className="px-8 py-4 bg-white/80 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-brand-navy/30 hover:bg-brand-navy/5 transition-all duration-300"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-navy/10 bg-white/80 px-5 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
               >
                 View Services
               </Link>
             </div>
           </motion.div>
+          <CapabilityHeroVisual domain="SAP" solutions={sapServices.slice(0, 3)} />
         </div>
       </motion.section>
 
@@ -116,13 +118,13 @@ export default function SAPImplementationPage() {
       </section>
 
       {/* CTA Section - Figma Style */}
-      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-14 md:py-16">
+      <section className="px-6 py-8 md:py-10">
         <div className="max-w-4xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl shadow-lg p-12 text-center"
+            className="cta-surface rounded-3xl p-7 text-center sm:p-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
               Ready to Transform with SAP?
@@ -132,7 +134,7 @@ export default function SAPImplementationPage() {
             </p>
             <Link 
               href="/contact"
-              className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg text-lg"
+              className="cta-button"
             >
               Start Your SAP Journey
             </Link>

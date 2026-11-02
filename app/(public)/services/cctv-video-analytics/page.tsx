@@ -83,7 +83,7 @@ export default function CCTVVideoAnalyticsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative py-14 md:py-16">
+      <section className="relative py-8 md:py-10">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_20%_5%,rgba(59,130,246,0.08),transparent_45%),radial-gradient(ellipse_at_80%_95%,rgba(147,197,253,0.06),transparent_40%),radial-gradient(ellipse_at_50%_50%,rgba(255,255,255,0.8),transparent_60%)]"
@@ -108,7 +108,7 @@ export default function CCTVVideoAnalyticsPage() {
               Design a more useful video security system with centralized camera management, optional map views, and analytics tailored to your site and privacy requirements.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row justify-center gap-3">
-              <Link href="/contact" className="rounded-xl bg-gradient-to-r from-brand-navy to-blue-700 px-6 py-3 font-semibold text-white transition hover:shadow-lg hover:shadow-brand-navy/30">
+              <Link href="/contact" className="cta-button">
                 Discuss your requirements
               </Link>
               <Link href="#capabilities" className="rounded-xl border border-gray-200 bg-white/80 backdrop-blur-xl px-6 py-3 font-semibold text-brand-orange transition hover:bg-brand-orange/5">
@@ -281,20 +281,20 @@ export default function CCTVVideoAnalyticsPage() {
         </div>
       </section>
 
-      <section className="py-14 md:py-16 bg-gradient-to-br from-blue-50 to-white">
+      <section className="py-8 md:py-10">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl shadow-lg p-12 text-center"
+            className="cta-surface rounded-3xl p-7 text-center sm:p-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Ready to strengthen your security?</h2>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
               Let\'s review your priorities and identify practical next steps for your environment.
             </p>
-            <Link href="/contact" className="inline-block px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg">
+            <Link href="/contact" className="cta-button">
               Talk to our team
             </Link>
           </motion.div>

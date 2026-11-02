@@ -65,7 +65,7 @@ export default function ValidatePage() {
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 pb-10 pt-16 md:pb-12 md:pt-20"
+        className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white px-6 pb-8 pt-8 md:pb-10 md:pt-10"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/5 to-blue-400/5" />
         <div className="max-w-7xl mx-auto relative z-10">
@@ -87,7 +87,7 @@ export default function ValidatePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="/contact"
-                className="rounded-xl bg-brand-navy px-6 py-3 font-semibold text-white transition hover:bg-brand-navy-dark"
+                className="cta-button"
               >
                 Schedule Compliance Consultation
               </Link>
@@ -248,14 +248,14 @@ export default function ValidatePage() {
       </section>
 
       {/* CTA Section - Figma Style */}
-      <section className="bg-gradient-to-br from-blue-50 to-white px-6 py-14 md:py-16">
+      <section className="px-6 py-8 md:py-10">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl shadow-lg p-12 text-center"
+            className="cta-surface rounded-3xl p-7 text-center sm:p-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
               Need support with validation?
@@ -265,7 +265,7 @@ export default function ValidatePage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white hover:bg-blue-700 transition-all duration-300 shadow-lg"
+              className="cta-button"
             >
               Discuss your project <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>

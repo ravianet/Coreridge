@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import CapabilityHeroVisual from '../../../../components/CapabilityHeroVisual';
 
 export default function ChangeControlPage() {
   const changeControlServices = [
@@ -43,34 +44,35 @@ export default function ChangeControlPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="container-pro mx-auto py-14 md:py-16 px-4 sm:px-6 lg:px-8"
+        className="container-pro mx-auto grid items-center gap-8 py-8 md:py-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8"
       >
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="max-w-2xl">
           <span className="inline-block px-4 py-2 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold mb-6">
             📋 Change Control & CAPA
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+          <h1 className="mb-5 text-3xl font-bold leading-tight tracking-tight text-brand-navy sm:text-4xl lg:text-5xl">
             Change Control & CAPA Excellence
           </h1>
-          <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto mb-10">
+          <p className="mb-7 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
             Robust processes for managing changes and implementing corrective actions that maintain regulatory compliance.
           </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col gap-3 min-[480px]:flex-row">
               <Link 
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-brand-navy to-blue-700 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
+                className="cta-button px-5"
               >
                 Discuss Your Compliance Needs
               </Link>
               <Link 
                 href="#solutions"
-                className="px-8 py-4 bg-white/80 backdrop-blur-xl text-brand-orange font-semibold rounded-xl border border-gray-200 hover:bg-brand-orange/5 transition-all duration-300"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-navy/10 bg-white/80 px-5 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
               >
                 View Services
               </Link>
             </div>
           </div>
-        </motion.section>
+        <CapabilityHeroVisual domain="Change Control" solutions={changeControlServices.slice(0, 3)} />
+      </motion.section>
 
       {/* Core Services Grid - Glass-effect cards */}
       <section id="solutions" className="py-14 md:py-16 bg-gray-50">
@@ -115,13 +117,13 @@ export default function ChangeControlPage() {
       </section>
 
       {/* CTA Section - Figma Style */}
-      <section className="py-14 md:py-16 bg-gradient-to-br from-blue-50 to-white">
+      <section className="py-8 md:py-10">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl shadow-lg p-12 text-center"
+            className="cta-surface rounded-3xl p-7 text-center sm:p-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
               Ready to Strengthen Your Compliance?
@@ -131,7 +133,7 @@ export default function ChangeControlPage() {
             </p>
             <Link 
               href="/contact"
-              className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg text-lg"
+              className="cta-button"
             >
               Start Your Compliance Journey
             </Link>

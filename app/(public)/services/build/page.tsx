@@ -101,7 +101,7 @@ export default function BuildPage() {
           <p className="mx-auto max-w-3xl text-base leading-7 text-slate-600 md:text-lg">
             Practical infrastructure consulting, procurement, deployment, and managed services—aligned to your organization&apos;s needs.
           </p>
-          <Link href="/contact" className="mt-6 inline-flex items-center gap-2 rounded-xl bg-brand-navy px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-navy-dark">
+          <Link href="/contact" className="cta-button mt-6 px-5 py-2.5">
             Plan your infrastructure <ArrowRight aria-hidden="true" className="h-4 w-4" />
           </Link>
         </motion.div>
@@ -283,14 +283,14 @@ export default function BuildPage() {
         </motion.section>
 
         {/* CTA Section - Figma Style */}
-        <section className="bg-gradient-to-br from-blue-50 to-white px-5 py-12 md:py-16 -mx-4 sm:-mx-6 lg:-mx-8">
+        <section className="bg-gradient-to-br from-blue-50 to-white px-5 py-8 md:py-10">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-3xl shadow-lg p-8 md:p-10 text-center"
+              className="cta-surface rounded-3xl p-8 text-center md:p-10"
             >
               <h2 className="text-2xl md:text-3xl font-bold text-brand-navy mb-4">Ready to Build Your IT Infrastructure?</h2>
               <p className="text-base md:text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
@@ -298,7 +298,7 @@ export default function BuildPage() {
               </p>
               <a
                 href="/contact"
-                className="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold text-sm hover:bg-blue-700 transition-all duration-300 shadow-lg"
+                className="cta-button"
               >
                 Schedule a Consultation
               </a>

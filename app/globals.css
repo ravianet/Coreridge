@@ -109,6 +109,14 @@
   .section-padding {
     @apply py-20 md:py-28 lg:py-36;
   }
+
+  .cta-surface {
+    @apply border border-slate-200 bg-gradient-to-br from-[#fff8f0] via-white to-[#eef5ff] text-brand-navy shadow-lg shadow-brand-navy/[0.06];
+  }
+
+  .cta-button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-[#f2d2b5] bg-[#fff0df] px-6 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:-translate-y-0.5 hover:bg-[#ffe4c7] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange;
+  }
   
   /* Container - Professional max-width for enterprise readability */
   .container-pro {

@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import CapabilityHeroVisual from '../../../../components/CapabilityHeroVisual';
 
 export default function QMSPage() {
   const qmsServices = [
@@ -42,43 +43,44 @@ export default function QMSPage() {
       <motion.section 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative py-14 md:py-16 px-6"
+        className="relative py-8 md:py-10 px-6"
       >
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_20%_5%,rgba(59,130,246,0.08),transparent_45%),radial-gradient(ellipse_at_80%_95%,rgba(147,197,253,0.06),transparent_40%),radial-gradient(ellipse_at_50%_50%,rgba(255,255,255,0.8),transparent_60%)]"
         />
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mx-auto relative z-10 grid max-w-7xl items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-center"
+            className="text-left"
           >
-            <span className="inline-block px-4 py-2 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold mb-6">
+            <span className="mb-5 inline-flex rounded-full border border-brand-orange/20 bg-brand-orange/10 px-4 py-2 text-sm font-semibold text-brand-orange">
               ✅ Quality Management Systems (QMS)
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+            <h1 className="mb-5 text-3xl font-bold leading-tight tracking-tight text-brand-navy sm:text-4xl lg:text-5xl">
               Comprehensive Quality Management
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10">
+            <p className="mb-7 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
               QMS solutions that ensure your organization consistently meets quality standards and regulatory requirements.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col gap-3 min-[480px]:flex-row">
               <Link 
                 href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-brand-navy to-blue-700 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
+                className="cta-button px-5"
               >
                 Discuss Your QMS Needs
               </Link>
               <Link 
                 href="#solutions"
-                className="px-8 py-4 bg-white/80 backdrop-blur-xl text-brand-orange font-semibold rounded-xl border border-gray-200 hover:bg-brand-orange/5 transition-all duration-300"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-brand-navy/10 bg-white/80 px-5 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:-translate-y-0.5 hover:bg-white"
               >
                 View Solutions
               </Link>
             </div>
           </motion.div>
+          <CapabilityHeroVisual domain="Quality Management" solutions={qmsServices.slice(0, 3)} />
         </div>
       </motion.section>
 
@@ -125,13 +127,13 @@ export default function QMSPage() {
       </section>
 
       {/* CTA Section - Figma Style */}
-      <section className="py-14 md:py-16 px-6 bg-gradient-to-br from-blue-50 to-white">
+      <section className="py-8 md:py-10 px-6">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-white rounded-3xl shadow-lg p-12 text-center"
+            className="cta-surface rounded-3xl p-7 text-center sm:p-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">
               Ready to Implement Your QMS?
@@ -141,7 +143,7 @@ export default function QMSPage() {
             </p>
             <Link 
               href="/contact"
-              className="inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-all duration-300 shadow-lg text-lg"
+              className="cta-button"
             >
               Start Your Quality Journey
             </Link>

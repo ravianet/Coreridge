@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import CapabilityHeroVisual from '../../../../components/CapabilityHeroVisual';
 
 export default function ComputerSystemValidationPage() {
   const coreCapabilities = [
@@ -70,23 +71,24 @@ export default function ComputerSystemValidationPage() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="container-pro mx-auto py-14 md:py-16 px-4 sm:px-6 lg:px-8"
+        className="container-pro mx-auto grid items-center gap-8 py-8 md:py-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8"
       >
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="max-w-2xl">
           <span className="inline-block px-4 py-2 bg-brand-orange/10 text-brand-orange rounded-full text-sm font-semibold mb-6">
             💻 Regulatory Compliance
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
+          <h1 className="mb-5 text-3xl font-bold leading-tight tracking-tight text-brand-navy sm:text-4xl lg:text-5xl">
             Computer System Validation
             <span className="block text-gray-800 mt-2">
               Ensuring Regulatory Compliance
             </span>
           </h1>
-          <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          <p className="max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
             Complete validation services for all pharmaceutical systems ensuring FDA, GxP, and 21 CFR Part 11 compliance. 
             Our expert team delivers comprehensive validation documentation and execution for all regulated systems.
           </p>
         </div>
+        <CapabilityHeroVisual domain="Computer System Validation" solutions={coreCapabilities.slice(0, 3)} />
       </motion.section>
 
       {/* Core Capabilities - Glass-effect cards matching site design */}
@@ -169,14 +171,14 @@ export default function ComputerSystemValidationPage() {
       </section>
 
       {/* CTA Section - Figma Style */}
-      <section className="py-14 md:py-16 bg-gradient-to-br from-blue-50 to-white">
+      <section className="py-8 md:py-10">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl shadow-lg p-12 text-center"
+            className="cta-surface rounded-3xl p-7 text-center sm:p-10"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-brand-navy mb-6">Ready to Validate Your Systems?</h2>
             <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
@@ -184,7 +186,7 @@ export default function ComputerSystemValidationPage() {
             </p>
             <Link 
               href="/contact"
-              className="inline-block px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-300 shadow-lg"
+              className="cta-button"
             >
               Get Started with CSV
             </Link>
