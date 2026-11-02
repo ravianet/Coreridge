@@ -77,8 +77,6 @@ function errorResponse(message: string, status: number) {
 }
 
 export async function POST(request: Request) {
-  let savedInquiryId: string | null = null;
-
   try {
     const contentType = request.headers.get("content-type") ?? "";
     let emailData: {
@@ -238,36 +236,48 @@ export async function POST(request: Request) {
       return errorResponse("Unsupported form submission.", 415);
     }
 
-    const [inquiry] = await prisma.$transaction([
-      prisma.inquiry.create({
-        data: {
-          firstName: inquiryData.firstName,
-          lastName: inquiryData.lastName,
-          email: inquiryData.email,
-          company: inquiryData.company,
-          serviceType: inquiryData.serviceType,
-          message: inquiryData.message,
-        },
-      }),
-      prisma.auditLog.create({
-        data: {
-          action: "INQUIRY_SUBMITTED",
-          details: `New ${emailData.formName.toLowerCase()} from ${inquiryData.firstName} ${inquiryData.lastName} for ${inquiryData.serviceType}`,
-        },
-      }),
-    ]);
-    savedInquiryId = inquiry.id;
-
     await sendWebsiteEmail(emailData);
 
-    return NextResponse.json(
-      {
-        success: true,
-        message: "Your submission was sent successfully.",
-        inquiryId: inquiry.id,
-      },
-      { status: 201 },
-    );
+    try {
+      const [inquiry] = await prisma.$transaction([
+        prisma.inquiry.create({
+          data: {
+            firstName: inquiryData.firstName,
+            lastName: inquiryData.lastName,
+            email: inquiryData.email,
+            company: inquiryData.company,
+            serviceType: inquiryData.serviceType,
+            message: inquiryData.message,
+          },
+        }),
+        prisma.auditLog.create({
+          data: {
+            action: "INQUIRY_SUBMITTED",
+            details: `New ${emailData.formName.toLowerCase()} from ${inquiryData.firstName} ${inquiryData.lastName} for ${inquiryData.serviceType}`,
+          },
+        }),
+      ]);
+
+      return NextResponse.json(
+        {
+          success: true,
+          message: "Your submission was sent successfully.",
+          inquiryId: inquiry.id,
+        },
+        { status: 201 },
+      );
+    } catch (error) {
+      console.error("Email delivered, but inquiry could not be archived:", error);
+      return NextResponse.json(
+        {
+          success: true,
+          message:
+            "Your submission was emailed to our team, but could not be archived in our database. You do not need to submit it again.",
+        },
+        { status: 201 },
+      );
+    }
+
   } catch (error) {
     console.error("Error processing website form submission:", error);
 
@@ -276,31 +286,27 @@ export async function POST(request: Request) {
       error.message.startsWith("Email delivery is not configured")
     ) {
       return errorResponse(
-        savedInquiryId
-          ? `Your submission was saved (reference ${savedInquiryId}), but email delivery is not configured yet. Please contact info@coreridgetech.com directly.`
-          : "Email delivery is not configured. Please contact info@coreridgetech.com directly.",
+        "Email delivery is not configured on the hosting server. Please contact info@coreridgetech.com directly.",
         503,
       );
     }
 
-    if (error instanceof Error && error.name === "TimeoutError") {
+    if (
+      error instanceof Error &&
+      (error.name === "TimeoutError" ||
+        ("code" in error &&
+          ["ETIMEDOUT", "ECONNECTION", "ESOCKET"].includes(
+            String(error.code),
+          )))
+    ) {
       return errorResponse(
-        savedInquiryId
-          ? `Your submission was saved (reference ${savedInquiryId}), but email delivery timed out. Please contact info@coreridgetech.com before submitting again.`
-          : "Email delivery timed out. Please try again or contact info@coreridgetech.com.",
+        "Email delivery timed out or the mail server could not be reached. Please try again later or contact info@coreridgetech.com.",
         504,
       );
     }
 
-    if (savedInquiryId) {
-      return errorResponse(
-        `Your submission was saved (reference ${savedInquiryId}), but we couldn't forward it to our inbox. Please contact info@coreridgetech.com before submitting again.`,
-        502,
-      );
-    }
-
     return errorResponse(
-      "We couldn't process your submission. Please try again or contact info@coreridgetech.com.",
+      "We couldn't send your submission to our team. Please try again or contact info@coreridgetech.com.",
       502,
     );
   }

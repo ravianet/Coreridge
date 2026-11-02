@@ -17,6 +17,7 @@ export default function ContactPage() {
     phone: "", company: "", serviceInterest: "", message: ""
   });
   const [submitted, setSubmitted] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -48,6 +49,7 @@ export default function ContactPage() {
         return;
       }
 
+      setSuccessMessage(result.message || "Your submission was sent successfully.");
       setSubmitted(true);
       setFormData({
         firstName: "",
@@ -130,7 +132,7 @@ export default function ContactPage() {
                   <CheckCircle2 className="w-10 h-10 text-green-500" strokeWidth={2} />
                 </div>
                 <h3 className="text-xl font-bold text-green-600 mb-2">Message Sent!</h3>
-                <p className="text-gray-500 text-sm">Your inquiry has been submitted. Our team will review it and follow up.</p>
+                <p className="text-gray-500 text-sm">{successMessage}</p>
               </motion.div>
             ) : (
               <>

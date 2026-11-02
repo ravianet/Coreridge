@@ -19,6 +19,7 @@ export default function CareersPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [submitError, setSubmitError] = useState("");
   const resumeInputRef = useRef<HTMLInputElement>(null);
 
@@ -59,6 +60,7 @@ export default function CareersPage() {
         return;
       }
 
+      setSuccessMessage(result.message || "Your application was sent successfully.");
       setIsSubmitted(true);
       setFormData({
         fullName: "",
@@ -192,7 +194,7 @@ export default function CareersPage() {
                 role="status"
                 aria-live="polite"
               >
-                <span className="font-semibold">Thank you for your submission!</span> We'll review your application and get back to you soon.
+                <span className="font-semibold">{successMessage}</span>
               </motion.div>
             )}
 

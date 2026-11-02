@@ -29,6 +29,7 @@ export default function GetStartedPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -69,6 +70,7 @@ export default function GetStartedPage() {
         return;
       }
 
+      setSuccessMessage(result.message || "Your submission was sent successfully.");
       setSubmitted(true);
       setFormData({
         userName: "",
@@ -175,8 +177,7 @@ export default function GetStartedPage() {
                 Request received
               </h2>
               <p className="mt-2 max-w-sm text-sm leading-6 text-blue-100/80">
-                Thank you for sharing your project. Our team will review your
-                inquiry and follow up.
+                {successMessage}
               </p>
             </div>
           ) : (

@@ -27,6 +27,7 @@ type ConsultationFormData = z.infer<typeof consultationSchema>;
 export default function ConsultationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
@@ -54,12 +55,13 @@ export default function ConsultationForm() {
         body: JSON.stringify({ ...data, formType: "consultation" }),
       });
 
-      const result = await response.json();
+      const result: { success?: boolean; message?: string } = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok || !result.success) {
         throw new Error(result.message || "Something went wrong");
       }
 
+      setSuccessMessage(result.message || "Your consultation request was sent successfully.");
       setSubmitSuccess(true);
       reset();
       
@@ -77,7 +79,7 @@ export default function ConsultationForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       {submitSuccess && (
         <div className="p-4 bg-green-100 border border-green-300 rounded-lg text-green-700 text-center">
-          Thank you! Your consultation request has been submitted successfully.
+          {successMessage}
         </div>
       )}
       {submitError && (
