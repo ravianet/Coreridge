@@ -5,10 +5,10 @@ import Link from "next/link";
 import { ExternalLink, ArrowRight, Check } from "lucide-react";
 
 const companyStats = [
-  { number: "40+", label: "Years of combined leadership experience" },
-  { number: "15,000+", label: "Users supported in leadership experience" },
-  { number: "600+", label: "Locations supported in leadership experience" },
-  { number: "2023", label: "Founded" },
+  { number: "40+", label: "Combined leadership experience" },
+  { number: "10,000+", label: "Users supported across leadership experience" },
+  { number: "500+", label: "Locations supported across leadership experience" },
+  { number: "2023", label: "Coreridge founded" },
 ];
 
 const milestones = [

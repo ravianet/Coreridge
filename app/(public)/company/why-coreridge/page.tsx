@@ -260,8 +260,8 @@ export default function WhyCoreRidgePage() {
 
   const stats = [
     { number: "40+", label: "Combined leadership experience", icon: CalendarDays, artwork: "experience" as const, accent: "blue" as const, secondaryIcon: Sparkles },
-    { number: "50,000+", label: "Users supported across leadership experience", icon: UsersRound, artwork: "clients" as const, accent: "cyan" as const, secondaryIcon: HeartHandshake },
-    { number: "600+", label: "Locations supported across leadership experience", icon: Building2, artwork: "industry" as const, accent: "gold" as const, secondaryIcon: MapPin },
+    { number: "10,000+", label: "Users supported across leadership experience", icon: UsersRound, artwork: "clients" as const, accent: "cyan" as const, secondaryIcon: HeartHandshake },
+    { number: "500+", label: "Locations supported across leadership experience", icon: Building2, artwork: "industry" as const, accent: "gold" as const, secondaryIcon: MapPin },
     { number: "2023", label: "Coreridge founded", icon: CalendarDays, artwork: "projects" as const, accent: "green" as const, secondaryIcon: Rocket }
   ];
 
