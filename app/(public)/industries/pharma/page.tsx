@@ -1,7 +1,13 @@
 "use client";
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ClipboardCheck, Database, FlaskConical, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  ClipboardCheck,
+  Database,
+  FlaskConical,
+  ShieldCheck,
+} from "lucide-react";
 
 export default function PharmaPage() {
   const coreSolutions = [
@@ -47,38 +53,51 @@ export default function PharmaPage() {
     <div className="min-h-screen bg-white pt-20 pb-14">
       <div className="container-pro">
         {/* Hero Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+        <motion.section
+          aria-labelledby="pharma-hero-title"
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="relative isolate mb-0 overflow-hidden rounded-[2rem] border border-slate-200/80 bg-gradient-to-br from-white via-[#F8FAFD] to-[#EAF1F8] px-6 py-7 shadow-xl shadow-brand-navy/[0.06] sm:px-10 sm:py-9 lg:px-12"
         >
-          <span className="inline-block px-4 py-2 bg-brand-navy/10 text-brand-navy rounded-full text-sm font-semibold mb-6">
-            💊 Pharma & Life Sciences
-          </span>
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-brand-navy mb-6">
-            Technology for Life Sciences
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-10">
-            Comprehensive IT and compliance solutions supporting pharmaceutical research, development, and manufacturing worldwide.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div
+            aria-hidden="true"
+            className="absolute -right-20 -top-28 -z-10 h-80 w-80 rounded-full bg-brand-orange/[0.07] blur-3xl"
+          />
+          <div className="max-w-4xl">
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-navy/10 bg-white/80 px-3.5 py-2 text-sm font-semibold text-brand-navy shadow-sm">
+              <FlaskConical aria-hidden="true" className="h-4 w-4 text-brand-orange" />
+              Pharma &amp; Life Sciences
+            </span>
+            <h1
+              id="pharma-hero-title"
+              className="text-3xl font-bold leading-tight tracking-tight text-brand-navy sm:text-4xl lg:text-5xl"
+            >
+              Technology for Life Sciences
+            </h1>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+              Comprehensive IT and compliance solutions supporting pharmaceutical research, development, and manufacturing worldwide.
+            </p>
+          </div>
+          <div className="mt-5 flex flex-col gap-3 min-[480px]:flex-row">
             <Link
               href="/contact"
-              className="px-8 py-4 bg-gradient-to-r from-brand-navy to-brand-navy-light text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-brand-navy/30 transition-all duration-300"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand-navy px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-navy/15 transition hover:-translate-y-0.5 hover:bg-brand-navy-light hover:shadow-brand-navy/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
             >
               Discuss Your Project
+              <ArrowRight aria-hidden="true" className="h-4 w-4" />
             </Link>
             <Link
               href="#solutions"
-              className="px-8 py-4 bg-gray-100 backdrop-blur-sm text-brand-navy font-semibold rounded-xl border border-gray-200 hover:bg-gray-200 transition-all duration-300"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-brand-navy/10 bg-white/80 px-5 py-3 text-sm font-semibold text-brand-navy shadow-sm transition hover:-translate-y-0.5 hover:border-brand-navy/20 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
             >
               View Solutions
+              <ArrowRight aria-hidden="true" className="h-4 w-4 text-brand-orange" />
             </Link>
           </div>
-        </motion.div>
+        </motion.section>
 
       {/* Challenges & Solutions Overview */}
-      <section className="py-14 md:py-16 px-6">
+      <section className="px-6 pt-4 pb-10 md:pt-6 md:pb-14">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -106,16 +125,16 @@ export default function PharmaPage() {
                 ))}
               </ul>
             </div>
-            <div className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-brand-navy via-[#18376a] to-[#315579] p-7 text-white shadow-2xl sm:p-9">
-              <div aria-hidden="true" className="absolute -right-16 -top-20 -z-10 h-64 w-64 rounded-full border border-white/10 bg-white/5" />
-              <div aria-hidden="true" className="absolute -bottom-28 -left-20 -z-10 h-72 w-72 rounded-full border border-white/10 bg-white/5" />
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-orange-200">
+            <div className="relative isolate overflow-hidden rounded-3xl border border-slate-200/80 bg-gradient-to-br from-white via-[#F5F8FC] to-[#E8EFF8] p-7 text-brand-navy shadow-xl shadow-brand-navy/10 sm:p-9">
+              <div aria-hidden="true" className="absolute -right-16 -top-20 -z-10 h-64 w-64 rounded-full border border-brand-navy/5 bg-brand-navy/[0.03]" />
+              <div aria-hidden="true" className="absolute -bottom-28 -left-20 -z-10 h-72 w-72 rounded-full border border-brand-navy/5 bg-white/60" />
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand-orange/15 bg-brand-orange/10 text-brand-orange">
                 <FlaskConical aria-hidden="true" className="h-7 w-7" />
               </div>
-              <h3 className="mt-8 max-w-sm text-2xl font-semibold leading-tight sm:text-3xl">
+              <h3 className="mt-8 max-w-sm text-2xl font-bold leading-tight tracking-tight text-brand-navy sm:text-3xl">
                 Technology that supports trusted life sciences operations
               </h3>
-              <p className="mt-3 max-w-md text-sm leading-6 text-blue-100 sm:text-base">
+              <p className="mt-3 max-w-md text-sm leading-6 text-slate-600 sm:text-base">
                 Connect dependable infrastructure with validated systems and secure, traceable data practices.
               </p>
               <ul className="mt-7 space-y-3">
@@ -124,8 +143,8 @@ export default function PharmaPage() {
                   { label: "Data integrity", icon: Database },
                   { label: "Secure operations", icon: ShieldCheck },
                 ].map(({ label, icon: Icon }) => (
-                  <li key={label} className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white">
-                    <Icon aria-hidden="true" className="h-4 w-4 text-orange-200" />
+                  <li key={label} className="flex items-center gap-3 rounded-xl border border-brand-navy/10 bg-white/75 px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm shadow-brand-navy/[0.03]">
+                    <Icon aria-hidden="true" className="h-4 w-4 text-brand-orange" />
                     {label}
                   </li>
                 ))}
