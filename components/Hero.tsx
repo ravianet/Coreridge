@@ -75,17 +75,17 @@ export default function Hero() {
             playsInline
             preload="none"
             onError={() => setVideoLoaded(false)}
-            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-60"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-80"
           >
             <source src="/ai.mp4" type="video/mp4" />
           </video>
         ) : (
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_78%_22%,rgba(197,103,53,0.18),transparent_34%),linear-gradient(125deg,#dce5ed_0%,#e8edf2_52%,#d7e0e9_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_78%_22%,rgba(197,103,53,0.22),transparent_34%),linear-gradient(125deg,#102653_0%,#06143D_52%,#030B22_100%)]" />
         )}
       </div>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(232,237,242,0.72)_0%,rgba(232,237,242,0.44)_45%,rgba(232,237,242,0.24)_100%),linear-gradient(0deg,rgba(240,243,246,0.36)_0%,rgba(232,237,242,0.08)_100%)]"
+        className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(90deg,rgba(3,11,34,0.72)_0%,rgba(3,11,34,0.52)_48%,rgba(3,11,34,0.34)_100%),linear-gradient(0deg,rgba(3,11,34,0.28)_0%,rgba(3,11,34,0.08)_100%)]"
       />
       <div
         aria-hidden="true"
@@ -99,15 +99,15 @@ export default function Hero() {
             Your partner for technology that works
           </div>
 
-          <h1 className="text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-brand-navy sm:text-5xl lg:text-[3.1rem] xl:text-6xl">
+          <h1 className="text-balance text-4xl font-semibold leading-[1.06] tracking-[-0.045em] text-white sm:text-5xl lg:text-[3.1rem] xl:text-6xl">
             Move forward with
             <span className="mt-1 block">
-              <span className="text-[#A95122]">confidence</span>{" "}
+              <span className="text-[#FDBA74]">confidence</span>{" "}
               <span>in every system.</span>
             </span>
           </h1>
 
-          <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-slate-700 sm:mt-5 sm:text-lg sm:leading-8 lg:text-xl">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-7 text-slate-100 sm:mt-5 sm:text-lg sm:leading-8 lg:text-xl">
             From modernizing enterprise technology to validating critical
             systems, Coreridge helps your teams make complex change feel clear,
             secure, and manageable.
@@ -128,14 +128,14 @@ export default function Hero() {
             </Link>
             <Link
               href="/services"
-              className="group inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-white/60 bg-white/35 px-6 py-3.5 text-base font-semibold text-brand-navy shadow-sm backdrop-blur-md transition hover:border-white/80 hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy"
+              className="group inline-flex min-h-14 items-center justify-center gap-2 rounded-xl border border-white/40 bg-white/10 px-6 py-3.5 text-base font-semibold text-white shadow-sm backdrop-blur-md transition hover:border-white/60 hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               Explore our services
               <ArrowRight aria-hidden="true" className="h-4 w-4 text-[#A95122] transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>
 
-          <div className="mt-5 flex flex-wrap justify-start gap-x-3 gap-y-3 text-sm font-medium text-slate-700 sm:mt-6">
+          <div className="mt-5 flex flex-wrap justify-start gap-x-3 gap-y-3 text-sm font-medium text-slate-100 sm:mt-6">
             {[
               "Practical expertise",
               "Clear communication",
@@ -143,9 +143,11 @@ export default function Hero() {
             ].map((item) => (
               <span
                 key={item}
-                className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/45 px-3.5 py-2 shadow-sm backdrop-blur-md"
+                className={`inline-flex items-center gap-2 rounded-full border border-white/30 px-3.5 py-2 shadow-sm backdrop-blur-md ${
+                  item === "Practical expertise" ? "bg-white/15" : "bg-white/10"
+                }`}
               >
-                <Check aria-hidden="true" className="h-4 w-4 text-[#A95122]" />
+                <Check aria-hidden="true" className="h-4 w-4 text-[#FDBA74]" />
                 {item}
               </span>
             ))}
@@ -154,39 +156,39 @@ export default function Hero() {
 
         <div className="relative mx-auto w-full max-w-md lg:ml-auto">
           <div className="relative overflow-hidden rounded-3xl border border-white/55 bg-white/30 p-4 text-brand-navy shadow-2xl shadow-brand-navy/10 backdrop-blur-[2px] sm:p-4">
-            <div className="flex items-center justify-between gap-3 border-b border-slate-200 pb-4">
+            <div className="flex items-center justify-between gap-3 border-b border-white/25 pb-4">
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#A95122]">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#FDBA74]">
                   Our services
                 </p>
-                <h2 className="mt-1 text-lg font-semibold tracking-tight text-brand-navy sm:text-xl">
+                <h2 className="mt-1 text-lg font-semibold tracking-tight text-white sm:text-xl">
                   One partner. A clearer path.
                 </h2>
               </div>
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-navy text-orange-200">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/15 text-orange-200">
                 <Cpu aria-hidden="true" className="h-4 w-4" />
               </div>
             </div>
 
-            <div className="divide-y divide-slate-100 py-2">
+            <div className="divide-y divide-white/15 py-2">
               {deliveryAreas.map(({ label, detail, href, icon: Icon }, index) => (
                 <Link
                   key={label}
                   href={href}
-                  className="group flex items-center gap-3 rounded-xl px-2 py-2 transition-colors hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-navy sm:py-3"
+                  className="group flex items-center gap-3 rounded-xl px-2 py-2 transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:py-3"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/35 text-brand-navy transition-colors group-hover:bg-brand-navy group-hover:text-white">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-white transition-colors group-hover:bg-white/20 group-hover:text-white">
                     <Icon aria-hidden="true" className="h-4 w-4" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="text-[13px] font-semibold tracking-wide text-brand-navy">
+                    <p className="text-[13px] font-semibold tracking-wide text-white">
                       {label}
                     </p>
-                    <p className="mt-0.5 text-xs font-medium text-slate-700">
+                    <p className="mt-0.5 text-xs font-medium text-slate-100">
                       {detail}
                     </p>
                   </div>
-                  <span className="text-[11px] font-semibold tracking-wider text-[#A95122]">
+                  <span className="text-[11px] font-semibold tracking-wider text-[#FDBA74]">
                     0{index + 1}
                   </span>
                 </Link>
@@ -194,23 +196,23 @@ export default function Hero() {
             </div>
 
             <div className="p-2">
-              <p className="text-xs font-medium text-slate-600">
+              <p className="text-xs font-medium text-slate-100">
                 From planning to ongoing support
               </p>
               <div className="mt-2 flex items-center gap-2" aria-hidden="true">
-                <span className="h-1 flex-1 rounded-full bg-brand-navy" />
-                <span className="h-1 flex-1 rounded-full bg-brand-navy/55" />
-                <span className="h-1 flex-1 rounded-full bg-[#C56735]" />
+                <span className="h-1 flex-1 rounded-full bg-white" />
+                <span className="h-1 flex-1 rounded-full bg-white/55" />
+                <span className="h-1 flex-1 rounded-full bg-[#FDBA74]" />
               </div>
-              <div className="mt-1 flex justify-between text-[10px] font-medium text-slate-500">
+              <div className="mt-1 flex justify-between text-[10px] font-medium text-slate-200">
                 <span>Plan</span>
                 <span>Deliver</span>
                 <span>Support</span>
               </div>
             </div>
           </div>
-          <div className="relative ml-4 mt-3 hidden w-fit items-center gap-3 rounded-2xl border border-white/55 bg-white/30 px-4 py-3 text-brand-navy shadow-xl shadow-brand-navy/5 backdrop-blur-[2px] sm:flex">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#C56735]/10 text-[#A95122]">
+          <div className="relative mx-auto mt-3 hidden w-fit items-center justify-center gap-3 rounded-2xl border border-white/55 bg-white/10 px-4 py-3 text-white shadow-xl shadow-brand-navy/5 backdrop-blur-[2px] sm:flex">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15 text-[#FDBA74]">
               <Check aria-hidden="true" className="h-5 w-5" />
             </span>
             <span className="text-sm font-semibold">Thoughtful delivery</span>
